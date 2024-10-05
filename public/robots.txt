@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://yellow-v2.vercel.app/sitemap.xml
