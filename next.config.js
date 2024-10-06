@@ -15,6 +15,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'wordpress-156292-4703703.cloudwaysapps.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'wordpress.welcometoyellow.com',
+      }
     ],
   },
   async redirects() {

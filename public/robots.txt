@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://welcometoyellow.com/sitemap.xml
+Sitemap: https://www.welcometoyellow.com/sitemap.xml

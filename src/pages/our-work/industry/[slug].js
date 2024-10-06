@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { gsap } from 'gsap/dist/gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import PortfolioIndustries from '@/components/Portfolio/PortfolioIndustries';
 import Layout from '@/components/Layout';
 import Section from '@/components/Section';
@@ -12,8 +10,6 @@ import MetaData from '@/components/Metadata';
 import Consultant from '@/components/Portfolio/Consultant';
 import { titleAnim, paraAnim, lineAnim, fadeUp, fadeIn } from '@/components/gsapAnimations';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const Category = ({ portfolioIndustry, portfolio, portfolioIndustries }) => {
   const [activeIndustry, setActiveIndustry] = useState(`${portfolioIndustry.slug}`);
 
@@ -22,35 +18,6 @@ const Category = ({ portfolioIndustry, portfolio, portfolioIndustries }) => {
   lineAnim();
   fadeUp();
   fadeIn();
-
-  // useEffect(() => {
-  //   const imageAnimations = document.querySelectorAll(".image-animation-wrapper")
-  //   imageAnimations.forEach((img) => {
-  //     const imgHolder = img.querySelector("div");
-  //     const imgImage = img.querySelector("img, video");
-  //     const tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: img,
-  //         start: "top 80%",
-  //       },
-  //       defaults: {
-  //         ease: 'power3.inOut',
-  //       }
-  //     })
-  //     tl.fromTo(imgHolder, {
-  //       xPercent: -100,
-  //     }, {
-  //       duration: 1.5,
-  //       xPercent: 0,
-  //     })
-  //     tl.fromTo(imgImage, {
-  //       xPercent: 100,
-  //     }, {
-  //       duration: 1.5,
-  //       xPercent: 0,
-  //     }, "<")
-  //   })
-  // }, [portfolio]);
 
   const metadata = {
     title: `${portfolioIndustry.name} Portfolio Archive | Yellow`,
