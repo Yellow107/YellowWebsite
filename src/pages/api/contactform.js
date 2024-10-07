@@ -2,7 +2,7 @@
 import { Resend } from "resend";
 import ContactDetails from "@/components/emailtemplate/ContactDetails";
 
-const resend = new Resend(process.env.RESEND_API_KEY2);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async (req, res) => {
   try {
@@ -12,9 +12,9 @@ export default async (req, res) => {
     let otherService = services["Other"] ? req.body.other : null;
 
     const { data, error } = await resend.emails.send({
-      from: "Yellow <onboarding@resend.dev>",
-      to: ["hitesh@weareenigma.com"],
-      subject: "New Lead: New Contact Form Submission",
+      from: "Yellow <webforms@welcometoyellow.com>",
+      to: ["hello@welcometoyellow.com"],
+      subject: "Contact Form Submission - New Enquiry",
       react: ContactDetails({
         userName: name,
         userEmail: email,

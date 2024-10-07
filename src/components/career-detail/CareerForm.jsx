@@ -93,7 +93,7 @@ function CareerForm({ jobs }) {
       return; // Prevent form submission
     }
     const base64Content = content.split(',')[1];
-    console.log("Form Submitted Successfully:", data);
+    // console.log("Form Submitted Successfully:", data);
     
     const formData = {
       name: data.name,

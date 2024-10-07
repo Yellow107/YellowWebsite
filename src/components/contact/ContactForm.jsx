@@ -67,7 +67,7 @@ export default function ContactForm() {
   };
 
   const onSubmit = async (data) => {
-    console.log("Form Submitted Successfully:", data);
+    // console.log("Form Submitted Successfully:", data);
     router.push("/thank-you");
     const formData = {
       name: data.name,
@@ -106,7 +106,7 @@ export default function ContactForm() {
     <section className="px-[5vw] pt-[10%] py-[5%] tablet:py-[10%] mobile:pt-[25%]" id="contact-form">
       <h3
         data-para-anim
-        className="text-[4.8vw] capitalize leading-[1.3] font-display w-[70%] mb-[7vw] tablet:text-[5.4vw] mobile:text-[10vw] mobile:w-full"
+        className="text-[4vw] leading-[1.3] font-display w-[70%] mb-[7vw] tablet:text-[5.4vw] mobile:text-[10vw] mobile:w-full"
       >
         Connect with our team to bring your ideas to life.
       </h3>

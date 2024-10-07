@@ -14,7 +14,7 @@ const ContactDetails = ({ userName, userEmail, userNumber, userDetail, userServi
         <Container style={container}>
           <Img
             src={"https://yellow-v2.vercel.app/_next/image?url=%2Flogo-black.png&w=256&q=75"}
-            width="100"
+            width="140"
             height="50"
             alt="Logo"
             style={logo}

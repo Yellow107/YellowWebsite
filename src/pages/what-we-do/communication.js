@@ -38,7 +38,7 @@ export default function servicesdetail({ recentWorks }) {
       paragraphs: [
         "Your brand is unique, so we start with a bespoke marketing strategy. Every piece of content we create – from outdoor to radio to social media content – will be crafted to ignite meaningful conversations about your brand and product and inspire your target audience to take action.",
         "We act like your in-house marketing team in defining your marketing objectives and strategy that acts like a blueprint with a detailed yearly plan that covers everything from advertising ideas to marketing activations to social media calendars and more. We outline budgets and tactical campaigns and proactive initiatives along with recommended media investments. This helps businesses plan their budgets alongside KPIs and impact, and for some clients, we are also responsible for executing and delivering on the strategy and plan.",
-        
+
       ],
       image: "/assets/images/service/communication/Marketing-strategy.webp",
     },
@@ -47,11 +47,11 @@ export default function servicesdetail({ recentWorks }) {
       paragraphs: [
         "As a marketing partner for global brands like Mitsubishi Motors MEA, and local brands like Emaar Malls Group and several others, Yellow acts like an extension to the team, and ensures all marketing executions, regardless of media channel, delivers the desired results. We measure the effectiveness of each campaign to understand engagement, click through rates, top of mind awareness and increase in revenue.",
         "We believe communications, to be effective, needs to be specific and purpose-led. Fusing creativity and technology and leveraging our relationships with respected local and global media publishers, we’ll deliver and amplify your story in a way that makes a measurable impact on your business.",
-        
+
       ],
       image: "/assets/images/service/communication/mitsubishi-detail.webp",
     },
-  
+
   ];
 
   return (
@@ -201,51 +201,102 @@ export default function servicesdetail({ recentWorks }) {
         {/* Detail Section */}
         <section className="w-full h-full bg-black " id="detail">
           <div className=" container mobile:flex mobile:flex-col tablet:flex-col tablet:flex pb-[5%] bg-white">
-            {services.map((service, index) => (
-              <React.Fragment key={index}>
-                <div className="tablet:flex mobile:flex mobile:flex-col tablet:gap-[2vw] flex mobile:gap-0 gap-[15vw]">
-                  <div className="col-start-3 flex justify-end mobile:justify-center tablet:order-1 order-1 mobile:order-none">
-                    <div className="w-[22.5vw] h-[28vw] rounded-[10px] overflow-hidden relative fadeup mobile:w-[86vw] mobile:h-[85vw] mobile:mt-[5vw] tablet:w-[30vw] tablet:h-[30vw]">
-                        <Image
-                          loading="lazy"
-                          src={service.image}
-                          alt={`${service.title} Image`}
-                          className="absolute h-full w-full object-cover"
-                          fill
-                        />
-                    </div>
+            
+            <div>
+              <div className="tablet:flex mobile:flex mobile:flex-col tablet:gap-[2vw] flex mobile:gap-0 gap-[15vw]">
+                <div className="col-start-3 flex justify-end mobile:justify-center tablet:order-1 order-1 mobile:order-none">
+                  <div className="w-[22.5vw] h-[28vw] rounded-[10px] overflow-hidden relative fadeup mobile:w-[86vw] mobile:h-[85vw] mobile:mt-[5vw] tablet:w-[30vw] tablet:h-[30vw]">
+                    <Image
+                      loading="lazy"
+                      src="/assets/images/service/communication/Marketing-strategy.webp"
+                      alt="Marketing strategy Image"
+                      className="absolute h-full w-full object-cover"
+                      fill
+                    />
                   </div>
-                  <div className="col-span-2 flex flex-col w-[60%] gap-[1.5vw] mobile:w-full mobile:my-[10vw] mobile:gap-[5vw]">
-                    <h2
+                </div>
+                <div className="col-span-2 flex flex-col w-[60%] gap-[1.5vw] mobile:w-full mobile:my-[10vw] mobile:gap-[5vw]">
+                  <h2
+                    data-para-anim
+                    className="text-[2.5vw] capitalize font-display mobile:text-[8vw] tablet:text-[4vw]"
+                  >
+                    Marketing strategy
+                  </h2>
+                    <p
                       data-para-anim
-                      className="text-[2.5vw] capitalize font-display mobile:text-[8vw] tablet:text-[4vw]"
+                      className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]"
                     >
-                      {service.title}
-                    </h2>
-                    {service.paragraphs.map((para, paraIndex) => (
-                      <p
-                        key={paraIndex}
-                        data-para-anim
-                        className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]"
-                      >
-                        {para}
-                      </p>
-                    ))}
-                    <div className="fadeup mt-[1vw]">
-                      <LinkButton
-                        btnLink={"/contact-us"}
-                        btnText={"Connect With Yellow"}
-                      />
-                    </div>
+                      Your brand is unique, so we start with a bespoke marketing strategy. Every piece of content we create – from outdoor to radio to social media content – will be crafted to ignite meaningful conversations about your brand and product and inspire your target audience to take action.
+                    </p>
+                    <p
+                      data-para-anim
+                      className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]"
+                    >
+                      We act like your in-house marketing team in defining your marketing objectives and strategy that acts like a blueprint with a detailed yearly plan that covers everything from advertising ideas to marketing activations to social media calendars and more. We outline budgets and tactical campaigns and proactive initiatives along with recommended media investments. This helps businesses plan their budgets alongside KPIs and impact, and for some clients, we are also responsible for executing and delivering on the strategy and plan.
+                    </p>
+                  <div className="fadeup mt-[1vw]">
+                    <LinkButton
+                      btnLink={"/contact-us"}
+                      btnText={"Connect With Yellow"}
+                    />
                   </div>
                 </div>
-                <div className="h-[1px] col-span-3 bg-black my-[2vw] tablet:my-[6vw] lineDraw hidden tablet:block mobile:block"></div>
-                <div className="my-[3vw] tablet:h-[2px] tablet:my-[6vw] tablet:hidden">
-                  <Line />
+              </div>
+              <div className="h-[1px] col-span-3 bg-black my-[2vw] tablet:my-[6vw] lineDraw hidden tablet:block mobile:block"></div>
+              <div className="my-[3vw] tablet:h-[2px] tablet:my-[6vw] tablet:hidden">
+                <Line />
+              </div>
+            </div>
+
+            <div>
+              <div className="tablet:flex mobile:flex mobile:flex-col tablet:gap-[2vw] flex mobile:gap-0 gap-[15vw]">
+                <div className="col-start-3 flex justify-end mobile:justify-center tablet:order-1 order-1 mobile:order-none">
+                  <div className="w-[22.5vw] h-[28vw] rounded-[10px] overflow-hidden relative fadeup mobile:w-[86vw] mobile:h-[85vw] mobile:mt-[5vw] tablet:w-[30vw] tablet:h-[30vw]">
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      loading="lazy"
+                      src="/assets/images/service/communication/marketing-execution.mp4"
+                      alt="Marketing execution Video"
+                      className="absolute h-full w-full object-cover"
+                    />
+                  </div>
                 </div>
-              </React.Fragment>
-            ))}
-           
+                <div className="col-span-2 flex flex-col w-[60%] gap-[1.5vw] mobile:w-full mobile:my-[10vw] mobile:gap-[5vw]">
+                  <h2
+                    data-para-anim
+                    className="text-[2.5vw] capitalize font-display mobile:text-[8vw] tablet:text-[4vw]"
+                  >
+                    Marketing execution
+                  </h2>
+                    <p
+                      data-para-anim
+                      className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]"
+                    >
+                      Your brand is unique, so we start with a bespoke marketing strategy. Every piece of content we create – from outdoor to radio to social media content – will be crafted to ignite meaningful conversations about your brand and product and inspire your target audience to take action.
+                    </p>
+                    <p
+                      data-para-anim
+                      className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]"
+                    >
+                      We act like your in-house marketing team in defining your marketing objectives and strategy that acts like a blueprint with a detailed yearly plan that covers everything from advertising ideas to marketing activations to social media calendars and more. We outline budgets and tactical campaigns and proactive initiatives along with recommended media investments. This helps businesses plan their budgets alongside KPIs and impact, and for some clients, we are also responsible for executing and delivering on the strategy and plan.
+                    </p>
+                  <div className="fadeup mt-[1vw]">
+                    <LinkButton
+                      btnLink={"/contact-us"}
+                      btnText={"Connect With Yellow"}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="h-[1px] col-span-3 bg-black my-[2vw] tablet:my-[6vw] lineDraw hidden tablet:block mobile:block"></div>
+              <div className="my-[3vw] tablet:h-[2px] tablet:my-[6vw] tablet:hidden">
+                <Line />
+              </div>
+            </div>
+
           </div>
         </section>
 

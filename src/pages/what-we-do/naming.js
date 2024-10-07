@@ -64,7 +64,7 @@ export default function servicesdetail({ recentWorks }) {
             <div className="w-[90vw] h-[45vw] rounded-[15px] overflow-hidden relative fadeup mobile:w-[85vw] mobile:h-[100vw] tablet:w-[85vw]">
               <Image
                 quality={100}
-                src="/assets/images/service/naming/brand-naming-listing.webp"
+                src="/assets/images/service/naming/Brand-Naming-listing.webp"
                 alt="naming-hero"
                 className="object-cover w-full h-full"
                 fill
