@@ -1,24 +1,18 @@
-import NextApp from "next/app";
 import "@/styles/globals.css";
 import { ReactLenis } from 'lenis/react';
 import { DefaultSeo } from "next-seo";
-import { getSiteMetadata } from '@/lib/site';
-import { SiteContext, useSiteContext } from '@/hooks/use-site';
-// import { AnimatePresence } from "framer-motion";
 import { ImageObjectJsonLd, OrganizationJsonLd, WebsiteJsonLd } from "@/lib/json-ld";
 import { useEffect } from "react";
 import config from "../../package.json";
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
+import { GoogleAnalytics, 
+  // GoogleTagManager 
+} from '@next/third-parties/google';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { SearchProvider } from "@/hooks/use-search";
-export default function App({ Component, pageProps = {}, metadata }) {
 
+export default function App({ Component, pageProps = {},}) {
   const { homepage = "" } = config;
-
-  const site = useSiteContext({
-    metadata,
-  });
 
   useEffect(() => {
     const handleRouteChange = () => {
@@ -29,6 +23,26 @@ export default function App({ Component, pageProps = {}, metadata }) {
 
     return () => {
       window.removeEventListener("beforeunload", handleRouteChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleUserInteraction = () => {
+      const script = document.createElement('script');
+      script.src = `https://www.googletagmanager.com/gtm.js?id=GTM-W99KBPB`;
+      script.async = true;
+      document.body.appendChild(script);
+  
+      window.removeEventListener('scroll', handleUserInteraction);
+      window.removeEventListener('click', handleUserInteraction);
+    };
+  
+    window.addEventListener('scroll', handleUserInteraction);
+    window.addEventListener('click', handleUserInteraction);
+  
+    return () => {
+      window.removeEventListener('scroll', handleUserInteraction);
+      window.removeEventListener('click', handleUserInteraction);
     };
   }, []);
 
@@ -105,28 +119,18 @@ export default function App({ Component, pageProps = {}, metadata }) {
       <OrganizationJsonLd />
       <WebsiteJsonLd />
       <ImageObjectJsonLd />
-      <SiteContext.Provider value={site}>
+
         <SearchProvider>
           <ReactLenis root options={{duration: 2}}>
-            {/* <AnimatePresence mode="wait"> */}
-              <Component {...pageProps} />
-            {/* </AnimatePresence> */}
+            <Component {...pageProps} />
           </ReactLenis>
         </SearchProvider>
-      </SiteContext.Provider>
-      <GoogleTagManager gtmId="GTM-W99KBPB" />
+
+      {/* <GoogleTagManager gtmId="GTM-W99KBPB" /> */}
       <GoogleAnalytics gaId="G-CSXSBEQKTY" />
+
       <SpeedInsights />
       <Analytics />
     </>
   );
 }
-
-App.getInitialProps = async function (appContext) {
-  const appProps = await NextApp.getInitialProps(appContext);
-
-  return {
-    ...appProps,
-    metadata: await getSiteMetadata(),
-  };
-};
