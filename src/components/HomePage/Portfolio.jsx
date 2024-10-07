@@ -219,18 +219,13 @@ const Portfolio = ({ works }) => {
                 <RoundButton href={workPathBySlug(work.node.slug)} text="View More" className="magnetic-inner pointer-events-auto tablet:w-[10vw] tablet:h-[10vw] tablet:text-[1.5vw] tablet:px-[2vw]" />
               </div>
               <div className="relative w-full flex text-white h-full items-end">
-                <div className="flex justify-between items-end w-full mobile:flex-col mobile:h-full">
+                <div className="flex justify-between items-end w-full mobile:flex-col mobile:h-full mobile:items-start">
                   <div className="whitespace-normal flex gap-[2.5vw] flex-col mobile:order-2">
                     <h3 className="text-[2.8vw] font-display leading-[1] mobile:text-[8vw] tablet:text-[5vw]">
                       {work.node.title}
                     </h3>
-                    {/* <div dangerouslySetInnerHTML={{
-                      __html: work.node.excerpt
-                    }}
-                      className="text-[1.05vw] font-medium w-[55%] mobile:text-[4vw] mobile:leading-[1.3] mobile:w-[90%] mobile:pb-[4vw] tablet:text-[2vw] tablet:w-[90%]"
-                    /> */}
                   </div>
-                  <div className="flex flex-col justify-between gap-[1.5vw] items-end text-[1.2vw] mobile:items-start mobile:text-[4vw] tablet:text-[2vw]">
+                  <div className="flex flex-col justify-between gap-[1.5vw] items-end text-[1.2vw] mobile:text-[4vw] tablet:text-[2vw] mobile:w-full mobile:items-end">
                     <p className="py-[0.5vw] px-[2vw] border border-white rounded-full bg-white/25 backdrop-blur-lg mobile:hidden">
                       {formatDateYear(work.node.date)}
                     </p>

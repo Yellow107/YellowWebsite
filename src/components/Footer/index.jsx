@@ -169,7 +169,7 @@ const Footer = () => {
                                     <div className="w-full mobile:w-full tablet:w-full">
                                         <h6 className="text-[1.9vw] font-display leading-[1.3] mb-[1vw] mobile:text-[5vw] mobile:text-center mobile:mb-[3vw] tablet:text-[3vw]">Address</h6>
                                         <Link target="_blank" href="https://maps.app.goo.gl/jWqst61nES4irCZJA" className="text-[1.15vw] font-medium under-multi-parent mobile:text-[4vw] mobile:flex mobile:justify-center mobile:w-full tablet:text-[2.5vw] tablet:w-[50%] ">
-                                            <span className="under-multi mobile:text-center mobile:w-full tablet:w-[50%]">Loft offices 2, Office 107, Dubai Media City, Dubai UAE</span>
+                                            <span className="under-multi mobile:text-center mobile:w-full tablet:w-[50%]">Loft Offices 2, Office 107, Dubai Media City, Dubai UAE</span>
                                         </Link>
                                     </div>
                                     <div className="w-full mobile:w-full mobile:order-2 tablet:w-full">

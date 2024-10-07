@@ -80,7 +80,7 @@ export default function Essentials() {
                 >{`0${item.id}.`}</span>
                 <h4
                   data-para-anim
-                  className="text-[2vw] font-display mb-[1.5vw] mobile:text-[7vw] tablet:text-[3vw]"
+                  className="text-[2vw] capitalize font-display mb-[1.5vw] mobile:text-[7vw] tablet:text-[3vw]"
                 >
                   {item.title}
                 </h4>

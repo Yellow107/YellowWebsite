@@ -38,7 +38,6 @@ function Teamdetail({ team }) {
 
   paraAnim();
   fadeUp();
-  imageAnimationLeft();
   lineAnim();
 
   return (
@@ -78,14 +77,12 @@ function Teamdetail({ team }) {
         <Section id="teamdetail" className="w-full h-full bg-black">
           <div className="container py-[8%] mobile:pt-[25%] mobile:pb-[15%] tablet:py-[15%] bg-white">
             <div className="flex gap-[4vw] h-full items-start w-full mb-[3vw] mobile:flex-col mobile:gap-[5vw]">
-              <div className="w-[35vw] h-[45vw] relative mobile:w-[85vw] mobile:h-[120vw] image-animation-left-wrapper tablet:w-[45vw] tablet:h-[60vw]">
-                <div>
+              <div className="w-[35vw] h-[45vw] rounded-xl overflow-hidden relative mobile:w-[85vw] mobile:h-[120vw] fadeup tablet:w-[45vw] tablet:h-[60vw]">
                   <img
                     src={featuredImage.node.sourceUrl}
                     alt={`${title} Image`}
                     className="object-cover w-full h-full "
                   />
-                </div>
               </div>
               <div className="flex flex-col justify-start h-full pt-[5vw] gap-[2vw] mobile:h-full mobile:ml-[1%] tablet:h-[40vh] tablet:w-[40vw]">
                 <div className="">

@@ -5,7 +5,6 @@ import {
   paraAnim,
   lineAnim,
   fadeUp,
-  imageAnimationDown,
 } from "@/components/gsapAnimations";
 import MetaData from "@/components/Metadata";
 import { WebpageJsonLd } from "@/lib/json-ld";
@@ -21,7 +20,6 @@ export default function servicesdetail({ recentWorks }) {
   paraAnim();
   lineAnim();
   fadeUp();
-  imageAnimationDown();
 
   const metadata = {
     title: "Brand Identity Creation Dubai - Yellow Agency",
@@ -44,7 +42,7 @@ export default function servicesdetail({ recentWorks }) {
     },
   
     {
-      title: "Brand guideliness",
+      title: "Brand guidelines",
       paragraphs: [
         "We develop a set of guidelines for our brands to provide our clients and their partners with the tools they need to ensure the brand continues to stay consistent. We make sure to include everything anyone will ever need to fully understand, replicate, build on and even improve the overall brand experience. These manuals are much more than a simple set of rules and regulations – they aim to introduce internal and external stakeholders to the brand, give them insight into the brand’s personality and the tone it should be taking with its customers.",
       ],
@@ -67,12 +65,12 @@ export default function servicesdetail({ recentWorks }) {
               data-para-anim
               className="text-[5.8vw] w-[80%] uppercase font-display mb-[7vw] leading-[1.3] mobile:text-[12vw] tablet:w-[90%]  mobile:w-full tablet:text-[7vw] mobile:mb-[15vw]"
             >
-              Corporate Brand Identity
+              Brand Identity
             </h1>
             <div className="w-[90vw] h-[45vw] rounded-[15px] overflow-hidden relative fadeup mobile:w-[85vw] mobile:h-[100vw] tablet:w-[85vw]">
               <Image
                 quality={100}
-                src="/assets/images/service/brand-identity/brand-identity-listing.webp"
+                src="/assets/images/service/brand-identity/brand-identity-listing.png"
                 alt="brand-identity-hero"
                 className="object-cover w-full h-full"
                 fill
@@ -219,8 +217,7 @@ export default function servicesdetail({ recentWorks }) {
               <React.Fragment key={index}>
                 <div className="tablet:flex mobile:flex mobile:flex-col tablet:gap-[2vw] flex mobile:gap-0 gap-[15vw]">
                   <div className="col-start-3 flex justify-end mobile:justify-center tablet:order-1 order-1 mobile:order-none">
-                    <div className="w-[22.5vw] h-[28vw] rounded-[10px] overflow-hidden relative image-animation-down-wrapper mobile:w-[86vw] mobile:h-[85vw] mobile:mt-[5vw] tablet:w-[30vw] tablet:h-[30vw]">
-                      <div>
+                    <div className="w-[22.5vw] h-[28vw] rounded-[10px] overflow-hidden relative fadeup mobile:w-[86vw] mobile:h-[85vw] mobile:mt-[5vw] tablet:w-[30vw] tablet:h-[30vw]">
                         <Image
                           loading="lazy"
                           src={service.image}
@@ -228,13 +225,12 @@ export default function servicesdetail({ recentWorks }) {
                           className="absolute h-full w-full object-cover"
                           fill
                         />
-                      </div>
                     </div>
                   </div>
                   <div className="col-span-2 flex flex-col w-[60%] gap-[1.5vw] mobile:w-full mobile:my-[10vw] mobile:gap-[5vw]">
                     <h2
                       data-para-anim
-                      className="text-[2.5vw] font-display mobile:text-[8vw] tablet:text-[4vw]"
+                      className="text-[2.5vw] capitalize font-display mobile:text-[8vw] tablet:text-[4vw]"
                     >
                       {service.title}
                     </h2>

@@ -24,12 +24,12 @@ export default function Pagehero() {
                   </h2>
                 </div>
 
-                <div className="text-[1.2vw] w-[70%] tablet:w-[90%] mobile:w-full leading-[1.6] mobile:text-[4vw] tablet:text-[2.5vw] pl-[1vw] mobile:pl-[3vw] mt-[2.5vw] space-y-[1vw] tablet:space-y-[2vw] mobile:space-y-[4vw]">
+                <div className="text-[1.18vw] w-[70%] tablet:w-[90%] mobile:w-full leading-[1.6] mobile:text-[4vw] tablet:text-[2.5vw] pl-[1vw] mobile:pl-[3vw] mt-[2.5vw] space-y-[1vw] tablet:space-y-[2vw] mobile:space-y-[4vw]">
                   <p data-para-anim>
                     An <span className="font-bold">extension</span> of your team. The <span className="font-medium relative after:block after:h-[1px] after:bg-black after:w-full after:absolute after:bottom-[2px]">outside perspective</span> you need. Insightful, effective and <span className="font-bold">nice</span> (an underrated but very important quality). The <span className="font-medium relative after:block after:h-[1px] after:bg-black after:w-full after:absolute after:bottom-[2px]">perfect blend</span> of strategy, art, imagination, impeccable taste and a sprinkle of magic.
                   </p>
                   <p data-para-anim>
-                    Great thinkers and <span className="font-bold">even better doers</span>. Huge fans of <span className="font-medium relative after:block after:h-[1px] after:bg-black after:w-full after:absolute after:bottom-[2px]">work/life balance</span>. Namers, strategists, designers, researchers, artists, partners, terrible but enthusiastic singers.
+                    Great thinkers and <span className="font-bold">even better doers</span>. Huge fans of <span className="font-medium relative after:block after:h-[1px] after:bg-black after:w-full after:absolute after:bottom-[2px]">work-life balance.</span>{" "}Namers, strategists, designers, researchers, artists, partners, terrible but enthusiastic singers.
                   </p>
                 </div>
 
@@ -43,12 +43,12 @@ export default function Pagehero() {
                   </h2>
                 </div>
 
-                <div className="text-[1.2vw] w-[70%] tablet:w-[90%] mobile:w-full leading-[1.6] mobile:text-[4vw] tablet:text-[2.5vw] pl-[1.2vw] mobile:pl-[3vw] mt-[0.8vw] space-y-[1vw] tablet:space-y-[2vw] mobile:space-y-[4vw]">
+                <div className="text-[1.18vw] w-[70%] tablet:w-[90%] mobile:w-full leading-[1.6] mobile:text-[4vw] tablet:text-[2.5vw] pl-[1.2vw] mobile:pl-[3vw] mt-[0.8vw] space-y-[1vw] tablet:space-y-[2vw] mobile:space-y-[4vw]">
                   <p data-para-anim>
-                    Able to <span className="font-bold">work for free</span> - got bills to pay, y&apos;all! Complicated, stuffy and <span className="font-medium relative after:block after:h-[1px] after:bg-black after:w-full after:absolute after:bottom-[2px]">full of unhelpful jargon</span>. Specialised in PR / Events / Media / Web Developers - but we can <span className="font-bold">always connect</span> you with them. Know-it-alls.
+                    Able to <span className="font-bold">work for free</span> - got bills to pay, y&apos;all! Complicated, stuffy and <span className="font-medium relative after:block after:h-[1px] after:bg-black after:w-full after:absolute after:bottom-[2px]">full of unhelpful jargon.</span>{" "}Specialised in PR / Events / Media / Web Development - but we can <span className="font-bold">always connect</span> you with them. Know-it-alls.
                   </p>
                   <p data-para-anim>
-                    The kind of consultants that prepare a <span className="font-medium relative after:block after:h-[1px] after:bg-black after:w-full after:absolute after:bottom-[2px]">100 slide deck</span> with no substance. Your <span className="line-through">&apos;suppliers&apos;,</span> we are <span className="font-bold">your partners</span>. Bureaucratic and <span className="font-medium relative after:block after:h-[1px] after:bg-black after:w-full after:absolute after:bottom-[2px]">slow to move and react</span>.
+                    The kind of consultants that prepare a <span className="font-medium relative after:block after:h-[1px] after:bg-black after:w-full after:absolute after:bottom-[2px]">100 slide deck</span> with no substance.{" "}<span className="line-through">&apos;Your suppliers&apos;,</span> we are <span className="font-bold">your partners.</span>{" "}Bureaucratic and <span className="font-medium relative after:block after:h-[1px] after:bg-black after:w-full after:absolute after:bottom-[2px]">slow to move and react.</span>
                   </p>
                 </div>
               </div>

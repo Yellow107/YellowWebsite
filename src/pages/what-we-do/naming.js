@@ -5,7 +5,6 @@ import {
   paraAnim,
   lineAnim,
   fadeUp,
-  imageAnimationDown,
 } from "@/components/gsapAnimations";
 import MetaData from "@/components/Metadata";
 import { WebpageJsonLd } from "@/lib/json-ld";
@@ -21,7 +20,6 @@ export default function servicesdetail({ recentWorks }) {
   paraAnim();
   lineAnim();
   fadeUp();
-  imageAnimationDown();
 
   const metadata = {
     title: "Brand & Business Naming In Dubai - Yellow Agency",
@@ -222,8 +220,7 @@ export default function servicesdetail({ recentWorks }) {
               <React.Fragment key={index}>
                 <div className="tablet:flex mobile:flex mobile:flex-col tablet:gap-[2vw] flex mobile:gap-0 gap-[15vw]">
                   <div className="col-start-3 flex justify-end mobile:justify-center tablet:order-1 order-1 mobile:order-none">
-                    <div className="w-[22.5vw] h-[28vw] rounded-[10px] overflow-hidden relative image-animation-down-wrapper mobile:w-[86vw] mobile:h-[85vw] mobile:mt-[5vw] tablet:w-[30vw] tablet:h-[30vw]">
-                      <div>
+                    <div className="w-[22.5vw] h-[28vw] rounded-[10px] overflow-hidden relative fadeup mobile:w-[86vw] mobile:h-[85vw] mobile:mt-[5vw] tablet:w-[30vw] tablet:h-[30vw]">
                         <Image
                           loading="lazy"
                           src={service.image}
@@ -231,10 +228,9 @@ export default function servicesdetail({ recentWorks }) {
                           className="absolute h-full w-full object-cover"
                           fill
                         />
-                      </div>
                     </div>
                   </div>
-                  <div className="col-span-2 flex flex-col w-[60%] gap-[1.5vw] mobile:w-full mobile:my-[10vw] mobile:gap-[5vw]">
+                  <div className="col-span-2 flex capitalize flex-col w-[60%] gap-[1.5vw] mobile:w-full mobile:my-[10vw] mobile:gap-[5vw]">
                     <h2
                       data-para-anim
                       className="text-[2.5vw] font-display mobile:text-[8vw] tablet:text-[4vw]"

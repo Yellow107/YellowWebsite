@@ -5,7 +5,7 @@ export default async function handler(req, res) {
 
     try {
         const { portfolio, pagination } = await getPaginatedPortfolio({
-            currentPage: parseInt(page, 10),
+            currentPage: parseInt(page, 20),
             queryIncludes: 'archive',
         });
 

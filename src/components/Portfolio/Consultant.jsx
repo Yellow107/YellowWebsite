@@ -17,19 +17,21 @@ const Consultant = ({ consultant }) => {
                         </h2>
                     </div>
                     <div className="flex justify-between items-start mobile:flex-col">
-                        <div className="w-[35%] tablet:w-[40%] mobile:w-full mobile:h-[100vw] relative overflow-hidden mobile:rounded-lg image-animation-wrapper">
-                            <div className="h-full w-full overflow-hidden">
-                                <Image
-                                    className="w-full h-full object-cover object-top"
-                                    src={consultantImage.node.mediaItemUrl}
-                                    alt={consultantImage.node.altText}
-                                    width={600}
-                                    height={1000}
-                                    quality={100}
-                                    priority={false}
-                                />
+                        {consultantImage && (
+                            <div className="w-[35%] tablet:w-[40%] mobile:w-full mobile:h-[100vw] relative overflow-hidden mobile:rounded-lg image-animation-wrapper">
+                                <div className="h-full w-full overflow-hidden rounded-xl">
+                                    <Image
+                                        className="w-full h-full object-cover object-top"
+                                        src={consultantImage.node.mediaItemUrl}
+                                        alt={consultantImage.node.altText}
+                                        width={600}
+                                        height={1000}
+                                        quality={100}
+                                        priority={false}
+                                    />
+                                </div>
                             </div>
-                        </div>
+                        )}
                         <div className="w-[55%] mobile:w-full py-[1.5vw] mobile:pt-5">
                             <h4 data-para-anim className="text-[3vw] font-display uppercase leading-[1.1] mb-[2vw] mobile:mb-[3vw] mobile:text-[8vw] tablet:text-[5vw]">{consultantName}</h4>
                             <div 

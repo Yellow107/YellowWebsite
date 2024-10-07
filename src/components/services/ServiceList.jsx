@@ -12,7 +12,7 @@ const services = [
   },
   {
     id: 2,
-    imageSrc: "/assets/images/service/brand-identity/brand-identity-listing.webp",
+    imageSrc: "/assets/images/service/brand-identity/brand-identity-listing.png",
     title: "Brand Identity",
     link:"/what-we-do/brand-identity",
     description:"<p data-para-anim>A brand has always been more than just a logo. This is truer now than ever before, as over 80% of consumers research products online before making an in-store purchase. This shift makes all other brand cues incredibly important, from your voice and the way your products are photographed, to the illustrations and graphic elements that shape your brand's personality. From the tangible to the intangible, we carefully consider, craft, and create all the touchpoints surrounding your product. Our goal is to ensure your brand is always leading in the consideration set for your category.</p>",
@@ -42,8 +42,6 @@ const services = [
 
 export default function ServiceList() {
 
-  // imageAnimationLeft();
-
   return (
     <>
       <section className="w-full h-full bg-black" id="list">
@@ -52,18 +50,16 @@ export default function ServiceList() {
             {services.map((service, index) => (
               <div key={service.id} className="grid grid-cols-7 h-full gap-x-[3vw] gap-y-[7vw] mobile:flex mobile:flex-col tablet:flex-col tablet:flex tablet:gap-y-[10vw]">
                 <div className="col-span-4 w-full h-full">
-                  <div className={`w-[50vw] h-[33vw] rounded-xl overflow-hidden relative mobile:w-full mobile:h-[140vw] tablet:w-full image-animation-left-wrapper tablet:h-[45vw] ${index % 2 === 0 ? '' : 'mobile:mt-[5vw]'}`}>
-                    <div>
+                  <div className={`w-[50vw] h-[33vw] fadeup rounded-xl overflow-hidden relative mobile:w-full mobile:h-[140vw] tablet:w-full image-animation-left-wrapper tablet:h-[45vw] ${index % 2 === 0 ? '' : 'mobile:mt-[5vw]'}`}>
                       <Image
                         loading="lazy"
                         quality={100}
                         src={service.imageSrc}
                         alt={`${service.title} Image`}
                         title={`${service.title} Image`}
-                        className="object-cover w-full h-full fadeup"
+                        className="object-cover w-full h-full"
                         fill
                       />
-                    </div>
                   </div>
                 </div>
                 <div className="col-start-5 col-span-3 w-full mobile:mb-[7vw] tablet:mb-[3vw]">

@@ -56,7 +56,7 @@ export default function Join() {
               />
             </div>
           </div>
-          <div ref={imgWrapper} className='w-full h-[40vw] mt-[5vw] relative drop-shadow-2xl shadow-2xl overflow-hidden mobile:w-[85vw] mobile:h-[40vh] tablet:h-[45vw] mobile:mt-[10vw]'>
+          <div ref={imgWrapper} className='w-full h-[40vw] mt-[5vw] relative drop-shadow-2xl shadow-2xl overflow-hidden mobile:w-[85vw] mobile:h-[40vh] tablet:h-[45vw] mobile:mt-[10vw] rounded-xl'>
             <Image ref={img} src="/assets/images/about/join-team-big.png" alt='join-img' width={1800} height={1000} className='object-cover mobile:w-full h-full scale-[1.2] join-img object-center -translate-y-[15%] mobile:scale-100 mobile:translate-y-0'/>
           </div>
         </div>

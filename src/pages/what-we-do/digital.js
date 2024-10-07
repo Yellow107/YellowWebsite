@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import Layout from '@/components/Layout'
-import { titleAnim, paraAnim, lineAnim, fadeUp, imageAnimationDown } from '@/components/gsapAnimations';
+import { titleAnim, paraAnim, lineAnim, fadeUp } from '@/components/gsapAnimations';
 import MetaData from '@/components/Metadata';
 import { WebpageJsonLd } from '@/lib/json-ld';
 import { getRelatedPortfolioForPages } from '@/lib/portfolio';
@@ -15,7 +15,6 @@ export default function servicesdetail({ recentWorks }) {
   paraAnim();
   lineAnim();
   fadeUp();
-  imageAnimationDown();
 
   const metadata = {
     title: "Digital Marketing Agency In Dubai - Transform Your Brand Online",
@@ -25,25 +24,6 @@ export default function servicesdetail({ recentWorks }) {
     date_modified: "2024-08-01T12:32",
     slug: "what-we-do/digital"
   }
-
-  const services = [
-    {
-      title: "Website and app design",
-      paragraphs: [
-        "Yellow is a digital marketing company that can design and create your online brand presence, in a way that captures the hearts and minds of your customers.",
-        "We’ll work with you from concept to finish – ensuring that your brand personality comes through in your website or app content, design and user experience.",
-      ],
-      image: "/assets/images/service/digital/Website-and-app-design.png",
-    },
-    {
-      title: "Social Media Management",
-      paragraphs: [
-        "Social media is usually the first interaction your prospective customer will have with your brand. Thus, it is essential that your voice and aesthetic is curated and communicates how your brand is different from the market. Yellow supports clients with planning their social media strategy and executing on a monthly basis with content, whether it is reels or highlights, linkedin posts or YouTube Videos. And, we are obsessed with data and insights.",
-        "We will measure the effectiveness of the creative, and adapt and pivot based on learnings consistently. We are also constantly on the lookout for trends and always thinking of ways to apply them on our clients social media pages.",
-      ],
-      image: "/assets/images/service/digital/social-media-management.png",
-    },
-  ];
 
   return (
     <>
@@ -155,52 +135,85 @@ export default function servicesdetail({ recentWorks }) {
         {/* Detail Section */}
         <section className="w-full h-full bg-black " id="detail">
           <div className=" container mobile:flex mobile:flex-col tablet:flex-col tablet:flex pb-[5%] bg-white">
-            {services.map((service, index) => (
-              <React.Fragment key={index}>
-                <div className="tablet:flex mobile:flex mobile:flex-col tablet:gap-[2vw] flex mobile:gap-0 gap-[15vw]">
-                  <div className="col-start-3 flex justify-end mobile:justify-center tablet:order-1 order-1 mobile:order-none">
-                    <div className="w-[22.5vw] h-[28vw] rounded-[10px] overflow-hidden relative image-animation-down-wrapper mobile:w-[86vw] mobile:h-[85vw] mobile:mt-[5vw] tablet:w-[30vw] tablet:h-[30vw]">
-                      <div>
-                        <Image
-                          loading="lazy"
-                          src={service.image}
-                          alt={`${service.title} Image`}
-                          className="absolute h-full w-full object-cover"
-                          fill
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-span-2 flex flex-col w-[60%] gap-[1.5vw] mobile:w-full mobile:my-[10vw] mobile:gap-[5vw]">
-                    <h2
-                      data-para-anim
-                      className="text-[2.5vw] font-display mobile:text-[8vw] tablet:text-[4vw]"
-                    >
-                      {service.title}
-                    </h2>
-                    {service.paragraphs.map((para, paraIndex) => (
-                      <p
-                        key={paraIndex}
-                        data-para-anim
-                        className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]"
-                      >
-                        {para}
-                      </p>
-                    ))}
-                    <div className="fadeup mt-[1vw]">
-                      <LinkButton
-                        btnLink={"/contact-us"}
-                        btnText={"Connect With Yellow"}
+
+            <div>
+              <div className="tablet:flex mobile:flex mobile:flex-col tablet:gap-[2vw] flex mobile:gap-0 gap-[15vw]">
+                <div className="col-start-3 flex justify-end mobile:justify-center tablet:order-1 order-1 mobile:order-none">
+                  <div className="w-[22.5vw] h-[28vw] rounded-[10px] overflow-hidden relative fadeup mobile:w-[86vw] mobile:h-[85vw] mobile:mt-[5vw] tablet:w-[30vw] tablet:h-[30vw]">
+                      <Image
+                        loading="lazy"
+                        src="/assets/images/service/digital/Website-and-app-design.png"
+                        alt="Website and app design"
+                        className="absolute h-full w-full object-cover"
+                        fill
                       />
-                    </div>
                   </div>
                 </div>
-                <div className="h-[1px] col-span-3 bg-black my-[2vw] tablet:my-[6vw] lineDraw hidden tablet:block mobile:block"></div>
-                <div className="my-[3vw] tablet:h-[2px] tablet:my-[6vw] tablet:hidden">
-                  <Line />
+                <div className="col-span-2 flex flex-col w-[60%] gap-[1.5vw] mobile:w-full mobile:my-[10vw] mobile:gap-[5vw]">
+                  <h2 data-para-anim className="text-[2.5vw] capitalize font-display mobile:text-[8vw] tablet:text-[4vw]">
+                      Website and app design
+                  </h2>
+                    <p data-para-anim className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]">
+                      Yellow is a digital marketing company that can design and create your online brand presence, in a way that captures the hearts and minds of your customers.
+                    </p>
+                    <p data-para-anim className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]">
+                      We’ll work with you from concept to finish – ensuring that your brand personality comes through in your website or app content, design and user experience.
+                    </p>
+                  <div className="fadeup mt-[1vw]">
+                    <LinkButton
+                      btnLink={"/contact-us"}
+                      btnText={"Connect With Yellow"}
+                    />
+                  </div>
                 </div>
-              </React.Fragment>
-            ))}
+              </div>
+              <div className="h-[1px] col-span-3 bg-black my-[2vw] tablet:my-[6vw] lineDraw hidden tablet:block mobile:block"></div>
+              <div className="my-[3vw] tablet:h-[2px] tablet:my-[6vw] tablet:hidden">
+                <Line />
+              </div>
+            </div>
+
+            <div>
+              <div className="tablet:flex mobile:flex mobile:flex-col tablet:gap-[2vw] flex mobile:gap-0 gap-[15vw]">
+                <div className="col-start-3 flex justify-end mobile:justify-center tablet:order-1 order-1 mobile:order-none">
+                  <div className="w-[22.5vw] h-[28vw] rounded-[10px] overflow-hidden relative fadeup mobile:w-[86vw] mobile:h-[85vw] mobile:mt-[5vw] tablet:w-[30vw] tablet:h-[30vw]">
+                      <video
+                        loop
+                        autoPlay
+                        muted
+                        playsInline
+                        loading="lazy"
+                        src="/assets/images/service/digital/Social_Media_Mitsubishi.mp4"
+                        alt="Social Media Management Image"
+                        className="absolute h-full w-full object-cover"
+                        fill
+                      />
+                  </div>
+                </div>
+                <div className="col-span-2 flex flex-col w-[60%] gap-[1.5vw] mobile:w-full mobile:my-[10vw] mobile:gap-[5vw]">
+                  <h2 data-para-anim className="text-[2.5vw] capitalize font-display mobile:text-[8vw] tablet:text-[4vw]">
+                    Social Media Management
+                  </h2>
+                    <p data-para-anim className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]">
+                      Social media is usually the first interaction your prospective customer will have with your brand. Thus, it is essential that your voice and aesthetic is curated and communicates how your brand is different from the market. Yellow supports clients with planning their social media strategy and executing on a monthly basis with content, whether it is reels or highlights, linkedin posts or YouTube Videos. And, we are obsessed with data and insights.
+                    </p>
+                    <p data-para-anim className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]">
+                      We will measure the effectiveness of the creative, and adapt and pivot based on learnings consistently. We are also constantly on the lookout for trends and always thinking of ways to apply them on our clients social media pages.
+                    </p>
+                  <div className="fadeup mt-[1vw]">
+                    <LinkButton
+                      btnLink={"/contact-us"}
+                      btnText={"Connect With Yellow"}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="h-[1px] col-span-3 bg-black my-[2vw] tablet:my-[6vw] lineDraw hidden tablet:block mobile:block"></div>
+              <div className="my-[3vw] tablet:h-[2px] tablet:my-[6vw] tablet:hidden">
+                <Line />
+              </div>
+            </div>
+
           </div>
         </section>
 

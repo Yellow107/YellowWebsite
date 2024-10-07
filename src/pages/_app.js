@@ -107,7 +107,7 @@ export default function App({ Component, pageProps = {}, metadata }) {
       <ImageObjectJsonLd />
       <SiteContext.Provider value={site}>
         <SearchProvider>
-          <ReactLenis root>
+          <ReactLenis root options={{duration: 2}}>
             {/* <AnimatePresence mode="wait"> */}
               <Component {...pageProps} />
             {/* </AnimatePresence> */}

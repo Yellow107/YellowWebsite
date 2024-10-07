@@ -109,7 +109,7 @@ export default function values() {
                   </h3>
                 </div>
                 <div className="absolute top-0 left-0 w-[29vw] h-[35vw] bg-[#efefef] cardback py-[4vw] px-[2vw] flex flex-col items-start justify-between text-black rounded-[20px] border-white border-[1px] border-opacity-40 mobile:w-[90vw] mobile:h-[100vw] mobile:justify-center mobile:items-center tablet:w-[41vw] tablet:h-[50vw]">
-                  <div className="w-[5vw] h-[5vw] relative mobile:w-[20vw] mobile:h-[20vw] tablet:w-[8vw] tablet:h-[8vw]">
+                  <div className="w-[7vw] h-[7vw] relative mobile:w-[20vw] mobile:h-[20vw] tablet:w-[8vw] tablet:h-[8vw]">
                     <img
                       loading="lazy"
                       src="/assets/images/gifs/flower.gif"

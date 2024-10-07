@@ -103,16 +103,16 @@ export default function ContactForm() {
 
 
   return (
-    <section className="px-[5vw] py-[5%] tablet:py-[10%] mobile:pt-[25%]" id="contact-form">
+    <section className="px-[5vw] pt-[10%] py-[5%] tablet:py-[10%] mobile:pt-[25%]" id="contact-form">
       <h3
         data-para-anim
-        className="text-[4.8vw] leading-[1.3] font-display w-[70%] mb-[7vw] tablet:text-[5.4vw] mobile:text-[10vw] mobile:w-full"
+        className="text-[4.8vw] capitalize leading-[1.3] font-display w-[70%] mb-[7vw] tablet:text-[5.4vw] mobile:text-[10vw] mobile:w-full"
       >
         Connect with our team to bring your ideas to life.
       </h3>
 
       <Form {...form} >
-        <form onSubmit={form.handleSubmit(onSubmit)} className="form flex flex-wrap gap-y-[1.4vw] mobile:gap-[2.5vw] mobile:gap-y-[7vw] mobile:py-[10vw] tablet:gap-y-[2vw] fadeup">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="form flex flex-wrap gap-y-[2vw] mobile:gap-[2.5vw] mobile:gap-y-[7vw] mobile:py-[10vw] tablet:gap-y-[2vw] fadeup">
 
 
           <p className="text-[2.5vw] font-medium leading-[1.4] tablet:text-[3.5vw] mobile:text-[6.4vw]">

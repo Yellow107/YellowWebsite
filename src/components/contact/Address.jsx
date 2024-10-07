@@ -20,7 +20,7 @@ export default function Address() {
           <div className="w-[60%] mobile:w-full tablet:w-full">
             <h3
               data-para-anim
-              className="text-[2.8vw] leading-[1.4] font-medium mb-[7vw] mobile:text-[9.5vw] mobile:font-medium mobile:leading-[1.3] tablet:text-[4vw] "
+              className="text-[2vw] w-[80%] leading-[1.4] font-medium mb-[7vw] mobile:text-[9.5vw] mobile:font-medium mobile:leading-[1.3] tablet:text-[4vw] "
             >
               As a digital branding agency, we help businesses connect with
               their customers by using a variety of tools and services.
