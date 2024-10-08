@@ -29,15 +29,15 @@ export default function RelatedWork({works, heading, subheading}) {
 
           <div className='w-full flex gap-[2vw] mobile:flex-col mobile:gap-[7vw]'>
             {works.map((work, index) => (
-              <div key={work.node.slug} className={`fadeup group w-full h-full ${index == 2 ? "tablet:hidden" : ""}`}>
+              <div key={index} className={`fadeup group w-full h-full ${index == 2 ? "tablet:hidden" : ""}`}>
                 <Link href={workPathBySlug(work.node.slug)} className='h-full w-full block relative group-hover:shadow-2xl duration-300 overflow-hidden rounded-xl'>
                   <div className='h-[30vw] w-full relative overflow-hidden mobile:w-full mobile:h-[80vw] tablet:h-[45vw]'>
                     <MediaRender url={work.node.workFields.featuredImagevideo.node.mediaItemUrl} className='z-[0] group-hover:scale-110 duration-300'/>
                   </div>
                   <div className='absolute right-0 left-0 top-0 bottom-0 py-[2vw] px-[1.5vw] flex flex-col justify-between items-start mobile:px-[5vw] mobile:py-[6vw] tablet:p-[3vw]'>
                     <div className="flex gap-[1vw] mobile:gap-[2vw]">
-                      {work.node.portfolioIndustries && work.node.portfolioIndustries.edges.length > 0 && work.node.portfolioIndustries.edges.slice(0, 2).map((category) => (
-                        <p key={category.name} className="w-fit border border-white rounded-full backdrop-blur-xl px-[2.5vw] py-[0.4vw] text-[1.2vw] bg-black/20 text-white mobile:text-[4.5vw] mobile:px-[5vw] mobile:py-[1vw] tablet:text-[2.5vw]">
+                      {work.node.portfolioIndustries && work.node.portfolioIndustries.edges.length > 0 && work.node.portfolioIndustries.edges.slice(0, 2).map((category, i) => (
+                        <p key={i} className="w-fit border border-white rounded-full backdrop-blur-xl px-[2.5vw] py-[0.4vw] text-[1.2vw] bg-black/20 text-white mobile:text-[4.5vw] mobile:px-[5vw] mobile:py-[1vw] tablet:text-[2.5vw]">
                           {category.node.name}
                         </p>
                       ))}

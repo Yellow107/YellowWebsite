@@ -7,7 +7,7 @@ export default function Document() {
       <body>
         <noscript
           dangerouslySetInnerHTML={{
-            __html: <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W99KBPB" height="0" width="0" style="display: none; visibility: hidden;" />,
+            __html: <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W99KBPB" height="0" width="0" style="display: none; visibility: hidden; pointerEvents: none" />,
           }}
         />
         <Main />

@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import { gsap } from 'gsap/dist/gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { getPaginatedPortfolio } from '@/lib/portfolio';
 import Layout from '@/components/Layout';
 import PageHero from '@/components/Portfolio/PageHero';
@@ -11,8 +9,6 @@ import { WebpageJsonLd } from '@/lib/json-ld';
 import MetaData from '@/components/Metadata';
 import PortfolioIndustries from '@/components/Portfolio/PortfolioIndustries';
 import { getPortfolioIndustries } from '@/lib/portfolioIndustries';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Works({ initialPortfolio, initialPagination, portfolioIndustries }) {
 
@@ -58,35 +54,6 @@ export default function Works({ initialPortfolio, initialPagination, portfolioIn
         setIsLoading(false);
     }
   };
-
-  // useEffect(() => {
-  //     const imageAnimations = document.querySelectorAll(".image-animation-wrapper")
-  //     imageAnimations.forEach((img) => {
-  //       const imgHolder = img.querySelector("div");
-  //       const imgImage = img.querySelector("img, video");
-  //       const tl = gsap.timeline({
-  //         scrollTrigger: {
-  //           trigger: img,
-  //           start: "top 80%",
-  //         },
-  //         defaults: {
-  //           ease: 'power3.inOut',
-  //         }
-  //       })
-  //       tl.fromTo(imgHolder, {
-  //         xPercent: -100,
-  //       }, {
-  //         duration: 1.5,
-  //         xPercent: 0,
-  //       })
-  //       tl.fromTo(imgImage, {
-  //         xPercent: 100,
-  //       }, {
-  //         duration: 1.5,
-  //         xPercent: 0,
-  //       }, "<")
-  //     })
-  // }, [portfolio]);
 
   return (
     <>

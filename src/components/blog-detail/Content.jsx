@@ -16,29 +16,32 @@ const Content = (({date, content, slug, readingTime}) => {
     const sectionContent = useRef(null);
     const progressBar = useRef(null);
 
-    if (globalThis.innerWidth > 1024) {
-        useGSAP(() => {
-            ScrollTrigger.create({
-              trigger: sectionPin.current,
-              start: "top 10%",
-              endTrigger: sectionContent.current,
-              end: "bottom 70%",
-              invalidateOnRefresh: true,
-              pin: sectionPin.current,
-            });
-          });
-      }
+    // if (globalThis.innerWidth > 1024) {
+    //     useGSAP(() => {
+    //         ScrollTrigger.create({
+    //           trigger: sectionPin.current,
+    //           start: "top 10%",
+    //           endTrigger: sectionContent.current,
+    //           end: "bottom 70%",
+    //           invalidateOnRefresh: true,
+    //           pin: sectionPin.current,
+    //         });
+    //       });
+    //   }
 
       useGSAP(() => {
-        gsap.to(progressBar.current, {
-            scrollTrigger: {
-                trigger: sectionContent.current,
-                start: "top 10%",
-                end: "bottom 50%",
-                scrub: 1,
-            },
+        gsap.fromTo(progressBar.current, {
+            scaleX: 0,
+        }, {
             scaleX: 1,
             duration: 1,
+            ease: "none",
+            scrollTrigger: {
+                trigger: sectionContent.current,
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+            },
         })
       });
 

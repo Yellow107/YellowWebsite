@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "@/components/Layout";
 import {
   paraAnim,
   fadeUp,
-  imageAnimationLeft,
   lineAnim,
 } from "@/components/gsapAnimations";
 import Section from "@/components/Section";
@@ -13,6 +12,7 @@ import config from '../../../package.json';
 import { NextSeo } from "next-seo";
 import { WebpageJsonLd } from "@/lib/json-ld";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 function Teamdetail({ team }) {
   const {
@@ -28,6 +28,8 @@ function Teamdetail({ team }) {
 
   const { homepage = '' } = config;
 
+  const router = useRouter();
+
   const metadata = {
     title: seo.title,
     description: seo.metaDesc,
@@ -39,6 +41,21 @@ function Teamdetail({ team }) {
   paraAnim();
   fadeUp();
   lineAnim();
+
+  // Reload the page when the slug changes
+  useEffect(() => {
+    const handleSlugChange = () => {
+      window.location.reload();  // This will force a full page reload
+    };
+
+    // Set up a listener to watch for slug changes
+    router.events.on('routeChangeComplete', handleSlugChange);
+
+    return () => {
+      // Clean up the listener when the component unmounts
+      router.events.off('routeChangeComplete', handleSlugChange);
+    };
+  }, [router]);
 
   return (
     <>
@@ -78,11 +95,11 @@ function Teamdetail({ team }) {
           <div className="container py-[8%] mobile:pt-[25%] mobile:pb-[15%] tablet:py-[15%] bg-white">
             <div className="flex gap-[4vw] h-full items-start w-full mb-[3vw] mobile:flex-col mobile:gap-[5vw]">
               <div className="w-[35vw] h-[45vw] rounded-xl overflow-hidden relative mobile:w-[85vw] mobile:h-[120vw] fadeup tablet:w-[45vw] tablet:h-[60vw]">
-                  <img
-                    src={featuredImage.node.sourceUrl}
-                    alt={`${title} Image`}
-                    className="object-cover w-full h-full "
-                  />
+                <img
+                  src={featuredImage.node.sourceUrl}
+                  alt={`${title} Image`}
+                  className="object-cover w-full h-full "
+                />
               </div>
               <div className="flex flex-col justify-start h-full pt-[5vw] gap-[2vw] mobile:h-full mobile:ml-[1%] tablet:h-[40vh] tablet:w-[40vw]">
                 <div className="">

@@ -8,12 +8,11 @@ import Link from 'next/link';
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { CustomEase } from 'gsap/dist/CustomEase';
-gsap.registerPlugin(ScrollTrigger, useGSAP, CustomEase);
 import { WebpageJsonLd } from '@/lib/json-ld';
 import MetaData from '@/components/Metadata';
 
-const primaryEase = CustomEase.create("cus-1", "0.62, 0.05, 0.01, 0.99");
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
 function Empty() {
   titleAnim();
   paraAnim();
@@ -43,7 +42,7 @@ function Empty() {
           duration: 1.47,
           yPercent: 100,
           stagger: 0.07,
-          ease: primaryEase,
+          ease: "power3.out",
         });
       });
     });
@@ -63,7 +62,7 @@ function Empty() {
           duration: 1.47,
           yPercent: 100,
           stagger: 0.07,
-          ease: primaryEase,
+          ease: "power3.out",
         });
       });
     });

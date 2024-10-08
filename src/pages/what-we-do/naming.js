@@ -31,19 +31,6 @@ export default function servicesdetail({ recentWorks }) {
     slug: "what-we-do/naming",
   };
 
-  const services = [
-    {
-      title: "Brand naming consulting",
-      paragraphs: [
-        "At Yellow, you’ll get all the support you need. Looking to name a new business or a new vertical? Needing to breathe new life into a legacy brand in need of a serious revamp? Seeking to explore new territories or simply wanting to assess if your current brand name can stand the test of time? No matter where you are in your journey, get a standout brand name that sells with the help of our brand naming consultancy service.",
-        "We can also conduct trademark checks in your region, using a licensed tool Corsearch, that can save a significant amount of time and investment when registering your brand name.",
-        
-      ],
-      image: "/assets/images/service/naming/Brand-naming-consulting.webp",
-    },
-   
-  ];
-
   return (
     <>
       <MetaData metadata={metadata} />
@@ -88,7 +75,7 @@ export default function servicesdetail({ recentWorks }) {
                 experience. Some of our greatest hits include CAFU, OliOli, Pan
                 Home, Numu and Irth.
               </p>
-              
+
             </div>
             <div className="w-full grid grid-cols-3 gap-x-[5vw] gap-y-[2vw] mobile:flex mobile:flex-col mobile:gap-[10vw] tablet:flex tablet:flex-col tablet:gap-[5vw]">
               <div className="col-span-1">
@@ -216,51 +203,43 @@ export default function servicesdetail({ recentWorks }) {
         {/* Detail Section */}
         <section className="w-full h-full bg-black " id="detail">
           <div className=" container mobile:flex mobile:flex-col tablet:flex-col tablet:flex pb-[5%] bg-white">
-            {services.map((service, index) => (
-              <React.Fragment key={index}>
-                <div className="tablet:flex mobile:flex mobile:flex-col tablet:gap-[2vw] flex mobile:gap-0 gap-[15vw]">
-                  <div className="col-start-3 flex justify-end mobile:justify-center tablet:order-1 order-1 mobile:order-none">
-                    <div className="w-[22.5vw] h-[28vw] rounded-[10px] overflow-hidden relative fadeup mobile:w-[86vw] mobile:h-[85vw] mobile:mt-[5vw] tablet:w-[30vw] tablet:h-[30vw]">
-                        <Image
-                          loading="lazy"
-                          src={service.image}
-                          alt={`${service.title} Image`}
-                          className="absolute h-full w-full object-cover"
-                          fill
-                        />
-                    </div>
-                  </div>
-                  <div className="col-span-2 flex capitalize flex-col w-[60%] gap-[1.5vw] mobile:w-full mobile:my-[10vw] mobile:gap-[5vw]">
-                    <h2
-                      data-para-anim
-                      className="text-[2.5vw] font-display mobile:text-[8vw] tablet:text-[4vw]"
-                    >
-                      {service.title}
-                    </h2>
-                    {service.paragraphs.map((para, paraIndex) => (
-                      <p
-                        key={paraIndex}
-                        data-para-anim
-                        className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]"
-                      >
-                        {para}
-                      </p>
-                    ))}
-                    <div className="fadeup mt-[1vw]">
-                      <LinkButton
-                        btnLink={"/contact-us"}
-                        btnText={"Connect With Yellow"}
-                      />
-                    </div>
+
+            <div>
+              <div className="tablet:flex mobile:flex mobile:flex-col tablet:gap-[2vw] flex mobile:gap-0 gap-[15vw]">
+                <div className="col-start-3 flex justify-end mobile:justify-center tablet:order-1 order-1 mobile:order-none">
+                  <div className="w-[22.5vw] h-[28vw] rounded-[10px] overflow-hidden relative fadeup mobile:w-[86vw] mobile:h-[85vw] mobile:mt-[5vw] tablet:w-[30vw] tablet:h-[30vw]">
+                    <Image
+                      loading="lazy"
+                      src="/assets/images/service/naming/Brand-naming-consulting.webp"
+                      alt="Brand naming consulting Image"
+                      className="absolute h-full w-full object-cover"
+                      fill
+                    />
                   </div>
                 </div>
-                <div className="h-[1px] col-span-3 bg-black my-[2vw] tablet:my-[6vw] lineDraw hidden tablet:block mobile:block"></div>
-                <div className="my-[3vw] tablet:h-[2px] tablet:my-[6vw] tablet:hidden">
-                  <Line />
+                <div className="col-span-2 flex flex-col w-[60%] gap-[1.5vw] mobile:w-full mobile:my-[10vw] mobile:gap-[5vw]">
+                  <h2 data-para-anim className="text-[2.5vw] capitalize font-display mobile:text-[8vw] tablet:text-[4vw]" >
+                    Brand Naming Consulting
+                  </h2>
+                  <p data-para-anim className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]">
+                    At Yellow, you’ll get all the support you need. Looking to name a new business or a new vertical? Needing to breathe new life into a legacy brand in need of a serious revamp? Seeking to explore new territories or simply wanting to assess if your current brand name can stand the test of time? No matter where you are in your journey, get a standout brand name that sells with the help of our brand naming consultancy service.
+                  </p>
+                  <p data-para-anim className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]">
+                    We can also conduct trademark checks in your region, using a licensed tool Corsearch, that can save a significant amount of time and investment when registering your brand name.
+                  </p>
+                  <div className="fadeup mt-[1vw]">
+                    <LinkButton
+                      btnLink={"/contact-us"}
+                      btnText={"Connect With Yellow"}
+                    />
+                  </div>
                 </div>
-              </React.Fragment>
-            ))}
-            
+              </div>
+              <div className="h-[1px] col-span-3 bg-black my-[2vw] tablet:my-[6vw] lineDraw hidden tablet:block mobile:block"></div>
+              <div className="my-[3vw] tablet:h-[2px] tablet:my-[6vw] tablet:hidden">
+                <Line />
+              </div>
+            </div>
           </div>
         </section>
 

@@ -14,7 +14,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Label } from "@/components/ui/label";
-import { Input} from "@/components/ui/input";
+import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/select";
 import { Button } from "../ui/button";
 import Section from "../Section";
+import Image from "next/image";
 
 const formSchema = z.object({
   name: z.string().min(3, {
@@ -37,10 +38,7 @@ const formSchema = z.object({
   number: z.string().min(10, {
     message: "Contact number must be at least 10 digits.",
   }),
-  social:z.string().min(5,{
-  
-
-  }),
+  social: z.string().min(5, {}),
   QuestionA: z.string().min(1, {
     message: "This field is required.",
   }),
@@ -50,27 +48,61 @@ const formSchema = z.object({
   QuestionC: z.string().min(1, {
     message: "This field is required.",
   }),
- 
 });
-const currentRoles = ['Art Director','Senior Designer','Midweight Designer','Junior Designer','Artworker','Illustrator','Copywriter','Marketing Manager','Social Media Manager','Web Designer','Web Developer','Office Manager','Account Manager','Account Executive']
-const mediums = ['Facebook','BBC News',"Its' all fake news",'Twitter','Instagram','Gulf News','The Daily Show','Guardian','Cosmopolitan','The Kardashians tell me all I need to know','104.1','103.8','The New Yorker','Snapchat','Time Out','I bury my head in the sand']
+const currentRoles = [
+  "Art Director",
+  "Senior Designer",
+  "Midweight Designer",
+  "Junior Designer",
+  "Artworker",
+  "Illustrator",
+  "Copywriter",
+  "Marketing Manager",
+  "Social Media Manager",
+  "Web Designer",
+  "Web Developer",
+  "Office Manager",
+  "Account Manager",
+  "Account Executive",
+];
+const mediums = [
+  "Facebook",
+  "BBC News",
+  "Its' all fake news",
+  "Twitter",
+  "Instagram",
+  "Gulf News",
+  "The Daily Show",
+  "Guardian",
+  "Cosmopolitan",
+  "The Kardashians tell me all I need to know",
+  "104.1",
+  "103.8",
+  "The New Yorker",
+  "Snapchat",
+  "Time Out",
+  "I bury my head in the sand",
+];
 
 function CareerForm({ jobs }) {
   const JobsData = jobs.jobs;
   const router = useRouter();
-  const [selectedRole , setSelectedRole] = useState('');
-  const [currentRole, setCurrentRole] = useState('');
-  const [medium, setMedium] = useState('');
-  const [firstTextArea, setFirstTextArea] = useState('');
-  const [secondTextArea, setSecondTextArea] = useState('');
-  const [thirdTextArea, setThirdTextArea] = useState('');
-  const [fourthTextArea, setFourthTextArea] = useState('');
- 
+  const [selectedRole, setSelectedRole] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [currentRole, setCurrentRole] = useState("");
+  const [medium, setMedium] = useState("");
+  const [firstTextArea, setFirstTextArea] = useState("");
+  const [secondTextArea, setSecondTextArea] = useState("");
+  const [thirdTextArea, setThirdTextArea] = useState("");
+  const [fourthTextArea, setFourthTextArea] = useState("");
+
   const [content, setContent] = React.useState(null);
   const [fileName, setFileName] = useState(null);
   const [fileError, setFileError] = useState(null);
- 
 
+  // const handleClick = () => {
+  //   // This can be replaced with actual API call logic
+  // };
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -82,19 +114,20 @@ function CareerForm({ jobs }) {
       QuestionA: "",
       QuestionB: "",
       QuestionC: "",
-      filename:null
+      filename: null,
     },
   });
   const fileRef = form.register("file");
   const onSubmit = async (data) => {
-
+    setIsLoading(true);
+    
     if (!fileName) {
       setFileError("File is required.");
       return; // Prevent form submission
     }
-    const base64Content = content.split(',')[1];
+    const base64Content = content.split(",")[1];
     // console.log("Form Submitted Successfully:", data);
-    
+
     const formData = {
       name: data.name,
       email: data.email,
@@ -103,21 +136,19 @@ function CareerForm({ jobs }) {
       QuestionA: data.QuestionA,
       QuestionB: data.QuestionB,
       QuestionC: data.QuestionC,
-      role:selectedRole,
-      currentRole:currentRole,
-      medium:medium,
-      firstTextArea:firstTextArea,
-      secondTextArea:secondTextArea,
-      thirdTextArea:thirdTextArea,
-      fourthTextArea:fourthTextArea,
-      filename:fileName,
-      content:base64Content
-
+      role: selectedRole,
+      currentRole: currentRole,
+      medium: medium,
+      firstTextArea: firstTextArea,
+      secondTextArea: secondTextArea,
+      thirdTextArea: thirdTextArea,
+      fourthTextArea: fourthTextArea,
+      filename: fileName,
+      content: base64Content,
     };
     // console.log(data)
-    console.log(formData);
+    // console.log(formData);
     try {
-      
       const res = await fetch("/api/careerform", {
         method: "POST",
         body: JSON.stringify(formData),
@@ -128,26 +159,17 @@ function CareerForm({ jobs }) {
       });
 
       if (!res.ok) {
-        
         throw new Error("Failed to send message");
-        
-
-      }
-      else{
+      } else {
         form.reset();
+        setIsLoading(false);
         router.push("/thank-you");
-
       }
-      
-
-
-      
-     
     } catch (error) {
       console.log(error);
     }
   };
-   
+
   const handleValueChange = (value) => {
     setSelectedRole(value);
   };
@@ -157,22 +179,22 @@ function CareerForm({ jobs }) {
   const handleMediumChange = (value) => {
     setMedium(value);
   };
-  const handleFirstTextAreaChange = (e)=>{
-    setFirstTextArea(e.target.value)
-  }
-  const handleSecondTextAreaChange = (e)=>{
-    setSecondTextArea(e.target.value)
-  }
-  const handleThirdTextAreaChange = (e)=>{
-    setThirdTextArea(e.target.value)
-  }
-  const handleFourthTextAreaChange = (e)=>{
-    setFourthTextArea(e.target.value)
-  }
+  const handleFirstTextAreaChange = (e) => {
+    setFirstTextArea(e.target.value);
+  };
+  const handleSecondTextAreaChange = (e) => {
+    setSecondTextArea(e.target.value);
+  };
+  const handleThirdTextAreaChange = (e) => {
+    setThirdTextArea(e.target.value);
+  };
+  const handleFourthTextAreaChange = (e) => {
+    setFourthTextArea(e.target.value);
+  };
   const onAddFileAction = (e) => {
     const reader = new FileReader();
     const files = e.target.files;
-  
+
     reader.onload = (r) => {
       const fileContent = r.target.result.toString();
       setContent(fileContent);
@@ -180,12 +202,9 @@ function CareerForm({ jobs }) {
       // console.log("File read successfully:", fileContent);
       console.log("Filename:", files[0].name);
     };
-  
+
     reader.readAsDataURL(files[0]);
   };
-  
-
-
 
   return (
     <>
@@ -221,7 +240,7 @@ function CareerForm({ jobs }) {
               <div className="flex w-full justify-between mobile:flex-col mobile:gap-[8vw]">
                 <div className="w-[45%] flex flex-col mobile:w-full">
                   <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
-                    Your name*
+                    Name*
                   </Label>
                   <FormField
                     control={form.control}
@@ -276,9 +295,10 @@ function CareerForm({ jobs }) {
 
                 <div className="w-[45%] flex flex-col mobile:w-full">
                   <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
-                    Your website / blog / Instagram?{" "}
+                    Your website / blog / Instagram / Facebook (basically, how
+                    can we stalk you?) :
                     <span className="tablet:hidden text-[1.3vw] tablet:text-[2.2vw] career-form-span mobile:text-[4.5vw]">
-                      Facebook?
+                      {/* Facebook? */}
                     </span>
                   </Label>
                   <FormField
@@ -298,8 +318,8 @@ function CareerForm({ jobs }) {
 
               <div className="w-[100%] flex flex-col">
                 <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
-                  Let&apos;s forget about propriety and talk money - what&apos;s
-                  the bare minimum you can survive on monthly?
+                  Let&apos;s forget about propriety and talk money - what&apos;s the bare
+                  minimum you can survive on monthly? :
                 </Label>
                 <FormField
                   control={form.control}
@@ -316,16 +336,26 @@ function CareerForm({ jobs }) {
               </div>
               <div className="w-[100%] border-b border-black">
                 <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
-                  What&apos;s making you search for a new role? And what are you
-                  hoping to find at Yellow?
+                  Why Yellow? (write a short paragraph on makes you want to work
+                  with us) :
                 </Label>
-                <Textarea placeholder="" value={firstTextArea} onChange={handleFirstTextAreaChange} className="mt-[1vw]" />
+                <Textarea
+                  placeholder=""
+                  value={firstTextArea}
+                  onChange={handleFirstTextAreaChange}
+                  className="mt-[1vw]"
+                />
               </div>
               <div className="w-[100%] border-b border-black">
                 <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
-                  Tell us about your past - just the work part, for now!
+                  Tell us about your past - just the work part, for now! :
                 </Label>
-                <Textarea placeholder="" value={secondTextArea} onChange={handleSecondTextAreaChange} className="mt-[1vw]"/>
+                <Textarea
+                  placeholder=""
+                  value={secondTextArea}
+                  onChange={handleSecondTextAreaChange}
+                  className="mt-[1vw]"
+                />
               </div>
               <div className="w-[45%]  career-input border-b border-black flex flex-col gap-[1vw] mobile:w-full ">
                 <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[5vw] tablet:text-[2.2vw]">
@@ -338,19 +368,18 @@ function CareerForm({ jobs }) {
                   <SelectContent>
                     <SelectGroup>
                       <SelectLabel>current role</SelectLabel>
-                      {currentRoles.map((roles,index)=>(
-                      <SelectItem value={roles} key={index}>{roles}</SelectItem>
-
-
+                      {currentRoles.map((roles, index) => (
+                        <SelectItem value={roles} key={index}>
+                          {roles}
+                        </SelectItem>
                       ))}
-                 
                     </SelectGroup>
                   </SelectContent>
                 </Select>
               </div>
               <div className="w-[45%]  career-input border-b border-black flex flex-col gap-[1vw] mobile:w-full">
                 <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[5vw] tablet:text-[2.2vw]">
-                  How do you keep up with what&apos;s going on in the world?
+                  How do you keep up with what&apos;s going on in the world? :
                 </Label>
                 <Select onValueChange={handleMediumChange}>
                   <SelectTrigger className="w-full placeholder:text-[2vw]">
@@ -359,10 +388,11 @@ function CareerForm({ jobs }) {
                   <SelectContent>
                     <SelectGroup>
                       <SelectLabel>Mediums</SelectLabel>
-                      {mediums.map((medium,index)=>(
-                        <SelectItem value={medium} key={index}>{medium}</SelectItem>
+                      {mediums.map((medium, index) => (
+                        <SelectItem value={medium} key={index}>
+                          {medium}
+                        </SelectItem>
                       ))}
-                     
                     </SelectGroup>
                   </SelectContent>
                 </Select>
@@ -370,20 +400,30 @@ function CareerForm({ jobs }) {
               <div className="w-[100%] border-b border-black">
                 <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
                   If you could work on any brand or client in the world, which
-                  would it be and why?
+                  would it be and why? :
                 </Label>
-                <Textarea placeholder="" value={thirdTextArea} onChange={handleThirdTextAreaChange} className="mt-[1vw]" />
+                <Textarea
+                  placeholder=""
+                  value={thirdTextArea}
+                  onChange={handleThirdTextAreaChange}
+                  className="mt-[1vw]"
+                />
               </div>
               <div className="w-[100%] border-b border-black">
                 <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] tablet:text-[2.2vw]">
-                  What&apos;s the coolest thing you&apos;ve ever done?
+                  What&apos;s the coolest thing you&apos;ve ever done? :
                 </Label>
-                <Textarea placeholder="" value={fourthTextArea} onChange={handleFourthTextAreaChange} className="mt-[1vw]"/>
+                <Textarea
+                  placeholder=""
+                  value={fourthTextArea}
+                  onChange={handleFourthTextAreaChange}
+                  className="mt-[1vw]"
+                />
               </div>
               <div className="w-[100%] flex flex-col">
                 <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
-                  When you&apos;re not hailing Helvetica as the second coming,
-                  which typeface do you champion?
+                  When you&apos;re not hailing Helvetica as the second coming, which
+                  typeface do you champion? :
                 </Label>
                 <FormField
                   control={form.control}
@@ -399,7 +439,10 @@ function CareerForm({ jobs }) {
                 />
               </div>
               <div className="w-[100%] flex flex-col">
-                <Label htmlFor="QuestionC" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
+                <Label
+                  htmlFor="QuestionC"
+                  className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]"
+                >
                   Which is your favourite film ever?
                 </Label>
                 <FormField
@@ -425,12 +468,10 @@ function CareerForm({ jobs }) {
                 </p>
 
                 <div className="w-full h-full border border-dashed border-black rounded-lg py-[3vw] mobile:h-[70vw] mobile:mt-[10vw] tablet:h-[30vw] tablet:mt-[4vw]">
-                 
-                   <Label
+                  <Label
                     htmlFor="filename"
                     className="w-full h-full bg-white flex flex-col items-center justify-center rounded-lg cursor-pointer"
                   >
-                    
                     <div className="flex flex-col items-center justify-center py-4 px-5">
                       <svg
                         className="w-16 h-16 text-primary mobile:w-20 mobile:h-20 tablet:w-24 tablet:h-24"
@@ -535,42 +576,58 @@ function CareerForm({ jobs }) {
                       </p>
                     </div>
                   </Label>
-                    <FormField
-                  control={form.control}
-                  name="filename"
-                  render={({ field }) => (
-                    <FormItem className="h-full flex justify-center career flex-col">
-                      <FormControl>
-                      <Input
-                      id="filename"
-                     {...fileRef}
-                      type="file"
-                      accept=".pdf,.docx"
-                      className="hidden"
-                      onChange={onAddFileAction}
-                    />
-                      </FormControl>
-                      {fileError && <p className="text-red-600 text-[1.1vw] tablet:text-[2vw] mobile:text-[3vw] mt-[1vw] mobile:mt-[4vw]">{fileError}</p>}
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    control={form.control}
+                    name="filename"
+                    render={({ field }) => (
+                      <FormItem className="h-full flex justify-center career flex-col">
+                        <FormControl>
+                          <Input
+                            id="filename"
+                            {...fileRef}
+                            type="file"
+                            accept=".pdf,.docx"
+                            className="hidden"
+                            onChange={onAddFileAction}
+                          />
+                        </FormControl>
+                        {fileError && (
+                          <p className="text-red-600 text-[1.1vw] tablet:text-[2vw] mobile:text-[3vw] mt-[1vw] mobile:mt-[4vw]">
+                            {fileError}
+                          </p>
+                        )}
+                      </FormItem>
+                    )}
+                  />
                 </div>
               </div>
               <div className="w-full flex justify-center items-center fadeup mt-[3vw]">
                 <Button
                   type="submit"
+                  
                   className="text-[1.4vw] px-[1.4vw] py-[0.3vw] min-w-[10vw] text-body border-black border bg-white hover:text-white rounded-full min-h-[3.5vw] flex gap-[2vw] group tablet:text-[2vw] tablet:min-w-[15vw] tablet:px-[3vw] tablet:py-[1vw] mobile:text-[4.5vw] mobile:px-[4.5vw] mobile:h-[12vw] overflow-hidden relative"
                 >
                   <div className="overflow-hidden flex items-center justify-center gap-[0.7vw] w-full mobile:gap-[2vw] ">
-                  <span className="absolute block w-full h-full scale-y-0 bg-body group-hover:scale-y-100 left-0 top-0 origin-bottom transition-all duration-700 ease-link"/>
-                    <span
-                      data-text={"Submit"}
-                      className="relative inline-block after:content-[attr(data-text)] after:absolute after:top-[130%] after:left-0 group-hover:translate-y-[-130%] transition-transform duration-1000 ease-link"
-                    >
-                      Submit
-                    </span>
-                    
-                    <svg
+                    <span className="absolute block w-full h-full scale-y-0 bg-body group-hover:scale-y-100 left-0 top-0 origin-bottom transition-all duration-700 ease-link" />
+                    {!isLoading ? (
+                      <span
+                        data-text={"Submit"}
+                        className="relative inline-block after:content-[attr(data-text)] after:absolute after:top-[130%] after:left-0 group-hover:translate-y-[-130%] transition-transform duration-1000 ease-link"
+                      >
+                        Submit
+                      </span>
+                    ) : (
+                      <div className="absolute top-0 left-0 bg-body w-full h-full flex justify-center items-center">
+                        <Image
+                          src="/button-loading.png"
+                          alt="button-loading"
+                          className="animate-spin invert"
+                          width={30}
+                          height={30}
+                        />
+                        </div>
+                    )}
+                   {!isLoading?(<svg
                       className="relative -rotate-[135deg] w-[1.1vw] h-[1.1vw] tablet:w-[2vw] tablet:h-[2vw] mobile:w-[5vw] mobile:h-[5vw] "
                       width="19"
                       height="23"
@@ -588,7 +645,8 @@ function CareerForm({ jobs }) {
                         d="M9.44186 23C9.38605 22.9324 9.33953 22.8559 9.27442 22.7973C6.25116 19.8649 3.22791 16.9369 0.204652 14.009C0.139535 13.9459 0.0604662 13.8964 1.30208e-06 13.8468C0.576745 13.2973 1.12558 12.7748 1.66512 12.2613C3.82326 14.3514 6.01861 16.4775 8.2093 18.6036C8.23256 18.5901 8.26047 18.5811 8.28372 18.5676C8.28372 12.3829 8.28372 6.19369 8.28372 -4.68423e-07C9.09768 -4.32844e-07 9.87442 -3.98892e-07 10.6744 -3.63923e-07C10.6744 6.19369 10.6744 12.3784 10.6744 18.5901C12.893 16.4369 15.0884 14.3108 17.2651 12.2027C17.8465 12.7568 18.3907 13.2838 19 13.8739C18.9488 13.9009 18.8558 13.9324 18.7907 13.9955C15.7581 16.9279 12.7302 19.8649 9.70233 22.7973C9.64186 22.8559 9.5907 22.9324 9.53488 23C9.50698 23 9.47442 23 9.44186 23Z"
                         fill="currentColor"
                       />
-                    </svg>
+                    </svg>):(<></>)}
+                    
                   </div>
                 </Button>
               </div>

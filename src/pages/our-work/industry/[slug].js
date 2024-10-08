@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PortfolioIndustries from '@/components/Portfolio/PortfolioIndustries';
 import Layout from '@/components/Layout';
 import Section from '@/components/Section';
@@ -9,14 +9,31 @@ import WorkCard from '@/components/Portfolio/WorkCard';
 import MetaData from '@/components/Metadata';
 import Consultant from '@/components/Portfolio/Consultant';
 import { paraAnim, lineAnim, fadeUp, fadeIn } from '@/components/gsapAnimations';
+import { useRouter } from 'next/router';
 
 const Category = ({ portfolioIndustry, portfolio, portfolioIndustries }) => {
   const [activeIndustry, setActiveIndustry] = useState(`${portfolioIndustry.slug}`);
+  const router = useRouter();
 
   paraAnim();
   lineAnim();
   fadeUp();
   fadeIn();
+
+  // Reload the page when the slug changes
+  useEffect(() => {
+    const handleSlugChange = () => {
+      window.location.reload();  // This will force a full page reload
+    };
+
+    // Set up a listener to watch for slug changes
+    router.events.on('routeChangeComplete', handleSlugChange);
+
+    return () => {
+      // Clean up the listener when the component unmounts
+      router.events.off('routeChangeComplete', handleSlugChange);
+    };
+  }, [router]);
 
   const metadata = {
     title: `${portfolioIndustry.name} Portfolio Archive | Yellow`,

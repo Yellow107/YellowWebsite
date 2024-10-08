@@ -5,8 +5,6 @@ import { gsap } from "gsap/dist/gsap";
 import { CustomEase } from "gsap/dist/CustomEase";
 import { usePathname } from 'next/navigation';
 
-gsap.registerPlugin(CustomEase, useGSAP);
-
 const MenuLink = ({href, text, className=""}) => {
   return (
     <Link href={href} className={`block w-fit ${className}`}>
@@ -21,6 +19,7 @@ export default function Menu({ menuOpen }) {
   const [serviceOpen, setServiceOpen] = useState(false);
   const pathname = usePathname();
 
+  gsap.registerPlugin(CustomEase, useGSAP);
 
   CustomEase.create("primary-ease", "0.62, 0.05, 0.01, 0.99");
 

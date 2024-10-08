@@ -4,12 +4,13 @@ import Pagehero from '@/components/PortfolioDetail/Pagehero';
 import Section from '@/components/Section';
 import Information from '@/components/PortfolioDetail/Information';
 import styles from "@/styles/work.module.css";
-// eslint-disable-next-line no-unused-vars
 import { titleAnim, lineAnim, fadeUp, paraAnimWordpress, imageAnimationWork } from '@/components/gsapAnimations';
 import { WebpageJsonLd } from '@/lib/json-ld';
 import config from '../../../package.json';
 import { NextSeo } from 'next-seo';
 import RelatedWork from '@/components/RelatedWork';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Work({ project }) {
   const {
@@ -35,11 +36,28 @@ export default function Work({ project }) {
 
   const { homepage = '' } = config;
 
+  const router = useRouter();
+
   titleAnim();
   paraAnimWordpress();
   lineAnim();
   fadeUp();
   imageAnimationWork();
+
+    // Reload the page when the slug changes
+    useEffect(() => {
+      const handleSlugChange = () => {
+        window.location.reload();  // This will force a full page reload
+      };
+  
+      // Set up a listener to watch for slug changes
+      router.events.on('routeChangeComplete', handleSlugChange);
+  
+      return () => {
+        // Clean up the listener when the component unmounts
+        router.events.off('routeChangeComplete', handleSlugChange);
+      };
+    }, [router]);
 
   const metadata = {
     title: metaTitle,

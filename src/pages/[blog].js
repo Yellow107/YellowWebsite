@@ -9,6 +9,8 @@ import Pagehero from '@/components/blog-detail/Pagehero';
 import { titleAnim, paraAnim, lineAnim, fadeIn, fadeUp } from '@/components/gsapAnimations';
 import { NextSeo } from 'next-seo';
 import config from '../../package.json';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 export default function Post({ post, relatedPosts }) {
   const {
@@ -23,6 +25,8 @@ export default function Post({ post, relatedPosts }) {
     readingTime,
   } = post;
 
+  const router = useRouter();
+
   const { homepage = '' } = config;
 
   titleAnim();
@@ -30,6 +34,22 @@ export default function Post({ post, relatedPosts }) {
   lineAnim();
   fadeIn();
   fadeUp();
+
+  // Reload the page when the slug changes
+  useEffect(() => {
+    const handleSlugChange = () => {
+      window.location.reload();  // This will force a full page reload
+      window.scrollTo(0, 0);
+    };
+
+    // Set up a listener to watch for slug changes
+    router.events.on('routeChangeComplete', handleSlugChange);
+
+    return () => {
+      // Clean up the listener when the component unmounts
+      router.events.off('routeChangeComplete', handleSlugChange);
+    };
+  }, [router]);
 
   return (
     <>

@@ -8,7 +8,7 @@ const WorkCard = ({ index, work }) => {
         <Link className="relative w-full h-full block group overflow-hidden rounded-[10px] fadeup" href={workPathBySlug(work.slug)}>
             <div className={`relative overflow-hidden h-[45vw] scale-[1.05] group-hover:scale-100 transition-all duration-300 ease-in-out ${index % 3 === 0 ? "mobile:h-[60vw]" : "mobile:h-[80vw]" }`}>
                 <MediaRender
-                    className="z-[0] static"
+                    className="z-[0] static brightness-90"
                     url={work.workFields.featuredImagevideo.node.mediaItemUrl}
                 />
             </div>
@@ -24,7 +24,6 @@ const WorkCard = ({ index, work }) => {
                     ))}
                 </div>
             </div>
-            
         </Link>
     )
 }

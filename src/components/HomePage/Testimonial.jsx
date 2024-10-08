@@ -105,6 +105,7 @@ const Testimonial = () => {
                             alt={`${name} image`}
                             loading="lazy"
                             src={img}
+                            priority={false}
                             quality={100}
                             width={100}
                             height={100}

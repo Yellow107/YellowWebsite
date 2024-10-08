@@ -30,6 +30,7 @@ const BrandsMarquee = () => {
           loading="lazy"
           src={src}
           quality={100}
+          priority={false}
           fill
         />
       </div>

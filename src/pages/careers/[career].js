@@ -7,6 +7,8 @@ import CareerForm from '@/components/career-detail/CareerForm';
 import { JobpostingJsonLd } from '@/lib/json-ld';
 import config from '../../../package.json';
 import { NextSeo } from 'next-seo';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Work({ job, jobsList }) {
 
@@ -18,6 +20,8 @@ export default function Work({ job, jobsList }) {
     seo,
   } = job;
 
+  const router = useRouter();
+
   const { homepage = '' } = config;
   const path = `${homepage}/careers/${slug}`
 
@@ -25,6 +29,21 @@ export default function Work({ job, jobsList }) {
   paraAnim();
   lineAnim();
   fadeUp();
+
+  // Reload the page when the slug changes
+  useEffect(() => {
+    const handleSlugChange = () => {
+      window.location.reload();  // This will force a full page reload
+    };
+
+    // Set up a listener to watch for slug changes
+    router.events.on('routeChangeComplete', handleSlugChange);
+
+    return () => {
+      // Clean up the listener when the component unmounts
+      router.events.off('routeChangeComplete', handleSlugChange);
+    };
+  }, [router]);
 
   return (
     <>

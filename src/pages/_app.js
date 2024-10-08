@@ -4,14 +4,11 @@ import { DefaultSeo } from "next-seo";
 import { ImageObjectJsonLd, OrganizationJsonLd, WebsiteJsonLd } from "@/lib/json-ld";
 import { useEffect } from "react";
 import config from "../../package.json";
-import { GoogleAnalytics, 
-  // GoogleTagManager 
-} from '@next/third-parties/google';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { SearchProvider } from "@/hooks/use-search";
 
-export default function App({ Component, pageProps = {},}) {
+export default function App({ Component, pageProps = {}, }) {
   const { homepage = "" } = config;
 
   useEffect(() => {
@@ -26,23 +23,42 @@ export default function App({ Component, pageProps = {},}) {
     };
   }, []);
 
+  // Load Google Tag Manager and Google Analytics based on user interaction
   useEffect(() => {
-    const handleUserInteraction = () => {
-      const script = document.createElement('script');
-      script.src = `https://www.googletagmanager.com/gtm.js?id=GTM-W99KBPB`;
-      script.async = true;
-      document.body.appendChild(script);
-  
-      window.removeEventListener('scroll', handleUserInteraction);
-      window.removeEventListener('click', handleUserInteraction);
+    const loadScripts = () => {
+      // Load Google Tag Manager
+      const gtmScript = document.createElement('script');
+      gtmScript.src = `https://www.googletagmanager.com/gtm.js?id=GTM-W99KBPB`;
+      gtmScript.async = true;
+      document.body.appendChild(gtmScript);
+
+      // Load Google Analytics
+      const gaScript = document.createElement('script');
+      gaScript.src = `https://www.googletagmanager.com/gtag/js?id=G-CSXSBEQKTY`;
+      gaScript.async = true;
+      document.body.appendChild(gaScript);
+
+      gaScript.onload = () => {
+        window.dataLayer = window.dataLayer || [];
+        // eslint-disable-next-line no-undef
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-CSXSBEQKTY');
+      };
+
+      // Remove event listeners after the scripts are loaded
+      window.removeEventListener('scroll', loadScripts);
+      window.removeEventListener('click', loadScripts);
     };
-  
-    window.addEventListener('scroll', handleUserInteraction);
-    window.addEventListener('click', handleUserInteraction);
-  
+
+    // Add event listeners for scroll and click to load Google Tag Manager and Google Analytics
+    window.addEventListener('scroll', loadScripts);
+    window.addEventListener('click', loadScripts);
+
+    // Clean up event listeners if the component unmounts
     return () => {
-      window.removeEventListener('scroll', handleUserInteraction);
-      window.removeEventListener('click', handleUserInteraction);
+      window.removeEventListener('scroll', loadScripts);
+      window.removeEventListener('click', loadScripts);
     };
   }, []);
 
@@ -120,14 +136,11 @@ export default function App({ Component, pageProps = {},}) {
       <WebsiteJsonLd />
       <ImageObjectJsonLd />
 
-        <SearchProvider>
-          <ReactLenis root options={{duration: 2}}>
-            <Component {...pageProps} />
-          </ReactLenis>
-        </SearchProvider>
-
-      {/* <GoogleTagManager gtmId="GTM-W99KBPB" /> */}
-      <GoogleAnalytics gaId="G-CSXSBEQKTY" />
+      <SearchProvider>
+        <ReactLenis root options={{ duration: 2 }}>
+          <Component {...pageProps} />
+        </ReactLenis>
+      </SearchProvider>
 
       <SpeedInsights />
       <Analytics />

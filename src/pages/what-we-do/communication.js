@@ -32,28 +32,6 @@ export default function servicesdetail({ recentWorks }) {
     slug: "what-we-do/communication",
   };
 
-  const services = [
-    {
-      title: "Marketing strategy",
-      paragraphs: [
-        "Your brand is unique, so we start with a bespoke marketing strategy. Every piece of content we create – from outdoor to radio to social media content – will be crafted to ignite meaningful conversations about your brand and product and inspire your target audience to take action.",
-        "We act like your in-house marketing team in defining your marketing objectives and strategy that acts like a blueprint with a detailed yearly plan that covers everything from advertising ideas to marketing activations to social media calendars and more. We outline budgets and tactical campaigns and proactive initiatives along with recommended media investments. This helps businesses plan their budgets alongside KPIs and impact, and for some clients, we are also responsible for executing and delivering on the strategy and plan.",
-
-      ],
-      image: "/assets/images/service/communication/Marketing-strategy.webp",
-    },
-    {
-      title: "Marketing execution",
-      paragraphs: [
-        "As a marketing partner for global brands like Mitsubishi Motors MEA, and local brands like Emaar Malls Group and several others, Yellow acts like an extension to the team, and ensures all marketing executions, regardless of media channel, delivers the desired results. We measure the effectiveness of each campaign to understand engagement, click through rates, top of mind awareness and increase in revenue.",
-        "We believe communications, to be effective, needs to be specific and purpose-led. Fusing creativity and technology and leveraging our relationships with respected local and global media publishers, we’ll deliver and amplify your story in a way that makes a measurable impact on your business.",
-
-      ],
-      image: "/assets/images/service/communication/mitsubishi-detail.webp",
-    },
-
-  ];
-
   return (
     <>
       <MetaData metadata={metadata} />

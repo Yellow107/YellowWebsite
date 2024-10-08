@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getAllCategories, getCategoryBySlug } from '@/lib/categories';
 import { getPostsByCategoryId } from '@/lib/posts';
 
@@ -8,15 +8,33 @@ import Section from '@/components/Section';
 import PostCard from '@/components/blog/PostCard';
 import styles from "@/styles/blogDetail.module.css";
 import MetaData from '@/components/Metadata';
+import { useRouter } from 'next/router';
 
 const Category = ({ category, posts, categories }) => {
   const [activeCategory, setActiveCategory] = useState(`${category.slug}`);
+
+  const router = useRouter();
 
   const metadata = {
     title: `${category.name} Archive | Yellow`,
     description: `Dive into our articles for fresh trends, insights, and ${category.name} inspiration.`,
     slug: `category/${category.slug}`,
   };
+
+    // Reload the page when the slug changes
+    useEffect(() => {
+      const handleSlugChange = () => {
+        window.location.reload();  // This will force a full page reload
+      };
+  
+      // Set up a listener to watch for slug changes
+      router.events.on('routeChangeComplete', handleSlugChange);
+  
+      return () => {
+        // Clean up the listener when the component unmounts
+        router.events.off('routeChangeComplete', handleSlugChange);
+      };
+    }, [router]);
 
   return (
     <>      

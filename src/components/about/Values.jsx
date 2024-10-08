@@ -1,14 +1,12 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React from "react";
-
 import { gsap } from "gsap/dist/gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import SectionTitle from "../SectionTitle";
-import { CustomEase } from "gsap/dist/CustomEase";
 import Section from "../Section";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, CustomEase);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function values() {
   if (globalThis.innerWidth >= 1024) {

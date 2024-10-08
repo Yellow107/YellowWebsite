@@ -22,7 +22,7 @@ export default async (req, res) => {
         userDetail: detail,
         userService: services,
         userSource: source,
-        userOther: otherService, // Only include if "Other" was selected
+        userOther: otherService,
       }),
     });
 

@@ -132,55 +132,6 @@ export function imageAnimationWork() {
   });
 }
 
-// export function imageAnimationWork() {
-//   useGSAP(() => {
-//     const imageAnimations = document.querySelectorAll(".img-work-anim");
-//     imageAnimations.forEach((imgWrapper) => {
-//       // Check if inner-div already exists
-//       if (!imgWrapper.querySelector(".inner-div")) {
-//         // Create a new div element inside the .img-work-anim element
-//         const newDiv = document.createElement("div");
-//         newDiv.className = "inner-div"; // add a class to the new div
-
-//         // Wrap all existing content of imgWrapper into innerDiv
-//         while (imgWrapper.firstChild) {
-//           newDiv.appendChild(imgWrapper.firstChild);
-//         }
-//         // Append the newly wrapped content back to imgWrapper
-//         imgWrapper.appendChild(newDiv);
-//       }
-
-//       const innerDiv = imgWrapper.querySelector(".inner-div");
-//       const img = innerDiv.querySelector("img, video");
-
-//       const tl = gsap.timeline({
-//         scrollTrigger: {
-//           trigger: imgWrapper,
-//           start: "top 80%",
-//         },
-//         defaults: {
-//           ease: 'power3.inOut',
-//         },
-//       });
-
-//       tl.fromTo(innerDiv, {
-//         xPercent: -100,
-//       }, {
-//         duration: 1,
-//         xPercent: 0,
-//       });
-
-//       tl.fromTo(img, {
-//         xPercent: 100,
-//       }, {
-//         duration: 1,
-//         xPercent: 0,
-//       }, "<");
-//     });
-//   });
-// }
-
-
 export function imageAnimationLeft() {
   useGSAP(() => {
     const imageAnimations = document.querySelectorAll(".image-animation-left-wrapper")
@@ -243,24 +194,6 @@ export function imageAnimationDown() {
   })
 }
 
-// export function imgAnim() {
-//   useGSAP(() => {
-//     const images = document.querySelectorAll(".imganim");
-//     images.forEach((img) => {
-//       gsap.to(img, {
-//         scrollTrigger: {
-//           trigger: img,
-//           start: "top 90%",
-//         },
-//         '--beforeHeight': '0%',
-//         duration: 1.5,
-//         stagger: 0.05,
-//         ease: "power3.inOut",
-//       });
-//     });
-//   });
-
-// }
 export function fadeIn() {
   useGSAP(() => {
     const content = document.querySelectorAll(".fadein");
