@@ -3,13 +3,11 @@ import { ReactLenis } from 'lenis/react';
 import { DefaultSeo } from "next-seo";
 import { ImageObjectJsonLd, OrganizationJsonLd, WebsiteJsonLd } from "@/lib/json-ld";
 import { useEffect } from "react";
-import config from "../../package.json";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { SearchProvider } from "@/hooks/use-search";
 
 export default function App({ Component, pageProps = {}, }) {
-  const { homepage = "" } = config;
 
   useEffect(() => {
     const handleRouteChange = () => {
@@ -106,7 +104,7 @@ export default function App({ Component, pageProps = {}, }) {
             rel: 'alternate',
             type: 'application/rss+xml',
             title: 'Welcome To Yellow Feed',
-            href: `${homepage}/feed.xml`
+            href: `https://welcometoyellow.com/feed.xml`
           },
         ]}
         openGraph={{
@@ -114,10 +112,10 @@ export default function App({ Component, pageProps = {}, }) {
           locale: 'en_US',
           title: "Branding & Communication Agency in Dubai - Yellow Agency",
           description: "Welcome to Yellow: your trusted branding, marketing, & design agency in Dubai. We specialize in crafting brand stories & innovative marketing strategies. Let your brand shine with expert services. Contact today!",
-          url: homepage,
+          url: "https://welcometoyellow.com",
           images: [
             {
-              url: `${homepage}/assets/images/seo/home.png`,
+              url: `https://welcometoyellow.com/assets/images/seo/home.png`,
               width: 1920,
               height: 1016,
               alt: "Yellow Brand Image",

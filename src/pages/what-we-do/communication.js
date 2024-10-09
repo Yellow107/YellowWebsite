@@ -45,11 +45,11 @@ export default function servicesdetail({ recentWorks }) {
           <div className="container ">
             <h1
               data-para-anim
-              className="text-[5.8vw] w-[80%] uppercase font-display mb-[7vw] leading-[1.3] mobile:text-[12vw] tablet:w-[90%]  mobile:w-full tablet:text-[7vw] mobile:mb-[15vw]"
+              className="text-[5.8vw] w-[80%] uppercase font-display mb-[7vw] leading-[1.3] mobile:text-[9.8vw] tablet:w-[90%]  mobile:w-full tablet:text-[7vw] mobile:mb-[10vw]"
             >
               Communication
             </h1>
-            <div className="w-[90vw] h-[45vw] rounded-[15px] overflow-hidden relative fadeup mobile:w-[85vw] mobile:h-[100vw] tablet:w-[85vw]">
+            <div className="w-[90vw] h-[45vw] rounded-[15px] overflow-hidden relative fadeup mobile:w-full mobile:h-[45vw] tablet:w-[85vw]">
               <Image
                 quality={100}
                 src="/assets/images/service/communication/communication-detail-listing.webp"
@@ -91,10 +91,10 @@ export default function servicesdetail({ recentWorks }) {
                   className="hidden mobile:block text-[4.5vw] tablet:block tablet:text-[2.5vw]"
                 >
                   It all starts with a solid brief. We work with brands to
-                  define their business and marketing objectives, we then dive
+                  define their business and marketing objectives. We then dive
                   into research and analytics (lots of it) to find the sweet
                   spot where the product insight, market insight and consumer
-                  insight converge towards a communication positioning
+                  insight converge towards a communication positioning.
                 </p>
               </div>
               <div className="col-span-1 col-start-2 mobile:flex mobile:flex-col ">
@@ -143,10 +143,10 @@ export default function servicesdetail({ recentWorks }) {
               <div className="col-span-1 mobile:hidden tablet:hidden">
                 <p data-para-anim className="text-[1.2vw] font-medium ">
                   It all starts with a solid brief. We work with brands to
-                  define their business and marketing objectives, we then dive
+                  define their business and marketing objectives. We then dive
                   into research and analytics (lots of it) to find the sweet
                   spot where the product insight, market insight and consumer
-                  insight converge towards a communication positioning
+                  insight converge towards a communication positioning.
                 </p>
               </div>
               <div className="col-span-1 col-start-2 mobile:hidden tablet:hidden">
@@ -179,7 +179,6 @@ export default function servicesdetail({ recentWorks }) {
         {/* Detail Section */}
         <section className="w-full h-full bg-black " id="detail">
           <div className=" container mobile:flex mobile:flex-col tablet:flex-col tablet:flex pb-[5%] bg-white">
-            
             <div>
               <div className="tablet:flex mobile:flex mobile:flex-col tablet:gap-[2vw] flex mobile:gap-0 gap-[15vw]">
                 <div className="col-start-3 flex justify-end mobile:justify-center tablet:order-1 order-1 mobile:order-none">
@@ -198,19 +197,19 @@ export default function servicesdetail({ recentWorks }) {
                     data-para-anim
                     className="text-[2.5vw] capitalize font-display mobile:text-[8vw] tablet:text-[4vw]"
                   >
-                    Marketing strategy
+                    Marketing Strategy and Execution
                   </h2>
                     <p
                       data-para-anim
                       className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]"
                     >
-                      Your brand is unique, so we start with a bespoke marketing strategy. Every piece of content we create – from outdoor to radio to social media content – will be crafted to ignite meaningful conversations about your brand and product and inspire your target audience to take action.
+                      Your brand is unique, so we start with a bespoke marketing strategy. Every piece of content we create, from outdoor to radio to social media content, will be crafted to ignite meaningful conversations about your brand and product and inspire your target audience to take action.
                     </p>
                     <p
                       data-para-anim
                       className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]"
                     >
-                      We act like your in-house marketing team in defining your marketing objectives and strategy that acts like a blueprint with a detailed yearly plan that covers everything from advertising ideas to marketing activations to social media calendars and more. We outline budgets and tactical campaigns and proactive initiatives along with recommended media investments. This helps businesses plan their budgets alongside KPIs and impact, and for some clients, we are also responsible for executing and delivering on the strategy and plan.
+                      We act like your in-house marketing team in defining your marketing objectives and strategy that acts like a blueprint, with a detailed yearly plan that covers everything from advertising ideas to marketing activations to social media calendars and more. We outline budgets, tactical campaigns and proactive initiatives along with recommended media investments. This helps businesses plan their budgets alongside KPIs and impact, and for some clients, we are also responsible for executing and delivering on the strategy and plan.
                     </p>
                   <div className="fadeup mt-[1vw]">
                     <LinkButton
@@ -249,18 +248,6 @@ export default function servicesdetail({ recentWorks }) {
                   >
                     Marketing execution
                   </h2>
-                    <p
-                      data-para-anim
-                      className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]"
-                    >
-                      Your brand is unique, so we start with a bespoke marketing strategy. Every piece of content we create – from outdoor to radio to social media content – will be crafted to ignite meaningful conversations about your brand and product and inspire your target audience to take action.
-                    </p>
-                    <p
-                      data-para-anim
-                      className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]"
-                    >
-                      We act like your in-house marketing team in defining your marketing objectives and strategy that acts like a blueprint with a detailed yearly plan that covers everything from advertising ideas to marketing activations to social media calendars and more. We outline budgets and tactical campaigns and proactive initiatives along with recommended media investments. This helps businesses plan their budgets alongside KPIs and impact, and for some clients, we are also responsible for executing and delivering on the strategy and plan.
-                    </p>
                   <div className="fadeup mt-[1vw]">
                     <LinkButton
                       btnLink={"/contact-us"}

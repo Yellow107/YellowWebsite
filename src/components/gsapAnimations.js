@@ -2,12 +2,13 @@
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { CustomEase } from 'gsap/dist/CustomEase';
 import { SplitInLineWord, SplitInLine } from './splitTextUtils';
 
-gsap.registerPlugin(ScrollTrigger, CustomEase, useGSAP);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const primaryEase = CustomEase.create("cus-1", "0.62, 0.05, 0.01, 0.99");
+gsap.config({
+  nullTargetWarn: false,
+});
 
 export function titleAnim() {
   useGSAP(() => {
@@ -21,14 +22,15 @@ export function titleAnim() {
           start: "top 85%",
         },
         rotate: "5deg",
-        duration: 1.5,
+        duration: 0.8,
         yPercent: 100,
         stagger: 0.1,
-        ease: primaryEase,
+        ease: "power3.out",
       });
     });
   });
 }
+
 export function paraAnim() {
   useGSAP(() => {
     const paraAnimations = document.querySelectorAll("[data-para-anim]");
@@ -40,10 +42,10 @@ export function paraAnim() {
           trigger: paraAnimation,
           start: "top 90%",
         },
-        duration: 1.47,
+        duration: 0.8,
         yPercent: 100,
         stagger: 0.07,
-        ease: primaryEase,
+        ease: "power3.out",
       });
     });
   });
@@ -61,16 +63,14 @@ export function lineAnim() {
           },
           scaleX: 0,
           transformOrigin: "left",
-          duration: 1.47,
+          duration: 1,
           yPercent: 100,
           stagger: 0.07,
-          ease: primaryEase,
+          ease: "power3.out",
         });
       });
     });
-
-  }
-  else {
+  } else {
     useGSAP(() => {
       const lineDraws = document.querySelectorAll(".lineDraw");
       lineDraws.forEach((lineDraw) => {
@@ -84,28 +84,49 @@ export function lineAnim() {
           duration: 1.47,
           yPercent: 100,
           stagger: 0.07,
-          ease: primaryEase,
+          ease: "power3.out",
         });
       });
     });
-
   }
-
 }
 
-export function imageAnim() {
+export function fadeIn() {
   useGSAP(() => {
-    const images = document.querySelectorAll(".imageanim");
-    images.forEach((img) => {
-      gsap.to(img, {
+    const content = document.querySelectorAll(".fadein");
+    content.forEach((content) => {
+      gsap.from(content, {
         scrollTrigger: {
-          trigger: img,
+          trigger: content,
           start: "top 90%",
+          end: "bottom 60%",
         },
-        '--beforeHeight': '0%',
-        duration: 1.5,
-        stagger: 0.05,
-        ease: "power3.inOut",
+        opacity: 0,
+        ease: "power3.Out",
+        duration: 1,
+        stagger: 0.5
+      });
+    });
+  });
+}
+
+export function fadeUp() {
+  useGSAP(() => {
+    const content = document.querySelectorAll(".fadeup");
+    content.forEach((content) => {
+      gsap.from(content, {
+        scrollTrigger: {
+          trigger: content,
+          start: "top 90%",
+          end: "bottom 60%",
+
+        },
+        opacity: 0,
+        delay: 0.3,
+        y: 50,
+        ease: "power3.Out",
+        duration: 0.7,
+        stagger: 0.5
       });
     });
   });
@@ -130,37 +151,6 @@ export function imageAnimationWork() {
       });
     });
   });
-}
-
-export function imageAnimationLeft() {
-  useGSAP(() => {
-    const imageAnimations = document.querySelectorAll(".image-animation-left-wrapper")
-    imageAnimations.forEach((img) => {
-      const imgHolder = img.querySelector("div");
-      const imgImage = img.querySelector("img");
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: img,
-          start: "top 80%",
-        },
-        defaults: {
-          ease: 'power3.inOut',
-        }
-      })
-      tl.fromTo(imgHolder, {
-        xPercent: -100,
-      }, {
-        duration: 1,
-        xPercent: 0,
-      })
-      tl.fromTo(imgImage, {
-        xPercent: 100,
-      }, {
-        duration: 1,
-        xPercent: 0,
-      }, "<")
-    })
-  })
 }
 
 export function imageAnimationDown() {
@@ -194,48 +184,6 @@ export function imageAnimationDown() {
   })
 }
 
-export function fadeIn() {
-  useGSAP(() => {
-    const content = document.querySelectorAll(".fadein");
-    content.forEach((content) => {
-      gsap.from(content, {
-        scrollTrigger: {
-          trigger: content,
-          start: "top 90%",
-          end: "bottom 60%",
-        },
-        opacity: 0,
-        ease: "power3.Out",
-        duration: 1,
-        stagger: 0.5
-      });
-    });
-  });
-
-}
-export function fadeUp() {
-  useGSAP(() => {
-    const content = document.querySelectorAll(".fadeup");
-    content.forEach((content) => {
-      gsap.from(content, {
-        scrollTrigger: {
-          trigger: content,
-          start: "top 90%",
-          end: "bottom 60%",
-
-        },
-        opacity: 0,
-        delay: 0.3,
-        y: 50,
-        ease: "power3.Out",
-        duration: 0.7,
-        stagger: 0.5
-      });
-    });
-  });
-}
-
-
 export function paraAnimWordpress() {
   useGSAP(() => {
     const paraAnimations = document.querySelectorAll(".para-anim");
@@ -250,7 +198,7 @@ export function paraAnimWordpress() {
         duration: 1.47,
         yPercent: 100,
         stagger: 0.07,
-        ease: primaryEase,
+        ease: "power3.out",
       });
     });
   });

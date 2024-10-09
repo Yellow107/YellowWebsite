@@ -3,8 +3,6 @@ import Image from "next/image";
 
 export default function Pagehero() {
   
-  // imageAnimationLeft();
-
   return (
     <>
       <section className="w-full h-full pt-[10%] flex items-center mobile:h-full mobile:pt-[30%] tablet:h-full  tablet:pt-[15%] bg-white " id="hero">
@@ -19,7 +17,7 @@ export default function Pagehero() {
               others.
             </p>
           </div>
-          <div className="w-[50vw] h-[40vw] relative mobile:w-[85vw] mobile:h-[120vw] image-animation-left-wrapper rounded-xl overflow-hidden fadeup">
+          <div className="w-[50vw] h-[40vw] relative mobile:w-[85vw] mobile:h-[120vw] rounded-xl overflow-hidden fadeup">
             <div>
               <Image src="/assets/images/contact/contact-head.webp" alt="contac-head-img" className="object-cover h-full w-full " fill priority={true}/>
             </div>

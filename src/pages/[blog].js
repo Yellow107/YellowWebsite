@@ -39,7 +39,6 @@ export default function Post({ post, relatedPosts }) {
   useEffect(() => {
     const handleSlugChange = () => {
       window.location.reload();  // This will force a full page reload
-      window.scrollTo(0, 0);
     };
 
     // Set up a listener to watch for slug changes

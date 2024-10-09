@@ -146,7 +146,7 @@ export default function values() {
                       Curiosity
                     </h4>
                     <p className="text-[1.2vw] w-full leading-[1.4]  mobile:text-[4vw] mobile:text-center tablet:text-[2vw]">
-                      Love for learning is a core value of Yellow. We are not intimidated by advancements in trends, AI and technology, we embrace it and we play and learn, and more importantly we share it with our team and clients.
+                      Love for learning is a core value of Yellow. We are not intimidated by advancements in trends, AI and technology, we embrace it and we play and learn, and more importantly, we share it with our team and clients.
                     </p>
                   </div>
                 </div>
@@ -172,7 +172,7 @@ export default function values() {
                       Team Work
                     </h4>
                     <p className="text-[1.2vw] w-full leading-[1.4] mobile:text-[4vw] mobile:text-center tablet:text-[2vw] ">
-                      We prioritise collaboration and helpfulness, internally and with clients and go the extra mile. Yellow was started out of passion and purpose over profit. (Although, we like profit too :))
+                      We prioritise collaboration and helpfulness, internally and with clients, and we like to go the extra mile. Yellow was started out of passion and purpose over profit - although, we like profit too. :)
                     </p>
                   </div>
                 </div>

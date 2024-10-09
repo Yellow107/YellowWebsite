@@ -1,13 +1,11 @@
 import Link from "next/link";
-import { useRef, useState } from "react";
-import { useGSAP } from "@gsap/react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap/dist/gsap";
-import { CustomEase } from "gsap/dist/CustomEase";
 import { usePathname } from 'next/navigation';
 
 const MenuLink = ({href, text, className=""}) => {
   return (
-    <Link href={href} className={`block w-fit ${className}`}>
+    <Link aria-hidden href={href} className={`block w-fit ${className}`}>
       <span className="link-line block w-fit">{text}</span>
     </Link>
   )
@@ -19,11 +17,7 @@ export default function Menu({ menuOpen }) {
   const [serviceOpen, setServiceOpen] = useState(false);
   const pathname = usePathname();
 
-  gsap.registerPlugin(CustomEase, useGSAP);
-
-  CustomEase.create("primary-ease", "0.62, 0.05, 0.01, 0.99");
-
-  useGSAP(() => {
+  useEffect(() => {
     const links = document.querySelectorAll(".link-anim");
     const socialLinks = document.querySelectorAll(".social-link");
 
@@ -37,18 +31,18 @@ export default function Menu({ menuOpen }) {
         })
         .from(links, {
           yPercent: 100,
-          duration: 1.30,
-          delay: -0.6,
-          ease: "primary-ease",
-          stagger: 0.07
+          duration: 1,
+          delay: -0.4,
+          ease: "power3.out",
+          stagger: 0.05
         })
         .from(socialLinks, {
           rotationZ: 5,
           yPercent: 100,
-          duration: 1.30,
-          delay: -1.2,
-          stagger: 0.1,
-          ease: "primary-ease",
+          duration: 1,
+          delay: -1,
+          stagger: 0.05,
+          ease: "power3.out",
         })
     } else {
       gsap.timeline()
@@ -68,10 +62,9 @@ export default function Menu({ menuOpen }) {
     if(globalThis.innerWidth<541&&serviceOpen==true){
       setServiceOpen(false);
     }
-
   }
 
-  useGSAP(() => {
+  useEffect(() => {
     const serviceLinks = document.querySelectorAll(".service-links li");
     if (serviceOpen) {
       gsap.to(serviceLinks, {

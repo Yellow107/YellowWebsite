@@ -4,8 +4,6 @@ import Section from "../Section";
 
 export default function Pagehero() {
 
-  // imageAnimationLeft();
-
   return (
     <>
       <Section id="hero">
@@ -32,9 +30,7 @@ export default function Pagehero() {
                     Great thinkers and <span className="font-bold">even better doers</span>. Huge fans of <span className="font-medium relative after:block after:h-[1px] after:bg-black after:w-full after:absolute after:bottom-[2px]">work-life balance.</span>{" "}Namers, strategists, designers, researchers, artists, partners, terrible but enthusiastic singers.
                   </p>
                 </div>
-
               </div>
-
               <div className="mobile:mb-[10vw]">
                 <div className="w-full flex items-end">
                   <Image src="/assets/images/gifs/Bart.gif" className="fadeup mobile:ml-[-3vw]" alt="We Are Image" width={100} height={100} />
@@ -53,10 +49,8 @@ export default function Pagehero() {
                 </div>
               </div>
             </div>
-            <div className="h-[41vw] w-[30vw] relative mobile:w-[85vw] mobile:h-[105vw] tablet:w-[80vw] tablet:h-[80vw] image-animation-left-wrapper rounded-xl fadeup">
-              <div className="h-full w-full">
-                <Image src="/assets/images/about/partners-image.webp" alt="about-hero" fill className="object-cover h-full w-full tablet:object-top" priority={true} quality={100} />
-              </div>
+            <div className="h-[41vw] w-[30vw] relative mobile:w-[85vw] rounded-xl mobile:h-[105vw] tablet:w-[80vw] tablet:h-[80vw] overflow-hidden shadow-xl fadeup">
+              <Image src="/assets/images/about/partners-image.webp" alt="about-hero" fill className="object-cover h-full w-full tablet:object-top" priority={true} quality={100} />
             </div>
           </div>
         </div>

@@ -25,7 +25,7 @@ const BrandsMarquee = () => {
           src="/assets/images/clients/texture.png"
         />
         <Image
-          className="object-cover w-full h-full"
+          className="object-cover w-full h-full mobile:scale-[1.1]"
           alt="client img"
           loading="lazy"
           src={src}
@@ -96,19 +96,18 @@ const BrandsMarquee = () => {
 
   return (
     <div className="relative w-screen overflow-hidden fadein">
-
-      <div ref={slider} className="relative w-[400%] whitespace-nowrap mobile:w-[500%]">
-        <div ref={firstText} className="w-full grid h-[18vw] grid-cols-20 items-center gap-[1.5vw] pr-[1.5vw] mobile:h-[22vw] mobile:gap-[2.5vw] mobile:pr-[2.5vw] tablet:h-[16vw]">
+      <div ref={slider} className="relative w-[400%] whitespace-nowrap mobile:w-[700%]">
+        <div ref={firstText} className="w-full grid h-[18vw] grid-cols-20 items-center gap-[1.5vw] pr-[1.5vw] mobile:h-[32vw] mobile:gap-[2.5vw] mobile:pr-[2.5vw] tablet:h-[16vw]">
           {Clients.map((client, index) => (
             <Card key={index} src={client} />
           ))}
         </div>
-        <div ref={secondText} className="absolute left-full top-0 w-full grid h-[18vw] grid-cols-20 items-center gap-[1.5vw] pr-[1.5vw] mobile:h-[22vw] mobile:gap-[2.5vw] mobile:pr-[2.5vw] tablet:h-[16vw]">
+        <div ref={secondText} className="absolute left-full top-0 w-full grid h-[18vw] grid-cols-20 items-center gap-[1.5vw] pr-[1.5vw] mobile:h-[32vw] mobile:gap-[2.5vw] mobile:pr-[2.5vw] tablet:h-[16vw]">
           {Clients.map((client, index) => (
             <Card key={index} src={client} />
           ))}
         </div>
-        <div ref={thirdText} className="absolute -left-full top-0 w-full grid h-[18vw] grid-cols-20 items-center gap-[1.5vw] pr-[1.5vw] mobile:h-[22vw] mobile:gap-[2.5vw] mobile:pr-[2.5vw] tablet:h-[16vw]">
+        <div ref={thirdText} className="absolute -left-full top-0 w-full grid h-[18vw] grid-cols-20 items-center gap-[1.5vw] pr-[1.5vw] mobile:h-[32vw] mobile:gap-[2.5vw] mobile:pr-[2.5vw] tablet:h-[16vw]">
           {Clients.map((client, index) => (
             <Card key={index} src={client} />
           ))}

@@ -1,10 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useRef, Suspense } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLenis } from "lenis/react";
 import { useRouter } from "next/router";
-import Menu from "./Menu";
 import SearchButton from "./SearchButton";
+import dynamic from "next/dynamic";
+
+const DynamicMenu = dynamic(() => import('./Menu'), {
+  ssr: false,
+})
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -151,9 +155,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <Suspense fallback={null}>
-        <Menu menuOpen={menuOpen} />
-      </Suspense>
+      <DynamicMenu menuOpen={menuOpen} />
     </>
   );
 };

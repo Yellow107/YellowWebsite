@@ -44,11 +44,11 @@ export default function servicesdetail({ recentWorks }) {
           <div className="container ">
             <h1
               data-para-anim
-              className="text-[5.8vw] w-[80%] uppercase font-display mb-[7vw] leading-[1.3] mobile:text-[12vw] tablet:w-[90%]  mobile:w-full tablet:text-[7vw] mobile:mb-[15vw]"
+              className="text-[5.8vw] w-[80%] uppercase font-display mb-[7vw] leading-[1.3] mobile:text-[12vw] tablet:w-[90%]  mobile:w-full tablet:text-[7vw] mobile:mb-[10vw]"
             >
-              Brand Naming
+              Naming
             </h1>
-            <div className="w-[90vw] h-[45vw] rounded-[15px] overflow-hidden relative fadeup mobile:w-[85vw] mobile:h-[100vw] tablet:w-[85vw]">
+            <div className="w-[90vw] h-[45vw] rounded-[15px] overflow-hidden relative fadeup mobile:w-full mobile:h-[50vw] tablet:w-full">
               <Image
                 quality={100}
                 src="/assets/images/service/naming/Brand-Naming-listing.webp"
@@ -140,7 +140,7 @@ export default function servicesdetail({ recentWorks }) {
                   it. Consumers face an overwhelming amount of options, making
                   it crucial that brands invest in a naming exercise that’s in
                   touch with the realities of the current market. By working
-                  with brand naming consultants at Yellow Branding, you get to
+                  with brand naming consultants at Yellow, you get to
                   access our collective experience and reap the benefits of how
                   much literature we consume! We’ll work with you to come up
                   with an end result that is memorable, has an X factor and
@@ -184,7 +184,7 @@ export default function servicesdetail({ recentWorks }) {
                   it. Consumers face an overwhelming amount of options, making
                   it crucial that brands invest in a naming exercise that’s in
                   touch with the realities of the current market. By working
-                  with brand naming consultants at Yellow Branding, you get to
+                  with brand naming consultants at Yellow, you get to
                   access our collective experience and reap the benefits of how
                   much literature we consume! We’ll work with you to come up
                   with an end result that is memorable, has an X factor and
@@ -225,7 +225,7 @@ export default function servicesdetail({ recentWorks }) {
                     At Yellow, you’ll get all the support you need. Looking to name a new business or a new vertical? Needing to breathe new life into a legacy brand in need of a serious revamp? Seeking to explore new territories or simply wanting to assess if your current brand name can stand the test of time? No matter where you are in your journey, get a standout brand name that sells with the help of our brand naming consultancy service.
                   </p>
                   <p data-para-anim className="text-[1.1vw] font-medium mobile:text-[4.5vw] mobile:font-normal tablet:text-[2vw]">
-                    We can also conduct trademark checks in your region, using a licensed tool Corsearch, that can save a significant amount of time and investment when registering your brand name.
+                    We can also conduct trademark checks in your region, using a licensed tool called Corsearch, that can save a significant amount of time and investment when registering your brand name.
                   </p>
                   <div className="fadeup mt-[1vw]">
                     <LinkButton

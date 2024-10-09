@@ -2,7 +2,7 @@
 import { formatDate } from "@/lib/datetime";
 import Section from "../Section"
 import styles from "@/styles/blogDetail.module.css"
-import { LinkedinShareButton, FacebookShareButton, TwitterShareButton} from 'next-share';
+import { LinkedinShareButton, FacebookShareButton, TwitterShareButton } from 'next-share';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -10,40 +10,26 @@ import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Content = (({date, content, slug, readingTime}) => {
+const Content = (({ date, content, slug, readingTime }) => {
 
     const sectionPin = useRef(null);
     const sectionContent = useRef(null);
     const progressBar = useRef(null);
 
-    // if (globalThis.innerWidth > 1024) {
-    //     useGSAP(() => {
-    //         ScrollTrigger.create({
-    //           trigger: sectionPin.current,
-    //           start: "top 10%",
-    //           endTrigger: sectionContent.current,
-    //           end: "bottom 70%",
-    //           invalidateOnRefresh: true,
-    //           pin: sectionPin.current,
-    //         });
-    //       });
-    //   }
-
-      useGSAP(() => {
+    useGSAP(() => {
         gsap.fromTo(progressBar.current, {
             scaleX: 0,
         }, {
-            scaleX: 1,
-            duration: 1,
-            ease: "none",
             scrollTrigger: {
                 trigger: sectionContent.current,
                 start: "top top",
                 end: "bottom bottom",
                 scrub: 1,
             },
+            scaleX: 1,
+            duration: 1,
         })
-      });
+    });
 
     return (
         <Section id="second-section" className=" bg-black">
@@ -63,7 +49,7 @@ const Content = (({date, content, slug, readingTime}) => {
                                 <img className="border border-body rounded-full hover:border-white hover:bg-white hover:invert transition-all w-[2.8vw] h-[2.8vw] mobile:w-[10vw] mobile:h-[10vw] tablet:w-[7vw] tablet:h-[7vw]" src="/assets/icons/fb.svg" alt="Facebook Icon" title='Facebook Icon' />
                             </FacebookShareButton>
                             <LinkedinShareButton url={`https://welcometoyellow.com//${slug}`} quote="Read more articles like this on our website - https://welcometoyellow.com/blog" hashtag="#welcometoyellow">
-                                <img className="border border-body rounded-full hover:border-white hover:bg-white hover:invert transition-all w-[2.8vw] h-[2.8vw] mobile:w-[10vw] mobile:h-[10vw] tablet:w-[7vw] tablet:h-[7vw]" src="/assets/icons/linkedin.svg" alt="LinkedIn Icon" title='LinkedIn Icon'/>
+                                <img className="border border-body rounded-full hover:border-white hover:bg-white hover:invert transition-all w-[2.8vw] h-[2.8vw] mobile:w-[10vw] mobile:h-[10vw] tablet:w-[7vw] tablet:h-[7vw]" src="/assets/icons/linkedin.svg" alt="LinkedIn Icon" title='LinkedIn Icon' />
                             </LinkedinShareButton>
                             <TwitterShareButton url={`https://welcometoyellow.com//${slug}`} quote="Read more articles like this on our website - https://welcometoyellow.com/blog" hashtag="#welcometoyellow">
                                 <img className="border border-body rounded-full hover:border-white hover:bg-white hover:invert transition-all w-[2.8vw] h-[2.8vw] mobile:w-[10vw] mobile:h-[10vw] tablet:w-[7vw] tablet:h-[7vw]" src="/assets/icons/x.svg" alt="Twitter Icon" title='Twitter Icon' />

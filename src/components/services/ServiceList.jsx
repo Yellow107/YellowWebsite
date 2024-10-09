@@ -19,8 +19,8 @@ const services = [
   },
   {
     id: 3,
-    imageSrc: "/assets/images/service/naming/brand-naming-listing.webp",
-    title: "Brand Naming",
+    imageSrc: "/assets/images/service/naming/Brand-Naming-listing.webp",
+    title: "Naming",
     link:"/what-we-do/naming",
     description:"<p data-para-anim>From diving into the meaning of obscure words in different languages to stories, lyrics, poetry, art, classical and historical texts to Gen Z colloquialisms, we explore every single angle when it comes to naming your brand. This is why each name crafted by our team has such a great story behind it. From brand and product names to business names to even street naming within communities, we pride ourselves on our extensive experience. Our thorough process includes pre-screening for identical trademarks, linguistic and domain checks, descriptor and TLD recommendations to ensure the names we present are yours to fall in love with.</p><br><p data-para-anim>Some of our greatest hits include <a href='/our-work/cafu-branding-and-digital' class='link-style'>CAFU</a>, <a href='/our-work/olioli-branding' class='link-style'>OliOli</a>, <a href='/our-work/pan-home-case-study' class='link-style'>Pan Home</a>, <a href='/our-work/numu-early-childhood-centre-brand-case-study' class='link-style'>Numu</a> and Irth.</p>"
   },
@@ -50,7 +50,7 @@ export default function ServiceList() {
             {services.map((service, index) => (
               <div key={service.id} className="grid grid-cols-7 h-full gap-x-[3vw] gap-y-[7vw] mobile:flex mobile:flex-col tablet:flex-col tablet:flex tablet:gap-y-[10vw]">
                 <div className="col-span-4 w-full h-full">
-                  <div className={`w-[50vw] h-[33vw] fadeup rounded-xl overflow-hidden relative mobile:w-full mobile:h-[140vw] tablet:w-full image-animation-left-wrapper tablet:h-[45vw] ${index % 2 === 0 ? '' : 'mobile:mt-[5vw]'}`}>
+                  <div className={`w-[50vw] h-[33vw] fadeup rounded-xl overflow-hidden relative mobile:w-full mobile:h-[140vw] tablet:w-full tablet:h-[45vw] ${index % 2 === 0 ? '' : 'mobile:mt-[5vw]'}`}>
                       <Image
                         loading="lazy"
                         quality={100}

@@ -3,25 +3,25 @@ import LinkButton from "../Button/LinkButton";
 const essentialsData = [
   {
     id: 1,
-    title: "Easily amused",
+    title: "Easily Amused",
     content:
       "Amongst all the deadlines and drama, how will it ever be fun if someone isn't bursting into song or being given gold stars or telling stories that sound wildly made up or sharing how they're a strong, independent woman at all of 23? As the cliche goes, we're incredibly serious about the work but a lot less so about ourselves.",
   },
   {
     id: 2,
-    title: "Full of curiosity, wonder and passion",
+    title: "Full of Curiosity, Wonder and Passion",
     content:
       '<span class="italic mb-[1vw]">"Every child is an artist. The problem is how to remain an artist once we grow up" - <span class="not-italic">Picasso</span></span> <br> We look for those who have managed to hold on to their inner child and the artist within. The ones who want to keep learning, not just about their craft, but about the world around them, about people, trends, fashion, cuisines. They&apos;re discoverers, curators and storytellers. And they bring all of this into the work they do, every day, sprinkling each project with their own magic.',
   },
   {
     id: 3,
-    title: "Ready to dive in",
+    title: "Ready to Dive In",
     content:
       "The best ones of us can't stop coming up with new ideas and then executing them flawlessly, are unafraid of jumping in, scraping their knees and getting it occasionally wrong, but always giving it their all. We're still small and growing, so we love that each member of our team is always willing to help out and take ownership.",
   },
   {
     id: 4,
-    title: "Always open-minded",
+    title: "Always Open-Minded",
     content:
       "We pride ourselves on being a safe space for different types of people - the geeks, the introverts, the main characters, the workaholics, the fitness enthusiasts, the future influencers and the future housewives of beverly hills (okay, maybe not). We're a very eclectic mix that accepts, encourages and celebrates each others' quirks, because that diversity of personalities and thoughts makes what we do all the more creative.",
   },
@@ -80,7 +80,7 @@ export default function Essentials() {
                 >{`0${item.id}.`}</span>
                 <h4
                   data-para-anim
-                  className="text-[2vw] capitalize font-display mb-[1.5vw] mobile:text-[7vw] tablet:text-[3vw]"
+                  className="text-[2vw] font-display mb-[1.5vw] mobile:text-[7vw] tablet:text-[3vw]"
                 >
                   {item.title}
                 </h4>

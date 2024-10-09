@@ -21,11 +21,7 @@ const SearchButton = ({ isInverted, menuOpen }) => {
         maxResults: 10,
     });
     const searchIsLoaded = state === SEARCH_STATE_LOADED;
-    // When the search visibility changes, we want to add an event listener that allows us to
-    // detect when someone clicks outside of the search box, allowing us to close the results
-    // when focus is drawn away from search
 
-    // Group results by content type
     const groupedResults = results.reduce((acc, result) => {
         const type = result.contentType;
         if (!acc[type]) {
@@ -36,16 +32,13 @@ const SearchButton = ({ isInverted, menuOpen }) => {
     }, {});
 
     useEffect(() => {
-        // If we don't have a query, don't need to bother adding an event listener
-        // but run the cleanup in case the previous state instance exists
         if (searchVisibility === SEARCH_HIDDEN) {
             removeDocumentOnClick();
             return;
         }
         addDocumentOnClick();
         addResultsRoving();
-        // When the search box opens up, additionall find the search input and focus
-        // on the element so someone can start typing right away
+        
         const searchInput = Array.from(formRef.current.elements).find((input) => input.type === 'search');
         searchInput.focus();
         return () => {
@@ -55,52 +48,38 @@ const SearchButton = ({ isInverted, menuOpen }) => {
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchVisibility]);
-    /**
-     * addDocumentOnClick
-     */
+    
     function addDocumentOnClick() {
         document.body.addEventListener('click', handleOnDocumentClick, true);
     }
-    /**
-     * removeDocumentOnClick
-     */
+
     function removeDocumentOnClick() {
         document.body.removeEventListener('click', handleOnDocumentClick, true);
     }
-    /**
-     * handleOnDocumentClick
-     */
+   
     function handleOnDocumentClick(e) {
         if (!e.composedPath().includes(formRef.current)) {
             setSearchVisibility(SEARCH_HIDDEN);
             clearSearch();
         }
     }
-    /**
-     * handleOnSearch
-     */
+   
     function handleOnSearch({ currentTarget }) {
         search({
             query: currentTarget.value,
         });
     }
-    /**
-     * handleOnToggleSearch
-     */
+    
     function handleOnToggleSearch() {
         setSearchVisibility(SEARCH_VISIBLE);
         document.querySelector(".search-wrapper").classList.add("open");
         lenis.stop();
     }
-    /**
-     * addResultsRoving
-     */
+    
     function addResultsRoving() {
         document.body.addEventListener('keydown', handleResultsRoving);
     }
-    /**
-     * removeResultsRoving
-     */
+    
     function removeResultsRoving() {
         document.body.removeEventListener('keydown', handleResultsRoving);
     }
@@ -108,9 +87,6 @@ const SearchButton = ({ isInverted, menuOpen }) => {
         document.querySelector(".search-wrapper").classList.remove("open");
         lenis.start();
     }
-    /**
-     * handleResultsRoving
-     */
 
     function handleResultsRoving(e) {
         const focusElement = document.activeElement;
@@ -135,12 +111,6 @@ const SearchButton = ({ isInverted, menuOpen }) => {
             }
         }
     }
-
-    /**
-     * escFunction
-     */
-
-    // pressing esc while search is focused will close it
 
     const escFunction = useCallback((event) => {
         if (event.keyCode === 27) {

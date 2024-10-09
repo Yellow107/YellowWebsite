@@ -36,7 +36,7 @@ export default function servicesdetail({ recentWorks }) {
       title: "Brand Positioning",
       paragraphs: [
         "Knowing what your brand stands for and who it serves lays the foundation of what your brand looks like, speaks like and feels like to your customers.",
-        "Building a brand strategy in Dubai requires a discovery process that uses a big-thinking, growth-driven approach. The brand audit is an opportunity to not just take an honest look at your brand’s direction, but more importantly to challenge it. Yellow has the framework to allow you to accomplish this process with precision and expertise.",
+        "Building a brand strategy in Dubai requires a discovery process that uses a big-thinking, growth-driven approach. The brand audit is an opportunity to not just take an honest look at your brand’s direction, but more importantly, to challenge it. Yellow has the framework to allow you to accomplish this process with precision and expertise.",
         "From startups to legacy brands to global brands, we have worked on brand strategy and positioning that have helped these businesses reach their objectives.",
       ],
       image: "/assets/images/service/brand-strategy/Brand-Positioning.png",
@@ -74,11 +74,11 @@ export default function servicesdetail({ recentWorks }) {
           <div className="container ">
             <h1
               data-para-anim
-              className="text-[5.8vw] w-[80%] uppercase font-display mb-[7vw] leading-[1.3] mobile:text-[12vw] tablet:w-[90%]  mobile:w-full tablet:text-[7vw] mobile:mb-[15vw]"
+              className="text-[5.8vw] w-[80%] uppercase font-display mb-[7vw] leading-[1.3] mobile:text-[12vw] tablet:w-[90%]  mobile:w-full tablet:text-[7vw] mobile:mb-[10vw]"
             >
               Brand Strategy
             </h1>
-            <div className="w-[90vw] h-[45vw] rounded-[15px] overflow-hidden relative fadeup mobile:w-[85vw] mobile:h-[100vw] tablet:w-[85vw]">
+            <div className="w-[90vw] h-[45vw] rounded-[15px] overflow-hidden relative fadeup mobile:w-full mobile:h-[45vw] tablet:w-[85vw]">
               <Image
                 quality={100}
                 src="/assets/images/service/brand-strategy/brand-strategy-listing.png"
@@ -143,8 +143,8 @@ export default function servicesdetail({ recentWorks }) {
                   After understanding (a lot) about your business, your sector
                   and your customers, we distil our findings to map out the best
                   path to build or elevate your brand to its full potential. We
-                  help define the brand archetype, your why for being (Think
-                  Simon sinek) and what your brand essence is. Beyond this, we
+                  help define the brand archetype, your why for being (think Simon Sinek) 
+                  and what your brand essence is. Beyond this, we
                   plan tactics and a roadmap to implement your strategy
                 </p>
               </div>
@@ -170,6 +170,7 @@ export default function servicesdetail({ recentWorks }) {
               <div className="col-span-3 tablet:hidden">
                 <Line className="my-[1.8vw] " />
               </div>
+
               <div className="col-span-1 mobile:hidden tablet:hidden">
                 <p data-para-anim className="text-[1.2vw] font-medium ">
                   Where we start. We start by conducting an in-depth workshop to
@@ -181,19 +182,20 @@ export default function servicesdetail({ recentWorks }) {
                   industry.
                 </p>
               </div>
+
               <div className="col-span-1 col-start-2 mobile:hidden tablet:hidden">
                 <p data-para-anim className="text-[1.2vw] font-medium ">
-                After understanding (a lot) about your business, your sector
+                  After understanding (a lot) about your business, your sector
                   and your customers, we distil our findings to map out the best
                   path to build or elevate your brand to its full potential. We
-                  help define the brand archetype, your why for being (Think
-                  Simon sinek) and what your brand essence is. Beyond this, we
+                  help define the brand archetype, your why for being (think Simon Sinek) and what your brand essence is. Beyond this, we
                   plan tactics and a roadmap to implement your strategy.
                 </p>
               </div>
+
               <div className="col-span-1 col-start-3 mobile:hidden tablet:hidden">
                 <p data-para-anim className="text-[1.2vw] font-medium ">
-                Brand strategy development is equal parts creative and
+                  Brand strategy development is equal parts creative and
                   complicated. The beauty of working with Yellow is you get to
                   work with a team that feels invested in your success.
                    <br/>
@@ -262,9 +264,7 @@ export default function servicesdetail({ recentWorks }) {
         <RelatedWork
           works={recentWorks}
           heading={"Our Work"}
-          subheading={
-            "Let's find your onlyness.Just like we have for some incredible brands."
-          }
+          subheading={"Let's find your onlyness. Just like we have for some incredible brands."}
         />
       </Layout>
     </>

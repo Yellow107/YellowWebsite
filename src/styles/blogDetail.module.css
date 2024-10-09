@@ -28,6 +28,15 @@
     width: 110%;
 }
 
+.blogContent a{
+    color: #006aff;
+    text-decoration: none;
+    transition: all .2s;
+}
+.blogContent a:hover {
+    color: #0af;
+}
+
 .anchor {
     float: left;
     margin-left: -30px;
@@ -108,6 +117,10 @@
     letter-spacing: 0.5px;
     margin: 2.5% 0;
 }
+.blogContent ul, .blogContent ol {
+    margin: 2.5% 0;
+}
+
 .blogContent.mb-0{
     margin-bottom: 0;
 }
@@ -116,7 +129,7 @@
     margin-top: 0;
 }
 
-.blogContent ul,.blogContent ol{
+.blogContent ul, .blogContent ol{
     margin-left: 1.5vw;
 }
 
