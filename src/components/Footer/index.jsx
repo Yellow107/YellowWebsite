@@ -229,7 +229,7 @@ const Footer = () => {
                             </div>
                         </div>
 
-                        <div className="w-full flex items-center justify-between relative mobile:mt-[7vw]">
+                        <div className="w-full flex items-center justify-between relative mobile:mt-[7vw] mobile:flex-col mobile:gap-4">
                             <div>
                                 <p className="font-medium text-[1.15vw] capitalize mobile:text-[3.5vw] tablet:text-[2.5vw]">© 2024 | Yellow. All rights reserved.</p>
                             </div>
@@ -238,8 +238,8 @@ const Footer = () => {
                                 <span className="relative leading-[1.5] after:absolute after:block after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-current after:transition-all after:duration-500 after:ease-out group-hover:after:scale-x-0">Send me back up.</span>
                             </button>
 
-                            <div className="text-[1.15vw] font-medium mobile:text-[3vw] tablet:text-[2vw]">
-                                <p className="flex items-center gap-[5px]">By:
+                            <div className="text-[1.15vw] font-medium mobile:text-[3.5vw] tablet:text-[2vw]">
+                                <p className="flex items-center gap-[5px]">Developed By:
                                     <Link
                                         href="https://weareenigma.com" className="" target="_blank">
                                         <span
