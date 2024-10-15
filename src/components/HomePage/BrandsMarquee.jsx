@@ -52,11 +52,11 @@ const BrandsMarquee = () => {
     "/assets/images/clients/logo/ovasave.svg",
     "/assets/images/clients/logo/fine-arts.svg",
     "/assets/images/clients/logo/sufra.svg",
-    "/assets/images/clients/logo/mavroc.svg",
+    "/assets/images/clients/logo/maveroc.svg",
     "/assets/images/clients/logo/clement.svg",
     "/assets/images/clients/logo/beema.svg",
     "/assets/images/clients/logo/numu.svg",
-    "/assets/images/clients/logo/sufra.svg",
+    "/assets/images/clients/logo/ned.svg",
     "/assets/images/clients/logo/luma.svg",
   ]
 

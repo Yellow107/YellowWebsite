@@ -210,13 +210,11 @@ const Portfolio = () => {
           className="flex h-screen w-[300%] mobile:h-auto whitespace-nowrap mobile:flex-col mobile:w-full mobile:gap-[10vw] tablet:flex-col tablet:gap-[5vw] tablet:w-full tablet:justify-center tablet:items-center tablet:h-auto"
         >
           <div className="h-screen w-[90vw] relative pannel overflow-hidden p-[5vw] mobile:h-[50vh] mobile:mx-auto tablet:rounded-xl mobile:rounded-xl tablet:h-[40vh]" data-magnetic-target data-magnetic-strength="200">
-            <Image
-              quality={100}
+            <img
               src="/assets/images/homepage/mitsubishi.webp"
               alt="Mitsubishi Image"
-              fill
               loading="lazy"
-              className="brightness-75 object-cover w-full h-full"
+              className="brightness-75 object-cover h-full w-full absolute left-0 right-0 top-0 bottom-0"
             />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 z-[1] -translate-y-1/2">
               <RoundButton href="/our-work/mitsubishi-motors" text="View More" className="magnetic-inner pointer-events-auto tablet:w-[10vw] tablet:h-[10vw] tablet:text-[1.5vw] tablet:px-[2vw]" />
@@ -243,13 +241,11 @@ const Portfolio = () => {
           </div>
 
           <div className="h-screen w-[90vw] relative pannel overflow-hidden p-[5vw] mobile:h-[50vh] mobile:mx-auto tablet:rounded-xl mobile:rounded-xl tablet:h-[40vh]" data-magnetic-target data-magnetic-strength="200">
-            <Image
-              quality={100}
+            <img
               src="/assets/images/homepage/barakat.webp"
               alt="Barakat Image"
-              fill
               loading="lazy"
-              className="brightness-75 object-cover w-full h-full"
+              className="brightness-75 object-cover h-full w-full absolute left-0 right-0 top-0 bottom-0"
             />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 z-[1] -translate-y-1/2">
               <RoundButton href="/our-work/barakat" text="View More" className="magnetic-inner pointer-events-auto tablet:w-[10vw] tablet:h-[10vw] tablet:text-[1.5vw] tablet:px-[2vw]" />
@@ -276,13 +272,11 @@ const Portfolio = () => {
           </div>
 
           <div className="h-screen w-[90vw] relative pannel overflow-hidden p-[5vw] mobile:h-[50vh] mobile:mx-auto tablet:rounded-xl mobile:rounded-xl tablet:h-[40vh]" data-magnetic-target data-magnetic-strength="200">
-            <Image
-              quality={100}
+            <img
               src="/assets/images/homepage/cafu.webp"
               alt="Cafu Image"
-              fill
               loading="lazy"
-              className="brightness-75 object-cover w-full h-full"
+              className="brightness-75 object-cover h-full w-full absolute left-0 right-0 top-0 bottom-0"
             />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 z-[1] -translate-y-1/2">
               <RoundButton href="/our-work/cafu-branding-and-digital" text="View More" className="magnetic-inner pointer-events-auto tablet:w-[10vw] tablet:h-[10vw] tablet:text-[1.5vw] tablet:px-[2vw]" />
