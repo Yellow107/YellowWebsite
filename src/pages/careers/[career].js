@@ -77,7 +77,7 @@ export default function Work({ job, jobsList }) {
           }
         ]}
       />
-      <JobpostingJsonLd job={job} />
+      {/* <JobpostingJsonLd job={job} /> */}
       <Layout>
         <Pagehero
           title={title}

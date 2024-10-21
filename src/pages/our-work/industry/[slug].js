@@ -37,10 +37,11 @@ const Category = ({ portfolioIndustry, portfolio, portfolioIndustries }) => {
 
   const metadata = {
     title: `${portfolioIndustry.name} Portfolio Archive | Yellow`,
-    description: `Dive into our case studies of our latest projects for ${portfolioIndustry.name} category.`,
-    slug: `our-work/category/${portfolioIndustry.slug}`,
+    description: `Dive into our case studies of our latest projects for ${portfolioIndustry.name} industry.`,
+    img: 'home.png',
+    slug: `our-work/industry/${portfolioIndustry.slug}`,
   };
-
+ 
   return (
     <>
       <MetaData metadata={metadata} />

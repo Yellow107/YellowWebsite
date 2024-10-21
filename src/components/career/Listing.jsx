@@ -18,7 +18,7 @@ export default function Listing({jobs}) {
           <div className='w-full h-full flex flex-col gap-y-[2vw] mobile:gap-y-[4vw] tablet:gap-y-[3vw]'>
             {jobs.jobs.map((job) => (
               <div key={job.slug} className='fadeup'>
-                <Link href={jobPathBySlug(job.slug)} className='w-full grid grid-cols-4 h-[10vw] bg-transparent border-[1px] group border-white text-white rounded-[15px] py-[2vw] px-[3vw] justify-between items-center hover:bg-white hover:text-black hover:drop-shadow-2xl hover:shadow-xl transition-all ease duration-500 mobile:h-[20vw] mobile:flex tablet:h-[15vw] '>
+                <Link href="/careers/career-detail" className='w-full grid grid-cols-4 h-[10vw] bg-transparent border-[1px] group border-white text-white rounded-[15px] py-[2vw] px-[3vw] justify-between items-center hover:bg-white hover:text-black hover:drop-shadow-2xl hover:shadow-xl transition-all ease duration-500 mobile:h-[20vw] mobile:flex tablet:h-[15vw] '>
                   <h3 data-para-anim className='col-start-1 text-[1.9vw] font-medium mobile:text-[4.5vw] tablet:text-[2.5vw] '>{job.title}</h3>
                   <p data-para-anim className='col-start-2 text-[1.6vw] text-center mobile:hidden tablet:text-[2.5vw]'>{job.jobFields.location}</p>
                   <p data-para-anim className='col-start-3 text-[1.6vw] text-center mobile:hidden tablet:text-[2.5vw]'>{job.jobFields.jobType}</p>

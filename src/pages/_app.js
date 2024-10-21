@@ -7,6 +7,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { SearchProvider } from "@/hooks/use-search";
 
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
+
 export default function App({ Component, pageProps = {}, }) {
 
   useEffect(() => {
@@ -21,44 +23,44 @@ export default function App({ Component, pageProps = {}, }) {
     };
   }, []);
 
-  // Load Google Tag Manager and Google Analytics based on user interaction
-  useEffect(() => {
-    const loadScripts = () => {
-      // Load Google Tag Manager
-      const gtmScript = document.createElement('script');
-      gtmScript.src = `https://www.googletagmanager.com/gtm.js?id=GTM-W99KBPB`;
-      gtmScript.async = true;
-      document.body.appendChild(gtmScript);
+  // // Load Google Tag Manager and Google Analytics based on user interaction
+  // useEffect(() => {
+  //   const loadScripts = () => {
+  //     // Load Google Tag Manager
+  //     const gtmScript = document.createElement('script');
+  //     gtmScript.src = `https://www.googletagmanager.com/gtm.js?id=GTM-W99KBPB`;
+  //     gtmScript.async = true;
+  //     document.body.appendChild(gtmScript);
 
-      // Load Google Analytics
-      const gaScript = document.createElement('script');
-      gaScript.src = `https://www.googletagmanager.com/gtag/js?id=G-CSXSBEQKTY`;
-      gaScript.async = true;
-      document.body.appendChild(gaScript);
+  //     // Load Google Analytics
+  //     const gaScript = document.createElement('script');
+  //     gaScript.src = `https://www.googletagmanager.com/gtag/js?id=G-CSXSBEQKTY`;
+  //     gaScript.async = true;
+  //     document.body.appendChild(gaScript);
 
-      gaScript.onload = () => {
-        window.dataLayer = window.dataLayer || [];
-        // eslint-disable-next-line no-undef
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-CSXSBEQKTY');
-      };
+  //     gaScript.onload = () => {
+  //       window.dataLayer = window.dataLayer || [];
+  //       // eslint-disable-next-line no-undef
+  //       function gtag() { dataLayer.push(arguments); }
+  //       gtag('js', new Date());
+  //       gtag('config', 'G-CSXSBEQKTY');
+  //     };
 
-      // Remove event listeners after the scripts are loaded
-      window.removeEventListener('scroll', loadScripts);
-      window.removeEventListener('click', loadScripts);
-    };
+  //     // Remove event listeners after the scripts are loaded
+  //     window.removeEventListener('scroll', loadScripts);
+  //     window.removeEventListener('click', loadScripts);
+  //   };
 
-    // Add event listeners for scroll and click to load Google Tag Manager and Google Analytics
-    window.addEventListener('scroll', loadScripts);
-    window.addEventListener('click', loadScripts);
+  //   // Add event listeners for scroll and click to load Google Tag Manager and Google Analytics
+  //   window.addEventListener('scroll', loadScripts);
+  //   window.addEventListener('click', loadScripts);
 
-    // Clean up event listeners if the component unmounts
-    return () => {
-      window.removeEventListener('scroll', loadScripts);
-      window.removeEventListener('click', loadScripts);
-    };
-  }, []);
+  //   // Clean up event listeners if the component unmounts
+  //   return () => {
+  //     window.removeEventListener('scroll', loadScripts);
+  //     window.removeEventListener('click', loadScripts);
+  //   };
+  // }, []);
 
   return (
     <>
@@ -68,7 +70,11 @@ export default function App({ Component, pageProps = {}, }) {
         additionalMetaTags={[
           {
             name: 'viewport',
-            content: 'width=device-width, initial-scale=1.0, maximum-scale=5.0',
+            content: 'width=device-width, initial-scale=1.0, maximum-scale=3.0',
+          },
+          {
+            name: 'google-site-verification',
+            content: 'YpkX5Bmr_5_6VKgKXJm-yxvKpnHKzd_tppgvKB7FBnk',
           },
         ]}
         additionalLinkTags={[
@@ -142,6 +148,10 @@ export default function App({ Component, pageProps = {}, }) {
 
       <SpeedInsights />
       <Analytics />
+
+      <GoogleTagManager gtmId="GTM-W99KBPB" />
+      <GoogleAnalytics gaId="G-CSXSBEQKTY"/>
+
     </>
   );
 }

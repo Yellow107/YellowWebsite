@@ -1,5 +1,5 @@
 // const path = require('path');
-const { getSitemapData, generateSitemap, generateRobotsTxt } = require('./util');
+const { getSitemapData, generateSitemap } = require('./util');
 
 const WebpackPluginCompiler = require('./plugin-compiler');
 
@@ -12,7 +12,6 @@ module.exports = function sitemap(nextConfig = {}) {
     outputName: outputName || 'sitemap.xml',
     getData: getSitemapData,
     generate: generateSitemap,
-    postcreate: generateRobotsTxt,
   };
 
   const { WORDPRESS_GRAPHQL_ENDPOINT } = env;

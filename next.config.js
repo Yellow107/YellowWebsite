@@ -13,10 +13,6 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'wordpress-156292-4703703.cloudwaysapps.com',
-      },
-      {
-        protocol: 'https',
         hostname: 'wordpress.welcometoyellow.com',
       }
     ],
@@ -24,33 +20,53 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/homepage',
-        destination: '/',
+        source: '/brand-communication-agency-post-pandemic',
+        destination: '/4-truths-to-know-about-brand-communication-in-a-post-pandemic-world',
         permanent: true,
       },
       {
-        source: '/brand-strategy',
-        destination: '/what-we-do/brand-strategy',
+        source: '/our-work/category/childrens-experiences',
+        destination: '/our-work/industry/childrens-experiences',
         permanent: true,
       },
       {
-        source: '/brand-identity',
-        destination: '/what-we-do/brand-identity',
+        source: '/our-work/category/fmcg',
+        destination: '/our-work/industry/fmcg',
         permanent: true,
       },
       {
-        source: '/brand-naming',
-        destination: '/what-we-do/naming',
+        source: '/our-work/category/healthcare',
+        destination: '/our-work/industry/healthcare',
         permanent: true,
       },
       {
-        source: '/communication',
-        destination: '/what-we-do/communication',
+        source: '/our-work/category/hospitality',
+        destination: '/our-work/industry/hospitality',
         permanent: true,
       },
       {
-        source: '/digital',
-        destination: '/what-we-do/digital',
+        source: '/our-work/category/luxury',
+        destination: '/our-work/industry/luxury',
+        permanent: true,
+      },
+      {
+        source: '/our-work/category/retail',
+        destination: '/our-work/industry/retail',
+        permanent: true,
+      },
+      {
+        source: '/blog/brand-image-of-santa-claus',
+        destination: '/brand-image-of-santa-claus',
+        permanent: true,
+      },
+      {
+        source: '/blog/dubai-design-week-2018',
+        destination: '/dubai-design-week-2018',
+        permanent: true,
+      },
+      {
+        source: '/blog/when-rebranding-works-it-works',
+        destination: '/when-rebranding-works-it-works',
         permanent: true,
       },
     ]
