@@ -38,7 +38,7 @@ const CareerDetails = ({
         <Container style={container}>
           <Img
             src={
-              "https://yellow-v2.vercel.app/_next/image?url=%2Flogo-black.png&w=256&q=75"
+              "https://welcometoyellow.com/logo-black.png"
             }
             width="140"
             height="50"

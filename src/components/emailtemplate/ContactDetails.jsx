@@ -8,12 +8,12 @@ const ContactDetails = ({ userName, userEmail, userNumber, userDetail, userServi
     <Html>
       <Head />
       <Preview>
-        Someone just filled Contact Details on Enigma Website.
+        Someone just filled Contact Details on Yellow Website.
       </Preview>
       <Body style={main}>
         <Container style={container}>
           <Img
-            src={"https://yellow-v2.vercel.app/_next/image?url=%2Flogo-black.png&w=256&q=75"}
+            src={"https://welcometoyellow.com/logo-black.png"}
             width="140"
             height="50"
             alt="Logo"
