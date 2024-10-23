@@ -69,10 +69,6 @@ const CareerDetails = ({
               <Text style={paragraph}>{userNumber}</Text>
             </Section>
             <Section style={querySection}>
-              <Heading style={h1}>Phone:</Heading>
-              <Text style={paragraph}>{userNumber}</Text>
-            </Section>
-            <Section style={querySection}>
               <Heading style={h1}>Your website / blog / Instagram / Facebook (basically, how can we stalk you?) :</Heading>
               <Text style={paragraph}>{userSocial}</Text>
             </Section>
