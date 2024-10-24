@@ -21,87 +21,6 @@ const handleScroll = () => {
 
 const Footer = () => {
   const footerContainer = useRef(null);
-  const observerRef = useRef(null);
-
-//   useGSAP(() => {
-//     if (footerContainer.current) {
-//       const links = footerContainer.current.querySelectorAll(".footer-social");
-//       links.forEach((link) => SplitInChar(link));
-//     }
-
-//     const tl = gsap.timeline({
-//       scrollTrigger: {
-//         trigger: ".footer-top",
-//         start: "bottom bottom",
-//         end: "bottom 50%",
-//         scrub: 0.25,
-//         invalidateOnRefresh: true,
-//       },
-//     });
-
-//     if (typeof window !== "undefined" && !/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
-//       if (globalThis.innerWidth > 1024) {
-//         tl.to(".footer-top", {
-//           borderBottomRightRadius: "2vw",
-//           borderBottomLeftRadius: "2vw",
-//           duration: 1,
-//           delay: 0,
-//         }).to(".container", {
-//           duration: 1,
-//           delay: -1,
-//           width: "95%",
-//           paddingLeft: "2.5%",
-//           paddingRight: "2.5%",
-//         });
-//       } else {
-//         tl.to(".footer-top", {
-//           borderBottomRightRadius: "4vw",
-//           borderBottomLeftRadius: "4vw",
-//           duration: 1,
-//           delay: 0,
-//         }).to(".container", {
-//           duration: 1,
-//           delay: -1,
-//           width: "93%",
-//           paddingLeft: "3.5%",
-//           paddingRight: "3.5%",
-//         });
-//       }
-//       tl.fromTo(
-//         ".footer-bottom",
-//         {
-//           opacity: 0,
-//         },
-//         {
-//           opacity: 1,
-//           duration: 0.8,
-//           delay: -0.5,
-//         }
-//       );
-//     }
-//   });
-
-//   useGSAP(() => {
-//     const observeHeightChange = () => {
-//       if (observerRef.current) {
-//         observerRef.current.disconnect();
-//       }
-//       observerRef.current = new ResizeObserver((entries) => {
-//         for (let entry of entries) {
-//           ScrollTrigger.refresh();
-//         }
-//       });
-//       observerRef.current.observe(document.body);
-//     };
-
-//     observeHeightChange();
-
-//     return () => {
-//       if (observerRef.current) {
-//         observerRef.current.disconnect();
-//       }
-//     };
-//   });
 
     return (
         <footer id="footer" className="footer bg-black">
@@ -238,7 +157,7 @@ const Footer = () => {
                                 <span className="relative leading-[1.5] after:absolute after:block after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-current after:transition-all after:duration-500 after:ease-out group-hover:after:scale-x-0">Send me back up.</span>
                             </button>
 
-                            <div className="text-[1.15vw] font-medium mobile:text-[3.5vw] tablet:text-[2vw] mr-[2vw] mobile:mr-0">
+                            <div className="text-[1.15vw] font-medium mobile:text-[3.5vw] tablet:text-[2vw] mr-[3vw] mobile:mr-0">
                                 <p className="flex items-center gap-[5px]">Developed By:
                                     <Link
                                         href="https://weareenigma.com" className="" target="_blank">
