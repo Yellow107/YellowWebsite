@@ -1,13 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("./fonts.css");
-@import url("./button.css");
-@import url("./hamburger.css");
 
 :root {
   --primary-color: #111111;
   --animation-primary: 0.735s cubic-bezier(0.62, 0.05, 0.01, 0.99);
+  --font-display: '__outfit_e60784', '__outfit_Fallback_e60784';
+  --font-body: '__satoshi_be40ad', '__satoshi_Fallback_be40ad';
 }
 
 ::selection {
@@ -48,17 +47,18 @@ html.lenis body {
   margin-left: auto;
   margin-right: auto;
 }
-/* section{
-  background-color: #ffffff;
-} */
 
 body {
-  font-family: "Satoshi", Arial, sans-serif;
-  text-rendering: geometricPrecision;
+  font-family: var(--font-body);
+   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
   color: var(--primary-color);
   background-color: #ffffff;
   overflow-x: hidden;
+}
+
+.satoshi{
+  font-family: var(--font-body);
 }
 
 #cursor {

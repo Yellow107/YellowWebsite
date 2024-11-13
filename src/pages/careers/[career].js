@@ -4,7 +4,6 @@ import { getAllJobs, getJobBySlug } from '@/lib/jobs';
 import Pagehero from '@/components/career-detail/Pagehero';
 import Overview from '@/components/career-detail/Overview';
 import CareerForm from '@/components/career-detail/CareerForm';
-import { JobpostingJsonLd } from '@/lib/json-ld';
 import config from '../../../package.json';
 import { NextSeo } from 'next-seo';
 import { useEffect } from 'react';
@@ -65,17 +64,11 @@ export default function Work({ job, jobsList }) {
           ],
           siteName: "Yellow",
         }}
-        additionalLinkTags={[
-          {
-            rel: "canonical",
-            href: `${path}`,
-          },
-          {
-            rel: "alternate",
-            href: `${path}`,
-            hreflang: "x-default",
-          }
-        ]}
+        canonical={`${path}`}
+        languageAlternates={[{
+          hrefLang: 'x-default',
+          href: `${path}`,
+        }]}
       />
       {/* <JobpostingJsonLd job={job} /> */}
       <Layout>

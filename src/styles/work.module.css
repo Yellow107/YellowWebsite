@@ -15,7 +15,8 @@
     border-radius: 15px;
 }
 .work h3, .work h4 {
-    font-family: Outfit, Aial, san-serif;
+    /* font-family: Outfit, Aial, san-serif; */
+    font-family: var(--font-outfit);
     font-weight: 400;
 }
 .work h3{

@@ -4,11 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { useLenis } from "lenis/react";
 import { useRouter } from "next/router";
 import SearchButton from "./SearchButton";
-import dynamic from "next/dynamic";
-
-const DynamicMenu = dynamic(() => import('./Menu'), {
-  ssr: false,
-})
+import styles from "./styles.module.css";
+import Menu from "./Menu";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -123,6 +120,7 @@ const Header = () => {
                 alt="Yellow Brand Logo"
                 width={153}
                 height={48}
+                priority={true}
               />
             </Link>
           </div>
@@ -134,11 +132,11 @@ const Header = () => {
                 disabled={buttonDisabled}
                 onClick={handleMenuButtonClick}
                 aria-label="Open Menu"
-                className={`menu-btn cursor-pointer pointer-events-auto h-[3.5vw] transition-all fixed z-[200] w-[3.5vw] mobile:w-[12vw] mobile:h-[12vw] tablet:w-[8vw] tablet:h-[10vw] ${
-                  menuOpen ? "open" : ""
+                className={`${styles.menuBtn} cursor-pointer pointer-events-auto h-[3.5vw] transition-all fixed z-[200] w-[3.5vw] mobile:w-[12vw] mobile:h-[12vw] tablet:w-[8vw] tablet:h-[10vw] ${
+                  menuOpen ? styles.open : ""
                 }`}
               >
-                <span className={`bg ${isInverted ? "invert" : ""}`} />
+                <span className={`${styles.bg} ${isInverted ? "invert" : ""}`} />
                 <svg
                   className={`overflow-hidden mr-[-10px] w-full h-full transition-all duration-500 ease-out ${
                     isInverted ? "invert" : ""
@@ -146,16 +144,16 @@ const Header = () => {
                   viewBox="25 25 50 50"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path className="line--1" d="M0 70l28-28c2-2 2-2 7-2h64" />
-                  <path className="line--2" d="M0 50h99" />
-                  <path className="line--3" d="M0 30l28 28c2 2 2 2 7 2h64" />
+                  <path className={styles.line__1} d="M0 70l28-28c2-2 2-2 7-2h64" />
+                  <path className={styles.line__2} d="M0 50h99" />
+                  <path className={styles.line__3} d="M0 30l28 28c2 2 2 2 7 2h64" />
                 </svg>
               </button>
             </div>
           </div>
         </div>
       </header>
-      <DynamicMenu menuOpen={menuOpen} />
+      <Menu menuOpen={menuOpen} />
     </>
   );
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import Section from '../Section';
 import Link from 'next/link';
-import { jobPathBySlug } from '@/lib/jobs';
 
 export default function Listing({jobs}) {
 

@@ -125,16 +125,7 @@ const Reviews = [
 
 const Card = ({ img, company, name, content }) => {
     return (
-        <div className="relative h-full col-span-1 text-white backdrop-blur-md overflow-hidden rounded-[1.2vw] bg-gradient-to-br from-[#35333380] to-[#24242420] to-45% border border-white/25 fadein mobile:rounded-[10px]">
-            <Image
-                priority={false}
-                width={100}
-                height={100}
-                className="h-full w-full object-cover absolute pointer-events-none"
-                alt="Image Texture"
-                loading="lazy"
-                src="/assets/images/clients/texture-2.png"
-            />
+        <div className="relative h-full col-span-1 text-white overflow-hidden rounded-[1.2vw] bg-gradient-to-br from-[#35333380] to-[#24242420] to-45% border border-white/20 fadein mobile:rounded-[10px]">
             <div className="w-full h-full py-[3vw] px-[2.5vw] space-y-[2vw] mobile:py-[5vw] mobile:px-[4vw] mobile:space-y-[5vw] tablet:space-y-[5vw]">
                 <div className="flex items-center gap-[1vw] mobile:gap-[3vw] tablet:gap-[2vw]">
                     <Image

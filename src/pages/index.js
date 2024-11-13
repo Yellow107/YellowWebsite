@@ -4,12 +4,15 @@ import Hero from "@/components/HomePage/Hero";
 import AboutUs from "@/components/HomePage/AboutUs";
 import Portfolio from "@/components/HomePage/Portfolio";
 import Services from "@/components/HomePage/Services";
-import Clients from "@/components/HomePage/Clients";
-import Blogs from "@/components/HomePage/Blogs";
 import { getHomePagePosts } from "@/lib/posts";
-import { titleAnim, paraAnim, lineAnim, fadeIn, fadeUp } from '@/components/gsapAnimations';
+import { fadeIn, fadeUp, lineAnim, paraAnim, titleAnim } from '@/components/gsapAnimations';
 import { WebpageJsonLd } from "@/lib/json-ld";
 import MetaData from "@/components/Metadata";
+import dynamic from 'next/dynamic';
+import Clients from "@/components/HomePage/Clients";
+
+// Dynamically import Blogs component
+const Blogs = dynamic(() => import('@/components/HomePage/Blogs'));
 
 export default function Home({ recentPosts }) {
 
@@ -27,7 +30,7 @@ export default function Home({ recentPosts }) {
   lineAnim();
   fadeIn();
   fadeUp();
-
+  
   return (
     <>
       <MetaData metadata={metadata} />

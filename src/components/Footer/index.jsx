@@ -6,7 +6,6 @@ import { gsap } from "gsap/dist/gsap";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Link from "next/link";
-import { SplitInChar } from "../splitTextUtils";
 import Line from "../Line";
 
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, useGSAP);
@@ -24,7 +23,7 @@ const Footer = () => {
 
     return (
         <footer id="footer" className="footer bg-black">
-            <div className="bg-white container footer-top ">
+            <div className="bg-white container footer-top rounded-b-[30px]">
                 <div className="pb-[10%] pt-[5%] mobile:pb-[20%]">
                     <Line />
                     <div className="w-full h-[1px] bg-black lineDraw hidden mobile:block tablet:block"></div>
@@ -70,11 +69,11 @@ const Footer = () => {
             </div>
 
             <div
-                className="h-[30vw] w-full relative mobile:h-full mobile:py-[10%] tablet:h-[60vw] tablet:py-[7%] footer-anim"
+                className="h-[30vw] w-full relative mobile:h-[170vw] mobile:py-[10%] tablet:h-[50vw] tablet:py-[7%] footer-anim"
                 style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
             >
-                <div className="fixed bottom-0 left-0 right-0 top-0 z-[-1] pb-[2vw] mobile:static tablet:static">
-                    <div ref={footerContainer} className="container flex h-full flex-col justify-end text-white footer-bottom mobile:justify-center">
+                <div className="fixed bottom-0 left-0 right-0 top-0 z-[-1] pb-[2vw] mobile:pb-[12vw]">
+                    <div ref={footerContainer} className="container flex h-full flex-col justify-end text-white footer-bottom mobile:justify-end">
                         <div className="flex items-start w-full justify-between mb-[8vw] mobile:flex-col mobile:items-center tablet:mb-[12vw]">
                             <div className="w-[40%] flex flex-col gap-[2vw] items-start mobile:w-full mobile:items-center mobile:gap-[12vw] tablet:w-[80%] tablet:gap-[6vw] ">
                                 <h6 className="text-[2.5vw] font-display mobile:text-[6vw] tablet:text-[4vw]">
@@ -87,7 +86,7 @@ const Footer = () => {
                                 <div className="w-full flex justify-between items-start mobile:flex-col mobile:items-center gap-[4vw] mobile:gap-[7vw] mobile:order-3 tablet:w-full tablet:gap-[3vw]">
                                     <div className="w-full mobile:w-full tablet:w-full">
                                         <h6 className="text-[1.9vw] font-display leading-[1.3] mb-[1vw] mobile:text-[5vw] mobile:text-center mobile:mb-[3vw] tablet:text-[3vw]">Address</h6>
-                                        <Link target="_blank" href="https://maps.app.goo.gl/jWqst61nES4irCZJA" className="text-[1.15vw] font-medium under-multi-parent mobile:text-[4vw] mobile:flex mobile:justify-center mobile:w-full tablet:text-[2.5vw] tablet:w-[50%] ">
+                                        <Link target="_blank" href="https://maps.app.goo.gl/jWqst61nES4irCZJA" className="text-[1.15vw] font-medium under-multi-parent mobile:text-[4vw] mobile:flex mobile:justify-center mobile:w-full tablet:text-[2.5vw] tablet:w-[50%]">
                                             <span className="under-multi mobile:text-center mobile:w-full tablet:w-[50%]">Loft Offices 2, Office 107, Dubai Media City, Dubai UAE</span>
                                         </Link>
                                     </div>

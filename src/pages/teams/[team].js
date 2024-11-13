@@ -77,17 +77,11 @@ function Teamdetail({ team }) {
           ],
           siteName: "Yellow",
         }}
-        additionalLinkTags={[
-          {
-            rel: "canonical",
-            href: `${homepage}/teams/${slug}`,
-          },
-          {
-            rel: "alternate",
-            href: `${homepage}/teams/${slug}`,
-            hreflang: "x-default",
-          }
-        ]}
+        canonical={`${homepage}/teams/${slug}`}
+        languageAlternates={[{
+          hrefLang: 'x-default',
+          href: `${homepage}/teams/${slug}`,
+        }]}
       />
       <WebpageJsonLd metadata={metadata} />
       <Layout>

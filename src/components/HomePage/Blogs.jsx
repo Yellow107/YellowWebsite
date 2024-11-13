@@ -5,8 +5,9 @@ import SectionTitle from "../SectionTitle"
 import BlogCard from "./BlogCard"
 
 const Blogs = ({posts}) => {
-
+    
     imageAnimationDown();
+   
 
     return (
         <Section id="Blogs" className="bg-black">

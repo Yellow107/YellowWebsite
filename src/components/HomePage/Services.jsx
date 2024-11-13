@@ -71,7 +71,7 @@ const Services = () => {
                     </p>
                 </div>
 
-                <div className="w-3/5 ml-auto mt-[12vw] mobile:w-full tablet:w-full">
+                <div className="w-3/5 ml-auto mt-[12vw] mobile:w-full tablet:w-full satoshi">
                     <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
                         {serviceData.map((service) => (
                             <SingleAccordion

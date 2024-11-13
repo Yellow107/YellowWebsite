@@ -29,10 +29,10 @@ export default function Whatsapp() {
                     className='animate-spin transition-transform object-cover duration-5000 w-[6vw] h-[6vw] tablet:w-[12vw] tablet:h-[12vw] mobile:w-[20vw] mobile:h-[20vw]'
                     alt='PopUp Form HireUs Image'
                     src="/assets/icons/talk-to-us-1.svg"
-                    priority={false}
+                    priority={true}
                 />
                 <Image
-                    loading="lazy"
+                    
                     height={50}
                     width={50}
                     alt="Whatsapp Icon"

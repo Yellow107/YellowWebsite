@@ -298,7 +298,7 @@ export default function ContactForm() {
           <div className="w-full flex justify-center items-center  mt-[3vw] mobile:justify-start">
             <Button
               type="submit"
-              className="text-[1.4vw] px-[1.4vw] py-[0.6vw] min-w-[12vw] bg-body mobile:bg-white border border-body mobile:text-black  rounded-full min-h-[3.5vw] flex gap-[0.5vw] hover:bg-body mobile:hover:bg-white group tablet:text-[2vw] tablet:min-w-[15vw] tablet:px-[3vw] tablet:h-[6vw] tablet:py-[1.2vw] mobile:text-[4vw] mobile:px-[6vw] mobile:h-[14vw]"
+              className="text-[1.4vw] px-[1.4vw] py-[0.6vw] min-w-[12vw] bg-body border border-body rounded-full min-h-[3.5vw] flex gap-[0.5vw] hover:bg-body group tablet:text-[2vw] tablet:min-w-[15vw] tablet:px-[3vw] tablet:h-[6vw] tablet:py-[1.2vw] mobile:text-[4vw] mobile:px-[6vw] mobile:h-[14vw]"
             >
               <div className="overflow-hidden flex items-center gap-[0.5vw] w-full mobile:gap-[2vw] relative">
               <span className="absolute block w-full h-full scale-y-0 bg-body group-hover:scale-y-100 left-0 top-0 origin-bottom transition-all duration-700 ease-link overflow-hidden" />
@@ -339,7 +339,6 @@ export default function ContactForm() {
                         fill="currentColor"
                       />
                     </svg>):(<></>)}
-               
               </div>
             </Button>
           </div>

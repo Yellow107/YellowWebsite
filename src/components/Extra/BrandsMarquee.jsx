@@ -6,16 +6,7 @@ const BrandsMarquee = () => {
 
   const Card = ({ src }) => {
     return (
-      <div className="col-span-1 relative h-full backdrop-blur-md overflow-hidden flex justify-center items-center rounded-[1vw] bg-gradient-to-br from-[#35333350] to-[#24242420] to-45% border border-white/25">
-        <Image
-          loading="lazy"
-          priority={false}
-          width={100}
-          height={100}
-          className="h-full w-full object-cover absolute pointer-events-none"
-          alt="Image Texture"
-          src="/assets/images/clients/texture.png"
-        />
+      <div className="col-span-1 relative h-full overflow-hidden flex justify-center items-center rounded-[1vw] bg-gradient-to-br from-[#35333350] to-[#24242420] to-45% border border-white/20">
         <Image
           className="object-cover w-full h-full mobile:scale-[1.1]"
           alt="client img"

@@ -44,20 +44,20 @@ export default function Work({ project }) {
   fadeUp();
   imageAnimationWork();
 
-    // Reload the page when the slug changes
-    useEffect(() => {
-      const handleSlugChange = () => {
-        window.location.reload();  // This will force a full page reload
-      };
-  
-      // Set up a listener to watch for slug changes
-      router.events.on('routeChangeComplete', handleSlugChange);
-  
-      return () => {
-        // Clean up the listener when the component unmounts
-        router.events.off('routeChangeComplete', handleSlugChange);
-      };
-    }, [router]);
+  // Reload the page when the slug changes
+  useEffect(() => {
+    const handleSlugChange = () => {
+      window.location.reload();  // This will force a full page reload
+    };
+
+    // Set up a listener to watch for slug changes
+    router.events.on('routeChangeComplete', handleSlugChange);
+
+    return () => {
+      // Clean up the listener when the component unmounts
+      router.events.off('routeChangeComplete', handleSlugChange);
+    };
+  }, [router]);
 
   const metadata = {
     title: metaTitle,
@@ -89,17 +89,11 @@ export default function Work({ project }) {
             : [],
           siteName: "Yellow",
         }}
-        additionalLinkTags={[
-          {
-            rel: "canonical",
-            href: `${homepage}/${metadata.slug}`,
-          },
-          {
-            rel: "alternate",
-            href: `${homepage}/${metadata.slug}`,
-            hreflang: "x-default",
-          }
-        ]}
+        canonical={`${homepage}/${metadata.slug}`}
+        languageAlternates={[{
+          hrefLang: 'x-default',
+          href: `${homepage}/${metadata.slug}`,
+        }]}
       />
       <WebpageJsonLd metadata={metadata} />
       <Layout>

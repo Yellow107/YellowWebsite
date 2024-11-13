@@ -25,17 +25,11 @@ export default function MetaData({ metadata }) {
                 ],
                 siteName: "Yellow",
             }}
-            additionalLinkTags={[
-                {
-                    rel: "canonical",
-                    href: `${homepage}/${slug}`,
-                },
-                {
-                    rel: "alternate",
-                    href: `${homepage}/${slug}`,
-                    hreflang: "x-default",
-                }
-            ]}
+            canonical={`${homepage}/${slug}`}
+            languageAlternates={[{
+                hrefLang: 'x-default',
+                href: `${homepage}/${slug}`,
+            }]}
         />
     )
 }

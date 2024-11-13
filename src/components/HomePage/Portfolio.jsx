@@ -13,7 +13,6 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Portfolio = () => {
 
-  const containerRef = useRef(null);
   const scrollRef = useRef(null);
 
   const createTimeline = (triggerClass, countClasses, start, end) => {
@@ -56,25 +55,17 @@ const Portfolio = () => {
 
   if (globalThis.innerWidth > 1023) {
     useGSAP(() => {
-      const container = containerRef.current;
       const scroll = scrollRef.current;
-
-      const tl = gsap.timeline({
+      let panels = gsap.utils.toArray(".panel");
+      gsap.to(panels, {
+        x: -100 * (panels.length - 2) + "vw",
+        ease: "none",
         scrollTrigger: {
-          trigger: container,
+          trigger: scroll,
           pin: true,
           scrub: 1,
-          start: "top top",
-          end: "=+2500 top",
-        },
-      });
-
-      tl.fromTo(scroll, {
-        x: "0"
-      }, {
-        x: "-200vw",
-        duration: 4,
-        ease: "none"
+          end: () => "+=" + (scroll.offsetWidth * 0.5),
+        }
       });
     });
 
@@ -100,6 +91,7 @@ const Portfolio = () => {
           </div>
         </div>
 
+        {/* Counters Start */}
         <div className="flex justify-between items-end mt-[5vw] mobile:flex-col mobile:items-start mobile:gap-[10vw] mobile:mt-[10vw]">
           <div className="flex items-center justify-start gap-[5vw] mobile:grid mobile:grid-cols-2 mobile:items-start mobile:space-between mobile:w-full mobile:gap-y-[5vw]">
             <div className="flex items-end gap-[8px] mobile:flex-col mobile:items-start mobile:gap-0">
@@ -199,25 +191,23 @@ const Portfolio = () => {
             <LinkButton btnLink={"/"} btnText={"See All Work"} />
           </div>
         </div>
-
+        {/* Counters END */}
       </div>
-      <div
-        ref={containerRef}
-        className="horizontal-scroll w-screen h-screen overflow-hidden mt-[5vw] mobile:mt-[12vw] mobile:h-auto tablet:h-auto"
-      >
+
         <div
           ref={scrollRef}
-          className="flex h-screen w-[300%] mobile:h-auto whitespace-nowrap mobile:flex-col mobile:w-full mobile:gap-[10vw] tablet:flex-col tablet:gap-[5vw] tablet:w-full tablet:justify-center tablet:items-center tablet:h-auto"
+          className="flex h-screen w-[300vw] mobile:h-auto whitespace-nowrap mobile:flex-col mobile:w-full mobile:gap-[10vw] tablet:flex-col tablet:gap-[5vw] tablet:w-full tablet:justify-center tablet:items-center tablet:h-auto mt-[5vw] mobile:mt-[12vw]"
         >
-          <div className="h-screen w-[90vw] relative pannel overflow-hidden p-[5vw] mobile:h-[50vh] mobile:mx-auto tablet:rounded-xl mobile:rounded-xl tablet:h-[40vh]" data-magnetic-target data-magnetic-strength="200">
-            <img
+          <div className="h-screen w-[90vw] relative panel overflow-hidden p-[5vw] mobile:h-[50vh] mobile:mx-auto tablet:rounded-xl mobile:rounded-xl tablet:h-[40vh]" data-magnetic-target data-magnetic-strength="200">
+            <Image
               src="/assets/images/homepage/mitsubishi.webp"
               alt="Mitsubishi Image"
               loading="lazy"
+              fill
               className="brightness-75 object-cover h-full w-full absolute left-0 right-0 top-0 bottom-0"
             />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 z-[1] -translate-y-1/2">
-              <RoundButton href="/our-work/mitsubishi-motors" text="View More" className="magnetic-inner pointer-events-auto tablet:w-[10vw] tablet:h-[10vw] tablet:text-[1.5vw] tablet:px-[2vw]" />
+              <RoundButton href="/our-work/mitsubishi-motors"/>
             </div>
             <div className="relative w-full flex text-white h-full items-end">
               <div className="flex justify-between items-end w-full mobile:flex-col mobile:h-full mobile:items-start">
@@ -240,15 +230,16 @@ const Portfolio = () => {
             </div>
           </div>
 
-          <div className="h-screen w-[90vw] relative pannel overflow-hidden p-[5vw] mobile:h-[50vh] mobile:mx-auto tablet:rounded-xl mobile:rounded-xl tablet:h-[40vh]" data-magnetic-target data-magnetic-strength="200">
-            <img
+          <div className="h-screen w-[90vw] relative panel overflow-hidden p-[5vw] mobile:h-[50vh] mobile:mx-auto tablet:rounded-xl mobile:rounded-xl tablet:h-[40vh]" data-magnetic-target data-magnetic-strength="200">
+            <Image
               src="/assets/images/homepage/barakat.webp"
               alt="Barakat Image"
               loading="lazy"
+              fill
               className="brightness-75 object-cover h-full w-full absolute left-0 right-0 top-0 bottom-0"
             />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 z-[1] -translate-y-1/2">
-              <RoundButton href="/our-work/barakat" text="View More" className="magnetic-inner pointer-events-auto tablet:w-[10vw] tablet:h-[10vw] tablet:text-[1.5vw] tablet:px-[2vw]" />
+              <RoundButton href="/our-work/barakat" />
             </div>
             <div className="relative w-full flex text-white h-full items-end">
               <div className="flex justify-between items-end w-full mobile:flex-col mobile:h-full mobile:items-start">
@@ -271,15 +262,16 @@ const Portfolio = () => {
             </div>
           </div>
 
-          <div className="h-screen w-[90vw] relative pannel overflow-hidden p-[5vw] mobile:h-[50vh] mobile:mx-auto tablet:rounded-xl mobile:rounded-xl tablet:h-[40vh]" data-magnetic-target data-magnetic-strength="200">
-            <img
+          <div className="h-screen w-[90vw] relative panel overflow-hidden p-[5vw] mobile:h-[50vh] mobile:mx-auto tablet:rounded-xl mobile:rounded-xl tablet:h-[40vh]" data-magnetic-target data-magnetic-strength="200">
+            <Image
               src="/assets/images/homepage/cafu.webp"
               alt="Cafu Image"
               loading="lazy"
+              fill
               className="brightness-75 object-cover h-full w-full absolute left-0 right-0 top-0 bottom-0"
             />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 z-[1] -translate-y-1/2">
-              <RoundButton href="/our-work/cafu-branding-and-digital" text="View More" className="magnetic-inner pointer-events-auto tablet:w-[10vw] tablet:h-[10vw] tablet:text-[1.5vw] tablet:px-[2vw]" />
+              <RoundButton href="/our-work/cafu-branding-and-digital" />
             </div>
             <div className="relative w-full flex text-white h-full items-end">
               <div className="flex justify-between items-end w-full mobile:flex-col mobile:h-full mobile:items-start">
@@ -302,12 +294,11 @@ const Portfolio = () => {
             </div>
           </div>
 
-          <div className="h-full w-[30vw] relative bg-amber-50 tablet:bg-transparent mobile:bg-transparent flex items-center justify-center flex-col pannel mobile:hidden tablet:h-fit tablet:gap-[3vw]">
+          <div className="h-full w-[30vw] relative bg-amber-50 tablet:bg-transparent mobile:bg-transparent flex items-center justify-center flex-col panel mobile:hidden tablet:h-fit tablet:gap-[3vw]">
             <p className="font-display text-[4vw] tablet:text-[6vw] tablet:hidden">Want More?</p>
             <LinkButton btnText="View Showcase" btnLink="/our-work" className="tablet:text-[3vw]" />
           </div>
         </div>
-      </div>
     </Section>
   );
 };

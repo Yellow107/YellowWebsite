@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import Header from '@/components/Header'
 import Line from '@/components/Line'
 import Section from '@/components/Section'
 import React from 'react'
@@ -10,6 +9,7 @@ import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { WebpageJsonLd } from '@/lib/json-ld';
 import MetaData from '@/components/Metadata';
+import Layout from '@/components/Layout';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -28,7 +28,6 @@ function Empty() {
     slug: "404"
   }
 
-  if (globalThis.innerWidth <= 1023 && globalThis.innerWidth > 541) {
     useGSAP(() => {
       const lineDraws = document.querySelectorAll(".lineDraw");
       lineDraws.forEach((lineDraw) => {
@@ -47,32 +46,11 @@ function Empty() {
       });
     });
 
-  }
-  else {
-    useGSAP(() => {
-      const lineDraws = document.querySelectorAll(".lineDraw");
-      lineDraws.forEach((lineDraw) => {
-        gsap.from(lineDraw, {
-          scrollTrigger: {
-            trigger: lineDraw,
-            start: "top 95%",
-          },
-          scaleX: 0,
-          transformOrigin: "left",
-          duration: 1.47,
-          yPercent: 100,
-          stagger: 0.07,
-          ease: "power3.out",
-        });
-      });
-    });
-
-  }
   return (
     <>
       <MetaData metadata={metadata} />
       <WebpageJsonLd metadata={metadata} />
-      <Header />
+      <Layout>
       <Section id="404" className='bg-black w-screen h-screen relative dark mobile:h-dvh tablet:h-dvh'>
         {/* Background image */}
         <div className='w-screen h-screen absolute z-[2] blur-2xl'>
@@ -121,6 +99,7 @@ function Empty() {
           </div>
           </div>
       </Section>
+      </Layout>
     </>
   )
 }
