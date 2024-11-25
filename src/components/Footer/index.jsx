@@ -39,7 +39,7 @@ const Footer = () => {
                                 href="/contact-us#contact-form"
                             >
                                 <span className="relative after:absolute leading-[1.3] after:block after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-body after:transition-all after:duration-500 after:ease-out group-hover:after:scale-x-0 ">
-                                    Let&apos;s Talk
+                                    Get in Touch
                                 </span>
                                 <svg
                                     className="relative -rotate-[135deg] w-[2.2vw] h-[2.2vw] mt-[0.5vw] overflow-hidden mobile:w-[7vw] mobile:h-[7vw]"
