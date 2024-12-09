@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import SectionTitle from '../SectionTitle'
-import Section from '../Section'
-import LinkButton from '../Button/LinkButton'
-import MediaRender from '../MediaRender'
+import SectionTitle from '../../SectionTitle'
+import Section from '../../Section'
+import LinkButton from '../../Button/LinkButton'
+import MediaRender from '../../MediaRender'
 import { workPathBySlug } from '@/lib/portfolio'
 
 export default function RelatedWork({works, heading, subheading}) {

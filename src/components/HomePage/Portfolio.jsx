@@ -79,7 +79,7 @@ const Portfolio = () => {
   }
 
   return (
-    <Section className="py-[5%] mobile:py-[15%]" id="portfolio">
+    <Section className="py-[5%] mobile:py-[15%] overflow-hidden" id="portfolio">
 
       <div className="container">
         <div className="flex justify-between items-start mobile:flex-col mobile:gap-[5vw]">

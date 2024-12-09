@@ -8,7 +8,7 @@ import { titleAnim, lineAnim, fadeUp, paraAnimWordpress, imageAnimationWork } fr
 import { WebpageJsonLd } from '@/lib/json-ld';
 import config from '../../../package.json';
 import { NextSeo } from 'next-seo';
-import RelatedWork from '@/components/RelatedWork';
+import RelatedWork from '@/components/Metadata/RelatedWork';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 

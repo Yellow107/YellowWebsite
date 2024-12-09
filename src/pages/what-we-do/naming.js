@@ -13,7 +13,7 @@ import Image from "next/image";
 import Line from "@/components/Line";
 import LinkButton from "@/components/Button/LinkButton";
 import React from "react";
-import RelatedWork from "@/components/RelatedWork";
+import RelatedWork from "@/components/Metadata/RelatedWork";
 
 export default function servicesdetail({ recentWorks }) {
   titleAnim();
@@ -50,7 +50,7 @@ export default function servicesdetail({ recentWorks }) {
             </h1>
             <div className="w-[90vw] h-[45vw] rounded-[15px] overflow-hidden relative fadeup mobile:w-full mobile:h-[50vw] tablet:w-full">
               <Image
-                quality={100}
+                quality={90}
                 src="/assets/images/service/naming/Brand-Naming-listing.webp"
                 alt="naming-hero"
                 className="object-cover w-full h-full"

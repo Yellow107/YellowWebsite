@@ -13,7 +13,7 @@ import Image from "next/image";
 import Line from "@/components/Line";
 import LinkButton from "@/components/Button/LinkButton";
 import React from "react";
-import RelatedWork from "@/components/RelatedWork";
+import RelatedWork from "@/components/Metadata/RelatedWork";
 
 export default function servicesdetail({ recentWorks }) {
   titleAnim();

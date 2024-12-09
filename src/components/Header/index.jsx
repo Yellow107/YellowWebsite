@@ -3,9 +3,16 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { useLenis } from "lenis/react";
 import { useRouter } from "next/router";
-import SearchButton from "./SearchButton";
 import styles from "./styles.module.css";
-import Menu from "./Menu";
+import dynamic from "next/dynamic";
+
+const Menu = dynamic(() => import('./Menu'), {
+  ssr: false,
+})
+
+const SearchButton = dynamic(() => import('./SearchButton'), {
+  ssr: false,
+})
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);

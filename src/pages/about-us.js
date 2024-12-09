@@ -9,7 +9,7 @@ import Meet from '@/components/about/Meet';
 import { WebpageJsonLd } from '@/lib/json-ld';
 import MetaData from '@/components/Metadata';
 import { getAllTeams } from '@/lib/teams';
-import RelatedWork from '@/components/RelatedWork';
+import RelatedWork from '@/components/Metadata/RelatedWork';
 
 export default function About({ relatedWorks, teams }) {
 

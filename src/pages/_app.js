@@ -8,6 +8,7 @@ import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 import localFont from 'next/font/local';
 import nextSeoConfig from "../../next-seo.config";
 import { SearchProvider } from "@/hooks/use-search";
+import 'lenis/dist/lenis.css';
 
 const outfit = localFont({
   src: [
@@ -59,7 +60,7 @@ export default function App({ Component, pageProps = {}, }) {
 
   return (
     <>
-      <DefaultSeo {...nextSeoConfig} />
+      <DefaultSeo {...nextSeoConfig}/>
       
       <SearchProvider>
         <ReactLenis root options={{ lerp: 0.05 }}>

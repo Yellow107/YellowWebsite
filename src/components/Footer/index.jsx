@@ -11,15 +11,15 @@ import Line from "../Line";
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, useGSAP);
 
 const handleScroll = () => {
-  gsap.to(window, {
-    duration: 2.5,
-    scrollTo: { y: "#hero" },
-    ease: "power2.inOut",
-  });
+    gsap.to(window, {
+        duration: 2.5,
+        scrollTo: { y: "#hero" },
+        ease: "power2.inOut",
+    });
 };
 
 const Footer = () => {
-  const footerContainer = useRef(null);
+    const footerContainer = useRef(null);
 
     return (
         <footer id="footer" className="footer bg-black">
@@ -29,13 +29,13 @@ const Footer = () => {
                     <div className="w-full h-[1px] bg-black lineDraw hidden mobile:block tablet:block"></div>
                     <div className="flex justify-between items-center py-[2%] mobile:flex-col mobile:gap-[4vw] mobile:py-[10%]">
                         <div className="w-[50%] relative mobile:w-[100%] tablet:w-[70%] mobile:flex mobile:justify-center">
-                            <h5 data-para-anim  className="text-[5vw] leading-[1.2] font-display para-anim mobile:text-[10vw] mobile:text-center tablet:text-[6vw] inline-block">
-                                Ready to Elevate Your Brand <span className="w-[7vw] h-[4vw] inline-block mobile:w-[14vw] mobile:h-[7vw] tablet:w-[8vw] tablet:h-[4vw]"><img src="/assets/images/gifs/Bart.gif" loading="lazy" width={120} height={120} alt="footer-gif" className="object-cover h-full w-full"/></span>
+                            <h5 data-para-anim className="text-[5vw] leading-[1.2] font-display para-anim mobile:text-[10vw] mobile:text-center tablet:text-[6vw] inline-block">
+                                Ready to Elevate Your Brand <span className="w-[7vw] h-[4vw] inline-block mobile:w-[14vw] mobile:h-[7vw] tablet:w-[8vw] tablet:h-[4vw]"><img src="/assets/images/gifs/Bart.gif" loading="lazy" width={120} height={120} alt="footer-gif" className="object-cover h-full w-full" /></span>
                             </h5>
                         </div>
                         <div className="fadein">
                             <Link
-                                className={`cursor-pointer flex w-fit relative text-[3.4vw] gap-[0.5vw] items-center font-medium group mobile:text-[7vw] mobile:gap-[2vw] `}
+                                className={`cursor-pointer flex w-fit relative text-[3.4vw] gap-[0.5vw] items-center font-medium group mobile:text-[6vw] mobile:gap-[2vw] `}
                                 href="/contact-us#contact-form"
                             >
                                 <span className="relative after:absolute leading-[1.3] after:block after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-body after:transition-all after:duration-500 after:ease-out group-hover:after:scale-x-0 ">
@@ -172,7 +172,7 @@ const Footer = () => {
                 </div>
             </div>
         </footer>
-        )
+    )
 }
 
 export default Footer

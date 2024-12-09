@@ -50,7 +50,7 @@ export default function Pagehero() {
               </div>
             </div>
             <div className="h-[41vw] w-[30vw] relative mobile:w-[85vw] rounded-xl mobile:h-[105vw] tablet:w-[80vw] tablet:h-[80vw] overflow-hidden shadow-xl fadeup">
-              <Image src="/assets/images/about/partners-image.webp" alt="about-hero" fill className="object-cover h-full w-full tablet:object-top" priority={true} quality={100} />
+              <Image src="/assets/images/about/partners-image.webp" alt="about-hero" fill className="object-cover h-full w-full tablet:object-top" priority={true} quality={90} />
             </div>
           </div>
         </div>

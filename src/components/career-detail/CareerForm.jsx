@@ -212,7 +212,7 @@ function CareerForm({ jobs }) {
               className="w-full h-full border-[1.5px]  rounded-[50px] border-black/20 bg-white py-[5vw] px-[5vw] flex flex-wrap gap-x-[7.8vw] gap-y-[3vw] border-opacity-45 drop-shadow-[50px] shadow-2xl  mobile:rounded-[10px] mobile:gap-y-[12vw] mobile:border-[1px] mobile:py-[12vw] mobile:shadow-none tablet:rounded-[15px] tablet:gap-y-[4vw] tablet:py-[7vw] tablet:gap-x-[7vw] career-form fadeup"
             >
               <div className="w-full  career-input border-b border-black flex flex-col gap-[0.5vw]">
-                <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[5vw] tablet:text-[2.2vw]">
+                <Label htmlFor="roles" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[5vw] tablet:text-[2.2vw]">
                   Which role are you applying for?
                 </Label>
                 <Select onValueChange={handleValueChange}>
@@ -224,7 +224,7 @@ function CareerForm({ jobs }) {
                       <SelectLabel>Roles</SelectLabel>
                       {JobsData &&
                         JobsData.map((job, index) => (
-                          <SelectItem key={index} value={job.title}>
+                          <SelectItem key={index} value={job.title} name="roles">
                             {job.title}
                           </SelectItem>
                         ))}
@@ -234,7 +234,7 @@ function CareerForm({ jobs }) {
               </div>
               <div className="flex w-full justify-between mobile:flex-col mobile:gap-[8vw]">
                 <div className="w-[45%] flex flex-col mobile:w-full">
-                  <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
+                  <Label htmlFor="name" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
                     Name*
                   </Label>
                   <FormField
@@ -252,7 +252,7 @@ function CareerForm({ jobs }) {
                 </div>
 
                 <div className="w-[45%] flex flex-col mobile:w-full">
-                  <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
+                  <Label htmlFor="email" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
                     Email*
                   </Label>
                   <FormField
@@ -271,7 +271,7 @@ function CareerForm({ jobs }) {
               </div>
               <div className="flex w-full justify-between mobile:flex-col mobile:gap-[8vw]">
                 <div className="w-[45%] flex flex-col mobile:w-full">
-                  <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
+                  <Label htmlFor="number" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
                     Phone
                   </Label>
                   <FormField
@@ -289,7 +289,7 @@ function CareerForm({ jobs }) {
                 </div>
 
                 <div className="w-[45%] flex flex-col mobile:w-full">
-                  <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
+                  <Label htmlFor="social" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
                     Your website / blog / Instagram / Facebook (basically, how
                     can we stalk you?) :
                     <span className="tablet:hidden text-[1.3vw] tablet:text-[2.2vw] career-form-span mobile:text-[4.5vw]">
@@ -312,7 +312,7 @@ function CareerForm({ jobs }) {
               </div>
 
               <div className="w-[100%] flex flex-col">
-                <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
+                <Label htmlFor="QuestionA" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
                   Let&apos;s forget about propriety and talk money - what&apos;s the bare
                   minimum you can survive on monthly? :
                 </Label>
@@ -330,30 +330,50 @@ function CareerForm({ jobs }) {
                 />
               </div>
               <div className="w-[100%] border-b border-black">
-                <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
+                <Label htmlFor="textarea" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
                   Why Yellow? (write a short paragraph on makes you want to work
                   with us) :
                 </Label>
-                <Textarea
+                <FormField
+                name="textarea"
+                render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                  <Textarea
                   placeholder=""
+                  name="textarea"
                   value={firstTextArea}
                   onChange={handleFirstTextAreaChange}
                   className="mt-[1vw]"
                 />
+                  </FormControl>
+                </FormItem>
+                )}
+                />
               </div>
               <div className="w-[100%] border-b border-black">
-                <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
+                <Label htmlFor="secondtextarea" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
                   Tell us about your past - just the work part, for now! :
                 </Label>
-                <Textarea
+                <FormField
+                name="secondtextarea"
+                render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                  <Textarea
                   placeholder=""
+                  name="secondtextarea"
                   value={secondTextArea}
                   onChange={handleSecondTextAreaChange}
                   className="mt-[1vw]"
                 />
+                  </FormControl>
+                </FormItem>   
+                )} 
+                />
               </div>
               <div className="w-[45%]  career-input border-b border-black flex flex-col gap-[1vw] mobile:w-full ">
-                <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[5vw] tablet:text-[2.2vw]">
+                <Label  htmlFor="currentrole" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[5vw] tablet:text-[2.2vw]">
                   Which one of these best describes your current role?
                 </Label>
                 <Select onValueChange={handleCurrentRoleChange}>
@@ -364,7 +384,7 @@ function CareerForm({ jobs }) {
                     <SelectGroup>
                       <SelectLabel>current role</SelectLabel>
                       {currentRoles.map((roles, index) => (
-                        <SelectItem value={roles} key={index}>
+                        <SelectItem value={roles} key={index} name="currentrole">
                           {roles}
                         </SelectItem>
                       ))}
@@ -373,7 +393,7 @@ function CareerForm({ jobs }) {
                 </Select>
               </div>
               <div className="w-[45%]  career-input border-b border-black flex flex-col gap-[1vw] mobile:w-full">
-                <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[5vw] tablet:text-[2.2vw]">
+                <Label htmlFor="mediums"  className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[5vw] tablet:text-[2.2vw]">
                   How do you keep up with what&apos;s going on in the world? :
                 </Label>
                 <Select onValueChange={handleMediumChange}>
@@ -384,7 +404,7 @@ function CareerForm({ jobs }) {
                     <SelectGroup>
                       <SelectLabel>Mediums</SelectLabel>
                       {mediums.map((medium, index) => (
-                        <SelectItem value={medium} key={index}>
+                        <SelectItem value={medium} key={index} name="mediums">
                           {medium}
                         </SelectItem>
                       ))}
@@ -393,30 +413,51 @@ function CareerForm({ jobs }) {
                 </Select>
               </div>
               <div className="w-[100%] border-b border-black">
-                <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
+                <Label htmlFor="thirdtextarea" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
                   If you could work on any brand or client in the world, which
                   would it be and why? :
                 </Label>
-                <Textarea
+                <FormField
+                  name="thirdtextarea"
+                  render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                  <Textarea
                   placeholder=""
+                  name="thirdtextarea"
                   value={thirdTextArea}
                   onChange={handleThirdTextAreaChange}
                   className="mt-[1vw]"
                 />
+                  </FormControl>
+                </FormItem>
+                  )}
+                />
+                
               </div>
               <div className="w-[100%] border-b border-black">
-                <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] tablet:text-[2.2vw]">
+                <Label  htmlFor="fourthtextarea" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] tablet:text-[2.2vw]">
                   What&apos;s the coolest thing you&apos;ve ever done? :
                 </Label>
-                <Textarea
+                <FormField
+                name="fourthtextarea"
+                render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                  <Textarea
                   placeholder=""
+                  name="fourthtextarea"
                   value={fourthTextArea}
                   onChange={handleFourthTextAreaChange}
                   className="mt-[1vw]"
                 />
+                  </FormControl>
+                  </FormItem>
+                )} 
+                  />
               </div>
               <div className="w-[100%] flex flex-col">
-                <Label className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
+                <Label htmlFor="QuestionB" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
                   When you&apos;re not hailing Helvetica as the second coming, which
                   typeface do you champion? :
                 </Label>
@@ -454,13 +495,23 @@ function CareerForm({ jobs }) {
                 />
               </div>
               <div className="w-full docs flex flex-col gap-[0.5vw] mobile:gap-[4vw]">
-                <Label className="text-[1.3vw] font-medium mobile:text-[4.5vw] tablet:text-[2.2vw]">
+                <Label htmlFor="docs" className="text-[1.3vw] font-medium mobile:text-[4.5vw] tablet:text-[2.2vw]">
                   Time to do the needful - upload your CV here & cross those
                   fingers!
                 </Label>
-                <p className="text-gray-600 text-[1.2vw] font-medium mobile:text-[3vw] tablet:text-[1.8vw]">
+                <FormField
+                name="docs"
+                render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                  <p className="text-gray-600 text-[1.2vw] font-medium mobile:text-[3vw] tablet:text-[1.8vw]">
                   Only docx or pdf files are allowed
                 </p>
+                  </FormControl>
+                </FormItem>
+                )}
+                />
+               
 
                 <div className="w-full h-full border border-dashed border-black rounded-lg py-[3vw] mobile:h-[70vw] mobile:mt-[10vw] tablet:h-[30vw] tablet:mt-[4vw]">
                   <Label
@@ -579,6 +630,7 @@ function CareerForm({ jobs }) {
                         <FormControl>
                           <Input
                             id="filename"
+                            name="filename"
                             {...fileRef}
                             type="file"
                             accept=".pdf,.docx"
@@ -598,6 +650,7 @@ function CareerForm({ jobs }) {
               </div>
               <div className="w-full flex justify-center items-center fadeup mt-[3vw]">
                 <Button
+                aria-label="submit"
                   type="submit"
                   className="text-[1.4vw] px-[1.4vw] py-[0.3vw] min-w-[10vw] text-body border-black border bg-white hover:text-white rounded-full min-h-[3.5vw] flex gap-[2vw] group tablet:text-[2vw] tablet:min-w-[15vw] tablet:px-[3vw] tablet:py-[1vw] mobile:text-[4.5vw] mobile:px-[4.5vw] mobile:h-[12vw] overflow-hidden relative"
                 >
