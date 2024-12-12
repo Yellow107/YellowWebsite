@@ -1,6 +1,7 @@
 User-agent: *
+Allow: /
 Disallow: /tag/
-Disallow: /*?*
 Disallow: /_next/static/
 
+# Sitemaps
 Sitemap: https://welcometoyellow.com/sitemap.xml
