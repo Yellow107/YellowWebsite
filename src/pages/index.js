@@ -3,17 +3,16 @@ import Layout from "@/components/Layout";
 import Hero from "@/components/HomePage/Hero";
 import { getHomePagePosts } from "@/lib/posts";
 import { fadeIn, fadeUp, lineAnim, paraAnim, titleAnim } from '@/components/gsapAnimations';
-import { WebpageJsonLd } from "@/lib/json-ld";
+import { LocalBusiness, WebpageJsonLd } from "@/lib/json-ld";
 import MetaData from "@/components/Metadata";
 import dynamic from 'next/dynamic';
 import AboutUs from "@/components/HomePage/AboutUs";
 import Clients from "@/components/HomePage/Clients";
+
 // Dynamically import Blogs component
 const Blogs = dynamic(() => import('@/components/HomePage/Blogs'));
 const Portfolio = dynamic(()=> import('@/components/HomePage/Portfolio'),{ ssr: false });
 const Services = dynamic(()=>import ('@/components/HomePage/Services'), { ssr: false });
-
-
 
 export default function Home({ recentPosts }) {
 
@@ -36,6 +35,7 @@ export default function Home({ recentPosts }) {
     <>
       <MetaData metadata={metadata} />
       <WebpageJsonLd metadata={metadata} />
+      <LocalBusiness />
       <Layout>
         <Hero />
         <AboutUs />

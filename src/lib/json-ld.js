@@ -127,7 +127,7 @@ export function ImageObjectJsonLd() {
   );
 }
 
-export function WebpageJsonLd({metadata = {}}) {
+export function WebpageJsonLd({ metadata = {} }) {
   const { homepage = '', faviconPath = '/favicon.ico' } = config;
   const { title, slug, description, date_published, date_modified } = metadata;
 
@@ -164,6 +164,53 @@ export function WebpageJsonLd({metadata = {}}) {
   );
 }
 
+export function LocalBusiness() {
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Yellow Branding Agency",
+    "image": "https://welcometoyellow.com/assets/images/seo/home.png",
+    "@id": "",
+    "url": "https://welcometoyellow.com/",
+    "telephone": "+971 4 582 0205",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Loft Offices 2, Office 107",
+      "addressLocality": "Dubai",
+      "postalCode": "25314",
+      "addressCountry": "+971",
+      "addressRegion": "+971"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/yellow-branding",
+      "https://www.instagram.com/welcometoyellow/",
+      "https://www.behance.net/welcometoyellow",
+      "https://in.pinterest.com/Yellowbranding/"
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:30",
+        "closes": "05:30"
+      }
+    ]
+  };
+
+  return (
+    <Helmet encodeSpecialCharacters={false}>
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+    </Helmet>
+  );
+}
+
 export function AuthorJsonLd({ author = {} }) {
   const { homepage = '' } = config;
   const { name, avatar, description } = author;
@@ -185,9 +232,9 @@ export function AuthorJsonLd({ author = {} }) {
   );
 }
 
-export function JobpostingJsonLd({job}) {
+export function JobpostingJsonLd({ job }) {
   const { homepage = '', faviconPath = '/favicon.ico' } = config;
-  const {title, seo, date, jobFields } = job
+  const { title, seo, date, jobFields } = job
 
   const jsonLd = {
     "@context": "https://schema.org/",
@@ -197,9 +244,9 @@ export function JobpostingJsonLd({job}) {
     "identifier": {
       "@type": "PropertyValue",
       "name": "Yellow",
-      "value": {title},
+      "value": { title },
     },
-    "hiringOrganization" : {
+    "hiringOrganization": {
       "@type": "Organization",
       "name": "Yellow",
       "sameAs": homepage,
