@@ -155,6 +155,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/services',
+        destination: '/what-we-do',
+        permanent: true,
+      },
+      {
         source: '/blog-gameofthronescampaigns',
         destination: '/game-of-thrones-campaigns',
         permanent: true,
