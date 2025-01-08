@@ -152,7 +152,48 @@ const nextConfig = {
       {
         source: '/service/:slug',
         source: '/what-we-do',
-      }
+        permanent: true,
+      },
+      {
+        source: '/blog-gameofthronescampaigns',
+        source: '/game-of-thrones-campaigns',
+        permanent: true,
+      },
+      {
+        source: '/blog-rebranding',
+        source: '/thinking-of-rebranding',
+        permanent: true,
+      },
+      {
+        source: '/teams/gunjan-mathur',
+        source: '/teams/gunjan',
+        permanent: true,
+      },
+      {
+        source: '/project/:slug',
+        source: '/our-work/:slug',
+        permanent: true,
+      },
+      {
+        source: '/tag/:slug',
+        source: '/',
+        permanent: true,
+      },
+      {
+        source: '/author/:slug',
+        source: '/',
+        permanent: true,
+      },
+      {
+        source: '/job/:slug',
+        source: '/careers/:slug',
+        permanent: true,
+      },
+      {
+        source: '/portfolio-industry/:slug',
+        source: '/our-work/industry/:slug',
+        permanent: true,
+      },
     ]
   },
   env: {
