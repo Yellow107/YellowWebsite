@@ -9,7 +9,7 @@ const PostCard = (({ post }) => {
         <div className='col-span-1 h-full group cardfade'>
             <Link href={postPathBySlug(post.slug)} key={post.id} className="hover:shadow-2xl h-full w-full block transition-all duration-500 border border-black/40 rounded-[10px] overflow-hidden">
                 <div className='h-[16vw] w-full relative mobile:h-[60vw] tablet:h-[25vw] overflow-hidden'>
-                    <Image src={post.featuredImage.sourceUrl} className="scale-[1.05] group-hover:scale-100 object-cover transition-all duration-300" alt={post.featuredImage.altText} fill sizes={post.featuredImage.sizes} />
+                    <Image src={post.featuredImage.sourceUrl} className="scale-[1.05] group-hover:scale-100 object-cover transition-all duration-300" alt={`${post.title} image`} fill sizes={post.featuredImage.sizes} />
                 </div>
                 <div className='w-full h-full px-[1.5vw] pt-[1.5vw] py-[3vw] flex flex-col gap-[2vw] mobile:gap-[3vw] mobile:py-[7vw] mobile:px-[5vw]'>
                     <h3 className='text-[1.5vw] font-display leading-[1.3] mobile:text-[6vw] tablet:text-[3vw]'>{post.title}</h3>
