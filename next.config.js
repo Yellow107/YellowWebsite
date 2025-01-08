@@ -20,8 +20,103 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/brand-communication-agency-post-pandemic',
-        destination: '/4-truths-to-know-about-brand-communication-in-a-post-pandemic-world',
+        source: '/4-truths-to-know-about-brand-communication-in-a-post-pandemic-world',
+        destination: '/brand-communication-agency-post-pandemic',
+        permanent: true,
+      },
+      {
+        source: '/3-ways-brands-can-provide-value-during-turbulent-times',
+        destination: '/best-branding-agency-dubai-providing-value-turbulent-times',
+        permanent: true,
+      },
+      {
+        source: '/5-proven-tips-for-creating-a-successful-brand-communication-strategy',
+        destination: '/brand-development-in-dubai-tips-communication-strategy',
+        permanent: true,
+      },
+      {
+        source: '/4-marketing-mistakes-to-avoid-during-and-after-the-coronavirus-crisis',
+        destination: '/dubai-best-marketing-agency-marketing-tips-coronavirus',
+        permanent: true,
+      },
+      {
+        source: '/menu-design-in-the-era-of-online-ordering-and-takeout-dining',
+        destination: '/menu-design-guide-online-ordering-takeout',
+        permanent: true,
+      },
+      {
+        source: '/a-guide-to-choosing-your-businesss-best-brand-touchpoints',
+        destination: '/brand-strategy-guide-to-touchpoints',
+        permanent: true,
+      },
+      {
+        source: '/how-to-boost-brand-awareness-through-employee-engagement',
+        destination: '/employee-engagement-tips-brand-strategy-agency-dubai',
+        permanent: true,
+      },
+      {
+        source: '/a-guide-to-digital-media-planning-in-the-era-of-the-informed-customer',
+        destination: '/guide-digital-media-planning-marketing-strategy-in-dubai',
+        permanent: true,
+      },
+      {
+        source: '/brand-strategy-Dubai-marketing-brand-identity',
+        destination: '/building-a-strong-brand-identity-key-elements-and-strategies',
+        permanent: true,
+      },
+      {
+        source: '/3-lessons-from-the-most-legendary-rebranding-campaigns-of-all-time',
+        destination: '/lessons-branding-agency-can-use-rebranding-success',
+        permanent: true,
+      },
+      {
+        source: '/rebranding-done-right-successful-case-studies-and-lessons-learned',
+        destination: '/when-rebranding-works-it-works',
+        permanent: true,
+      },
+      {
+        source: '/hue-are-you-using-color-theory-to-create-a-brand-persona',
+        destination: '/hue-are-you-use-color-theory-brand-persona-visual-identity',
+        permanent: true,
+      },
+      {
+        source: '/social-media-solution-commerce',
+        destination: '/social-commerce-is-here-to-stay-are-you-ready',
+        permanent: true,
+      },
+      {
+        source: '/signs-rebranding-time-change-brand-identity',
+        destination: '/building-a-strong-brand-identity-key-elements-and-strategies',
+        permanent: true,
+      },
+      {
+        source: '/winning-brand-strategy-agency-dubai',
+        destination: '/the-hows-and-whys-of-building-a-winning-brand-strategy',
+        permanent: true,
+      },
+      {
+        source: '/top-marketing-company-in-dubai-trends/',
+        destination: '/2019s-top-5-marketing-trends-that-are-here-to-stay',
+        permanent: true,
+      },
+      {
+        source: '/top-marketing-company-in-dubai-trends',
+        destination: '/2019s-top-5-marketing-trends-that-are-here-to-stay',
+        permanent: true,
+      },
+      {
+        source: '/brand-strategy-Dubai-marketing-brand-identity/',
+        destination: '/building-a-strong-brand-identity-key-elements-and-strategies',
+        permanent: true,
+      },
+      {
+        source: '/marketing-companies-uae-tips-creating-go-to-marketing-strategies',
+        destination: '/a-bitesize-guide-for-developing-a-new-product-go-to-market-strategy',
+        permanent: true,
+      },
+      {
+        source: '/social-media-solution-commerce/',
+        destination: '/social-commerce-is-here-to-stay-are-you-ready',
         permanent: true,
       },
       {
@@ -30,28 +125,13 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/our-work/category/fmcg',
-        destination: '/our-work/industry/fmcg',
+        source: '/blog/page/4/',
+        destination: '/blog',
         permanent: true,
       },
       {
-        source: '/our-work/category/healthcare',
-        destination: '/our-work/industry/healthcare',
-        permanent: true,
-      },
-      {
-        source: '/our-work/category/hospitality',
-        destination: '/our-work/industry/hospitality',
-        permanent: true,
-      },
-      {
-        source: '/our-work/category/luxury',
-        destination: '/our-work/industry/luxury',
-        permanent: true,
-      },
-      {
-        source: '/our-work/category/retail',
-        destination: '/our-work/industry/retail',
+        source: '/our-work/category/:slug',
+        destination: '/our-work/industry/:slug',
         permanent: true,
       },
       {
@@ -69,6 +149,10 @@ const nextConfig = {
         destination: '/when-rebranding-works-it-works',
         permanent: true,
       },
+      {
+        source: '/service/:slug',
+        source: '/what-we-do',
+      }
     ]
   },
   env: {

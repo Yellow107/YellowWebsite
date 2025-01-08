@@ -165,7 +165,6 @@
 }
 
 .blogContent img{
-    width: auto;
     object-fit: cover;
     border-radius: 20px;
     margin: auto;
@@ -178,8 +177,8 @@
     margin-top: 1rem;
 }
 .blogContent a{
-    color: var(--primary);
     position: relative;
+    color: #2b87ff;
     transition: all 200ms ease;
 }
 .blogContent a::after{
