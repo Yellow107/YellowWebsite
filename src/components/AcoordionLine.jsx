@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-function AccordionLine() {
+function AccordionLine({linecenter}) {
   const path = useRef(null);
 
   let progress = 0;
@@ -26,7 +26,7 @@ function AccordionLine() {
   const setPath = (value) => {
     if (!path.current) return;
 
-    const width = window.innerWidth/1.85;
+    const width = window.innerWidth/linecenter;
     const height = 100;
     const controlX = width * x; // Keep the control point in the center
 
@@ -49,7 +49,7 @@ function AccordionLine() {
   const manageMouseMove = (e) => {
     const { movementY } = e;
 
-    progress += movementY/2.5;
+    progress += movementY/1.5;
     setPath(progress);
   };
 

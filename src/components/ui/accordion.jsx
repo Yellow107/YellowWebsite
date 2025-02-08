@@ -20,7 +20,7 @@ const AccordionTrigger = React.forwardRef(({ className, children, ...props }, re
       {...props}>
       {children}
       <div className=" flex justify-end icon-container items-end relative z-[2]">
-      <span className="icon h-[4vw] w-[4vw] border border-body rounded-full relative flex items-center justify-center text-body duration-500 ease-out mobile:w-[15vw] mobile:h-[15vw] tablet:w-[8vw] tablet:h-[8vw]">
+      <span className="icon h-[4vw] w-[4vw] border border-body rounded-full relative flex items-center justify-center text-body duration-500 ease-out mobile:w-[10vw] mobile:h-[10vw] tablet:w-[8vw] tablet:h-[8vw]">
         <span className="minus w-[1.5vw] bg-current h-[2px] absolute duration-500 ease-out mobile:w-[5vw] tablet:w-[3.5vw]"/>
         <span className="w-[1.5vw] bg-current h-[2px] absolute rotate-90 mobile:w-[5vw] tablet:w-[3.5vw]"/>
       </span>

@@ -65,7 +65,7 @@ function Line() {
     setPath(newProgress);
 
     progress = lerp(progress, 0, 0.05);
-    time += 0.3;
+    time += 0.5;
 
     if (Math.abs(progress) > 0.1) {
       reqId = requestAnimationFrame(animateOut);

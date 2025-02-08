@@ -119,12 +119,12 @@ const Hero = () => {
           data-magnetic-target
           data-magnetic-strength="200"
         >
-          <div className="w-[45%] relative z-[11] mobile:flex mobile:items-center mobile:justify-center mobile:w-[90%] tablet:flex tablet:items-center tablet:justify-center tablet:w-[70%]">
+          <div className="w-[60%] relative z-[11] mobile:flex mobile:items-center mobile:justify-center mobile:w-[90%] tablet:flex tablet:items-center tablet:justify-center tablet:w-[70%]">
             <h1
               ref={text}
               className="text-body font-display text-[2.8vw] leading-[1.3] drop-shadow-lg lineWord mobile:text-[11vw] mobile:text-center tablet:text-center tablet:text-[5vw]"
             >
-              A creative consultancy that helps you cut through the noise.
+             A creative consulting & branding agency that helps you cut through the noise.
             </h1>
           </div>
           <div className="absolute left-1/2 -translate-x-1/2 mobile:static mobile:translate-x-0 tablet:static tablet:translate-x-0">

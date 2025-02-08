@@ -102,7 +102,7 @@ const AboutUs = () => {
                         <div className="text-left pr-[3vw] space-y-[2vw] mobile:space-y-[5vw] mobile:pt-[8vw] mobile:pr-0 tablet:pr-0">
                             <p className="text-[1.2vw] font-medium mobile:text-[5vw] tablet:text-[3vw]">About</p>
                             <h2 ref={texth2Ref} className="font-display text-[2.5vw] textbreak mobile:text-[8vw] mobile:leading-[1.3] tablet:text-[3vw]">
-                                A branding and communication consultancy in Dubai, Yellow stands for all that’s bright in business – collaboration, ambition, opportunity and transformation. Dubai-born and Dubai-bred, we have its optimism and drive in our DNA. We’ve helped businesses start, grow and thrive here and globally.
+                                A branding and communication consultancy in Dubai, Yellow stands for all that’s bright in business – collaboration, ambition, opportunity and transformation. Dubai-born and Dubai-bred, we have its optimism and drive in our DNA. We’ve helped businesses start, grow and thrive in GCC and globally.
                             </h2>
                             <div className="fadeUp">
                                 <LinkButton btnLink="/about-us" btnText="Get To Know Us" />
