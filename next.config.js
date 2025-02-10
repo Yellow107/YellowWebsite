@@ -208,7 +208,7 @@ const nextConfig = {
     WORDPRESS_MENU_LOCATION_NAVIGATION: process.env.WORDPRESS_MENU_LOCATION_NAVIGATION || 'PRIMARY',
     WORDPRESS_PLUGIN_SEO: process.env.WORDPRESS_PLUGIN_SEO,
   },
-};
+};  
 
 // export default nextConfig;
 module.exports = () => {
