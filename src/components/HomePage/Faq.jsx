@@ -3,6 +3,7 @@ import Section from "../Section";
 import SectionTitle from "../SectionTitle";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import AccordionLine from "../AcoordionLine";
+import { FAQPageJsonLd } from 'next-seo';
 
 const FaqData = [
   {
@@ -40,7 +41,7 @@ const FaqData = [
 const SingleAccordion = ({ id, title, content }) => {
   return (
     <AccordionItem value={id}>
-      <AccordionLine className="relative z-[-1] my-[1vw] tablet:hidden mobile:hidden" linecenter={1.1} />
+      <AccordionLine className="relative z-[-1] my-[1vw] tablet:hidden mobile:hidden" linecenter={1.38} />
       <div className="w-full bg-black lineDraw h-[1px] hidden mobile:block tablet:block"></div>
       <AccordionTrigger data-para-anim className="text-[2.2vw] text-left mobile:text-[5vw] mobile:flex mobile:w-full tablet:text-[4vw] tablet:text-left text-body font-display font-normal py-[1.5%] mobile:py-[5%] accordion [&[data-state=open]>.line>.line-internal>.icon-container>.icon]:rotate-[90deg] [&[data-state=open]>.line>.line-internal>.icon-container>.icon>.minus]:rotate-90 [&[data-state=open]>.line>.line-internal>.icon-container>.icon]:bg-body [&[data-state=open]>.line>.line-internal>.icon-container>.icon]:text-white">
         {title}
@@ -54,9 +55,20 @@ const SingleAccordion = ({ id, title, content }) => {
     </AccordionItem>
   )
 }
+
 const Faq = () => {
+
+  const mainEntity = [
+    ...FaqData.map((item) => ({
+      questionName: item.title,
+      acceptedAnswerText: item.description,
+    })),
+  ]
+
   const containerRef = useRef(null);
   return (
+    <>
+    <FAQPageJsonLd mainEntity={mainEntity} />
     <Section className="pb-[5%] mobile:pb-[15%]" id="services">
       <div ref={containerRef} className="container">
         <div className="mt-[2vw]">
@@ -79,6 +91,7 @@ const Faq = () => {
         </div>
       </div>
     </Section>
+    </>
   )
 }
 

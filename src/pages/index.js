@@ -12,8 +12,8 @@ import Faq from "@/components/HomePage/Faq";
 
 // Dynamically import Blogs component
 const Blogs = dynamic(() => import('@/components/HomePage/Blogs'));
-const Portfolio = dynamic(()=> import('@/components/HomePage/Portfolio'),{ ssr: false });
-const Services = dynamic(()=>import ('@/components/HomePage/Services'), { ssr: false });
+const Portfolio = dynamic(() => import('@/components/HomePage/Portfolio'), { ssr: false });
+const Services = dynamic(() => import('@/components/HomePage/Services'), { ssr: false });
 
 export default function Home({ recentPosts }) {
 
@@ -31,7 +31,7 @@ export default function Home({ recentPosts }) {
   lineAnim();
   fadeIn();
   fadeUp();
-  
+
   return (
     <>
       <MetaData metadata={metadata} />
@@ -44,7 +44,7 @@ export default function Home({ recentPosts }) {
         <Services />
         <Clients />
         <Blogs posts={recentPosts} />
-        <Faq/>
+        <Faq />
       </Layout>
     </>
   );
