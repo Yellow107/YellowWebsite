@@ -37,12 +37,12 @@ const serviceData = [
       link:"/what-we-do/digital",
       description: "<p data-para-anim>We work with you to bring your brand to life across social media channels based on the strategy and objectives. We support brands with ideation and exploring trends that work within the industry and with the audience. Following ideation, we manage the complete production process from sourcing the right videographer/photographer, location, talent, influencer to overseeing the total output. We produce content that converts.</p>"
     },
-    {
-        id: 6,
-        title: "UAE Market Entry",
-        link:"/what-we-do",
-        description: "<p data-para-anim>As a homegrown agency with deep roots in the UAE, we specialize in launching and rebranding brands to thrive in this dynamic market. From tech and retail to hospitality and FMCG, we've helped local brands scale to new heights—whether it's creating disruptive concepts like  <a class='link-style font-medium' href='/our-work/cafu-branding-and-digital'>Cafu</a> and <a class='link-style font-medium' href='/our-work/olioli-branding'>OliOli</a> or revitalizing legacy names like  <a class='link-style font-medium' href='/our-work/barakat'>Barakat</a> and <a class='link-style font-medium' href='/our-work/pan-home-case-study'>Pan Emirates (now Pan Home).</a></p><br><p data-para-anim>If you're an international company looking to enter the UAE, we bring insider market knowledge, cultural insights, and strategic expertise to ensure your brand resonates with the region's diverse audience. Beyond branding, we connect you with key industry leaders and decision-makers, helping you establish the right partnerships to accelerate your success.</p><br><p data-para-anim>The UAE is a land of opportunity—let's make sure your brand stands out.</p>"
-      },
+    // {
+    //     id: 6,
+    //     title: "UAE Market Entry",
+    //     link:"/what-we-do",
+    //     description: "<p data-para-anim>As a homegrown agency with deep roots in the UAE, we specialize in launching and rebranding brands to thrive in this dynamic market. From tech and retail to hospitality and FMCG, we've helped local brands scale to new heights—whether it's creating disruptive concepts like  <a class='link-style font-medium' href='/our-work/cafu-branding-and-digital'>Cafu</a> and <a class='link-style font-medium' href='/our-work/olioli-branding'>OliOli</a> or revitalizing legacy names like  <a class='link-style font-medium' href='/our-work/barakat'>Barakat</a> and <a class='link-style font-medium' href='/our-work/pan-home-case-study'>Pan Emirates (now Pan Home).</a></p><br><p data-para-anim>If you're an international company looking to enter the UAE, we bring insider market knowledge, cultural insights, and strategic expertise to ensure your brand resonates with the region's diverse audience. Beyond branding, we connect you with key industry leaders and decision-makers, helping you establish the right partnerships to accelerate your success.</p><br><p data-para-anim>The UAE is a land of opportunity—let's make sure your brand stands out.</p>"
+    //   },
   ];
 
 const SingleAccordion = ({ id, title, content, btnLink }) => {
