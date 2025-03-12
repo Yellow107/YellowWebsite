@@ -9,7 +9,7 @@ const FaqData = [
   {
     id: 1,
     title: "What services does Yellow offer?",
-    description: "Yellow supports clients solve their branding or marketing challenge. Yellow offers multiple services including brand strategy, brand Identity, brand naming, branded touchpoints, brand engagements and guidelines, web and app design, social media strategy and content, and advertising campaigns.",
+    description: "Yellow supports clients solve their branding and marketing challenges. Yellow offers multiple services including brand strategy, brand identity, brand naming, branded touchpoints, brand engagements and guidelines, web and app design, social media strategy and content, and advertising campaigns.",
   },
   {
     id: 2,
@@ -29,12 +29,12 @@ const FaqData = [
   {
     id: 5,
     title: "Does Yellow provide branding and marketing consultation services for new startups?",
-    description: "Yes, Yellow offers branding and marketing consultancy services in Dubai and Abu Dhabi to startups, and has been behind several startup stories from the region. services helps startups build a strong brand identity, connect with their target audience, and achieve sustainable growth through effective strategies.	"
+    description: "Yes. Yellow offers branding and marketing services in Dubai and Abu Dhabi to startups, and has been behind several successful startup stories from the region. Our services help startups build a strong brand identity, connect with their target audience, and achieve sustainable growth through effective strategies."
   },
   {
     id: 6,
     title: "In which countries and cities do Yellow branding agency, offer its services?",
-    description: "Yellow is a leading branding agency with the head office in Dubai. However, Yellow has experience providing creative branding, advertising, and marketing	services in multiple countries and cities, such as Abu Dhabi, Oman,	Bahrain, Qatar, Saudi Arabia and across the Gulf Countries.	"
+    description: "Yellow is a leading branding agency with the head office in Dubai. However, Yellow has experience providing creative branding, advertising, and marketing	services in multiple countries and cities, such as Abu Dhabi, Oman,	Bahrain, Qatar, Saudi Arabia and beyond."
   },
 ];
 

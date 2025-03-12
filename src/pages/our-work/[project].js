@@ -99,9 +99,10 @@ export default function Work({ project }) {
       <Layout>
         <Pagehero
           src={workFields.detailPageFeaturedImageVideo.node.mediaItemUrl}
-          tags={tags}
           date={date}
           title={title}
+          headertags={workFields.headertags}
+          tags={tags}
         />
         <Information
           info={workFields}

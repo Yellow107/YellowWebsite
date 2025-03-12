@@ -111,6 +111,13 @@ export const QUERY_PROJECT_BY_SLUG = gql`
             mediaItemUrl
           }
         }
+        headertags {
+          edges {
+            node {
+              name
+            }
+          }
+        }
       }
       portfolioForPages {
         relatedPortfolio {
