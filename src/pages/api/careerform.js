@@ -11,6 +11,8 @@ export default async (req, res) => {
     const { data, error } = await resend.emails.send({
       from: "Yellow <webforms@welcometoyellow.com>",
       to: ["hello@welcometoyellow.com"],
+      // from: 'Acme <onboarding@resend.dev>',
+      // to: ["hitesh@weareenigma.com"],
       subject: "Career Form Submission - New Application",
       react: ContactDetails({
         userName: name,
@@ -46,4 +48,12 @@ export default async (req, res) => {
     console.error("API route error:", error);
     res.status(400).json({ error: error.message });
   }
+};
+
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '10mb',
+    },
+  },
 };

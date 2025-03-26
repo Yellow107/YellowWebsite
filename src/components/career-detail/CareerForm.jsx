@@ -188,18 +188,32 @@ function CareerForm({ jobs }) {
   const handleFourthTextAreaChange = (e) => {
     setFourthTextArea(e.target.value);
   };
-  const onAddFileAction = (e) => {
-    const reader = new FileReader();
-    const files = e.target.files;
 
+  const onAddFileAction = (e) => {
+    const files = e.target.files;
+  
+    if (!files || files.length === 0) {
+      return;
+    }
+  
+    const file = files[0];
+  
+    if (file.size > 10 * 1024 * 1024) {
+      setFileError("File size is too large. Maximum allowed size is 10MB.");
+      return;
+    } else {
+      setFileError(null);
+    }
+  
+    const reader = new FileReader();
     reader.onload = (r) => {
       const fileContent = r.target.result.toString();
       setContent(fileContent);
-      setFileName(files[0].name);
+      setFileName(file.name);
     };
-
-    reader.readAsDataURL(files[0]);
-  };
+  
+    reader.readAsDataURL(file);
+  };  
 
   return (
     <>
@@ -335,20 +349,20 @@ function CareerForm({ jobs }) {
                   with us) :
                 </Label>
                 <FormField
-                name="textarea"
-                render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                  <Textarea
-                  placeholder=""
                   name="textarea"
-                  value={firstTextArea}
-                  onChange={handleFirstTextAreaChange}
-                  className="mt-[1vw]"
-                />
-                  </FormControl>
-                </FormItem>
-                )}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Textarea
+                          placeholder=""
+                          name="textarea"
+                          value={firstTextArea}
+                          onChange={handleFirstTextAreaChange}
+                          className="mt-[1vw]"
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
                 />
               </div>
               <div className="w-[100%] border-b border-black">
@@ -356,24 +370,24 @@ function CareerForm({ jobs }) {
                   Tell us about your past - just the work part, for now! :
                 </Label>
                 <FormField
-                name="secondtextarea"
-                render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                  <Textarea
-                  placeholder=""
                   name="secondtextarea"
-                  value={secondTextArea}
-                  onChange={handleSecondTextAreaChange}
-                  className="mt-[1vw]"
-                />
-                  </FormControl>
-                </FormItem>   
-                )} 
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Textarea
+                          placeholder=""
+                          name="secondtextarea"
+                          value={secondTextArea}
+                          onChange={handleSecondTextAreaChange}
+                          className="mt-[1vw]"
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
                 />
               </div>
               <div className="w-[45%]  career-input border-b border-black flex flex-col gap-[1vw] mobile:w-full ">
-                <Label  htmlFor="currentrole" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[5vw] tablet:text-[2.2vw]">
+                <Label htmlFor="currentrole" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[5vw] tablet:text-[2.2vw]">
                   Which one of these best describes your current role?
                 </Label>
                 <Select onValueChange={handleCurrentRoleChange}>
@@ -393,7 +407,7 @@ function CareerForm({ jobs }) {
                 </Select>
               </div>
               <div className="w-[45%]  career-input border-b border-black flex flex-col gap-[1vw] mobile:w-full">
-                <Label htmlFor="mediums"  className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[5vw] tablet:text-[2.2vw]">
+                <Label htmlFor="mediums" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[5vw] tablet:text-[2.2vw]">
                   How do you keep up with what&apos;s going on in the world? :
                 </Label>
                 <Select onValueChange={handleMediumChange}>
@@ -420,41 +434,41 @@ function CareerForm({ jobs }) {
                 <FormField
                   name="thirdtextarea"
                   render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                  <Textarea
-                  placeholder=""
-                  name="thirdtextarea"
-                  value={thirdTextArea}
-                  onChange={handleThirdTextAreaChange}
-                  className="mt-[1vw]"
-                />
-                  </FormControl>
-                </FormItem>
+                    <FormItem>
+                      <FormControl>
+                        <Textarea
+                          placeholder=""
+                          name="thirdtextarea"
+                          value={thirdTextArea}
+                          onChange={handleThirdTextAreaChange}
+                          className="mt-[1vw]"
+                        />
+                      </FormControl>
+                    </FormItem>
                   )}
                 />
-                
+
               </div>
               <div className="w-[100%] border-b border-black">
-                <Label  htmlFor="fourthtextarea" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] tablet:text-[2.2vw]">
+                <Label htmlFor="fourthtextarea" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] tablet:text-[2.2vw]">
                   What&apos;s the coolest thing you&apos;ve ever done? :
                 </Label>
                 <FormField
-                name="fourthtextarea"
-                render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                  <Textarea
-                  placeholder=""
                   name="fourthtextarea"
-                  value={fourthTextArea}
-                  onChange={handleFourthTextAreaChange}
-                  className="mt-[1vw]"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Textarea
+                          placeholder=""
+                          name="fourthtextarea"
+                          value={fourthTextArea}
+                          onChange={handleFourthTextAreaChange}
+                          className="mt-[1vw]"
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
                 />
-                  </FormControl>
-                  </FormItem>
-                )} 
-                  />
               </div>
               <div className="w-[100%] flex flex-col">
                 <Label htmlFor="QuestionB" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
@@ -500,18 +514,17 @@ function CareerForm({ jobs }) {
                   fingers!
                 </Label>
                 <FormField
-                name="docs"
-                render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                  <p className="text-gray-600 text-[1.2vw] font-medium mobile:text-[3vw] tablet:text-[1.8vw]">
-                  Only docx or pdf files are allowed
-                </p>
-                  </FormControl>
-                </FormItem>
-                )}
+                  name="docs"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <p className="text-gray-600 text-[1.2vw] font-medium mobile:text-[3.5vw] tablet:text-[1.8vw]">
+                          Only docx or pdf files are allowed and max file size is <b>10MB</b> 
+                        </p>
+                      </FormControl>
+                    </FormItem>
+                  )}
                 />
-               
 
                 <div className="w-full h-full border border-dashed border-black rounded-lg py-[3vw] mobile:h-[70vw] mobile:mt-[10vw] tablet:h-[30vw] tablet:mt-[4vw]">
                   <Label
@@ -650,9 +663,9 @@ function CareerForm({ jobs }) {
               </div>
               <div className="w-full flex justify-center items-center fadeup mt-[3vw]">
                 <Button
-                aria-label="submit"
+                  aria-label="submit"
                   type="submit"
-                  className="text-[1.4vw] px-[1.4vw] py-[0.3vw] min-w-[10vw] text-body border-black border bg-white hover:text-white rounded-full min-h-[3.5vw] flex gap-[2vw] group tablet:text-[2vw] tablet:min-w-[15vw] tablet:px-[3vw] tablet:py-[1vw] mobile:text-[4.5vw] mobile:px-[4.5vw] mobile:h-[12vw] overflow-hidden relative"
+                  className="text-[1.4vw] px-[1.4vw] py-[0.3vw] min-w-[10vw] text-body border-black border bg-white hover:text-white rounded-full min-h-[3.5vw] flex gap-[2vw] group tablet:text-[2vw] tablet:min-w-[15vw] tablet:px-[3vw] tablet:py-[1vw] mobile:text-[4.5vw] mobile:px-[4.5vw] mobile:h-[12vw] mobile:min-w-16 overflow-hidden relative"
                 >
                   <div className="overflow-hidden flex items-center justify-center gap-[0.7vw] w-full mobile:gap-[2vw]">
                     {!isLoading ? (

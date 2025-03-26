@@ -52,7 +52,7 @@ const CareerDetails = ({
             Below are the details.
           </Text>
           <Section>
-          <Section style={querySection}>
+            <Section style={querySection}>
               <Heading style={h1}>Which role are you applying for?:</Heading>
               <Text style={paragraph}>{userRole}</Text>
             </Section>
@@ -110,12 +110,12 @@ const CareerDetails = ({
             </Section>
           </Section>
           <Text style={footer}>
-            This form is submitted from <Link style={link} href="/careers">Career Page.</Link>
+            This form is submitted from <Link style={link} href="https://welcometoyellow.com/careers/career-detail">Careers Page.</Link>
           </Text>
           <Text style={h1}>- Team Yellow</Text>
           <Hr style={hr} />
           <Text style={footer}>
-          Loft offices 2, Office 107, Dubai Media City, Dubai UAE
+            Loft offices 2, Office 107, Dubai Media City, Dubai UAE
           </Text>
         </Container>
       </Body>
@@ -135,23 +135,23 @@ const main = {
 const container = {
   padding: "20px",
   margin: "0 auto",
-  border:"1px solid #f2f2f2",
+  border: "1px solid #f2f2f2",
   backgroundColor: "#ffffff",
   maxWidth: "50em",
-  
+
 };
 const logo = {
   margin: "0 auto",
 };
 
-const querySection ={
-  paddingBottom:"12px"
+const querySection = {
+  paddingBottom: "12px"
 }
 
 const paragraph = {
   fontSize: "16px",
   lineHeight: "24px",
-  color:"#6a6a6a"
+  color: "#6a6a6a"
 };
 const h1 = {
   color: "#333",
