@@ -201,18 +201,26 @@
 }
 
 /* Blog Table */
+.blogContent table {
+    width: 100%;
+    border: 1px solid #CACACA;
+    border-collapse: collapse;
+    overflow-x: scroll;
+}
 .blogContent tbody tr:nth-child(odd) {
-    background-color: #f6faff;
+    background-color: #ffffff;
 }
 .blogContent tbody tr:nth-child(even) {
-    background-color: #fdfdfd;
+    background-color: #f1f1f1;
 }
 .blogContent th{
-    background: var(--primary);
+    background: #303030;
     color: white;
     padding: 1vw;
     font-size: 1.3vw;
     font-weight: 400;
+    overflow: hidden;
+    /* border-radius: 10px; */
     border-right: 1px solid #CACACA;
 }
 .blogContent th:first-child{
@@ -223,7 +231,6 @@
     border-bottom: 1px solid #CACACA;
     padding: 1vw 1vw;
     font-size: 1.2vw;
-    color: var(--text-head);
 }
 .blogContent tr:last-child td{
     border-bottom: none;
