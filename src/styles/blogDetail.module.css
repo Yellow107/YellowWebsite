@@ -245,10 +245,10 @@
     position: absolute;
     display: block;
     height: 100%;
-    width: 4px;
+    width: 2px;
     top: 0;
     left: 0;
-    background: var(--text-head);
+    background: black;
 }
 
 .blogContent blockquote p{
