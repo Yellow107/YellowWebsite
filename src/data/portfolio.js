@@ -19,6 +19,7 @@ export const PROJECT_FIELDS = gql`
           mediaItemUrl
         }
       }
+      packagingWorld
     }
     databaseId
     date
@@ -106,6 +107,7 @@ export const QUERY_PROJECT_BY_SLUG = gql`
       workFields {
         description
         subheading
+        packagingWorld
         detailPageFeaturedImageVideo {
           node {
             mediaItemUrl
@@ -269,6 +271,7 @@ export const GET_HOME_PAGE_PORTFOLIO = gql`
               mediaItemUrl
             }
           }
+          packagingWorld
         }
         portfolioIndustries {
           nodes {
