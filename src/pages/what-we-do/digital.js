@@ -17,8 +17,8 @@ export default function servicesdetail({ recentWorks }) {
   fadeUp();
 
   const metadata = {
-    title: "Digital Marketing Agency In Dubai - Transform Your Brand Online",
-    description: "Strengthen your presence online without disrupting your business. For results-driven digital marketing services in Dubai, contact Yellow Branding.",
+    title: "Digital Marketing Agency in Dubai, Abu Dhabi & UAE - Yellow",
+    description: "Yellow is a leading digital marketing agency based in Dubai, Abu Dhabi, UAE. We offer a range of digital services like social media, website design, and digital audit & strategy.",
     img: "home.png",
     date_published: "2017-10-22T06:17",
     date_modified: "2024-08-01T12:32",
