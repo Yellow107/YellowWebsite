@@ -26,7 +26,7 @@ function Line() {
   const setPath = (value) => {
     if (!path.current) return;
 
-    const width = window.innerWidth - window.innerWidth*0.1;
+    const width = window.innerWidth - window.innerWidth * 0.1;
     const height = 100;
     const controlX = width * x; // Keep the control point in the center
 
@@ -49,7 +49,7 @@ function Line() {
   const manageMouseMove = (e) => {
     const { movementY } = e;
 
-    progress += movementY/2;
+    progress += movementY / 2;
     setPath(progress);
   };
 

@@ -68,6 +68,11 @@ body {
   position: relative;
 }
 
+/* Homepage Hero */
+.lineWord {
+  opacity: 0;
+}
+
 /* Services Section Accordion - HomePage */
 .accordion .line-internal {
   display: flex !important;
@@ -263,7 +268,6 @@ input:-webkit-autofill:active {
 }
 .cardfront {
   backface-visibility: hidden;
-
   transform: perspective(1200px) rotateY(0deg);
 }
 

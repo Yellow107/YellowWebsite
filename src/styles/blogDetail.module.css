@@ -15,10 +15,6 @@
     animation: fadeInUp 0.5s forwards;
 }
 
-/* .postCard>a>div::before{
-    content: none;
-} */
-
 .blogContent h2:hover .anchor {
     visibility: visible;
 }

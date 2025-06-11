@@ -40,6 +40,9 @@ const Hero = () => {
         ease: "power4.out",
       },
     });
+    tl.set(".lineWord", {
+      opacity: 1,
+    });
     tl.from(".lineWord .line .line-internal", {
       yPercent: 100,
       duration: 1.47,
@@ -59,21 +62,6 @@ const Hero = () => {
         color: "#ffffff",
         duration: 1,
         delay: -2,
-      })
-      .from("#header-logo", {
-        yPercent: 100,
-        duration: 0.5,
-        delay: -0.1,
-      })
-      .from("#search-btn", {
-        opacity: 0,
-        duration: 0.5,
-        delay: -0.3,
-      })
-      .from("#header-hamburger", {
-        opacity: 0,
-        duration: 0.5,
-        delay: -0.3,
       })
       .to(".lineWord .line .line-internal", {
         yPercent: -100,
@@ -124,7 +112,7 @@ const Hero = () => {
               ref={text}
               className="text-body font-display text-[2.8vw] leading-[1.3] drop-shadow-lg lineWord mobile:text-[11vw] mobile:text-center tablet:text-center tablet:text-[5vw]"
             >
-             A creative consulting & branding agency that helps you cut through the noise.
+              A creative consulting & branding agency that helps you cut through the noise.
             </h1>
           </div>
           <div className="absolute left-1/2 -translate-x-1/2 mobile:static mobile:translate-x-0 tablet:static tablet:translate-x-0">

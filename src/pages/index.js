@@ -9,6 +9,7 @@ import dynamic from 'next/dynamic';
 import AboutUs from "@/components/HomePage/AboutUs";
 import Clients from "@/components/HomePage/Clients";
 import Faq from "@/components/HomePage/Faq";
+import Awards from "@/components/HomePage/Awards";
 
 // Dynamically import Blogs component
 const Blogs = dynamic(() => import('@/components/HomePage/Blogs'));
@@ -42,6 +43,7 @@ export default function Home({ recentPosts }) {
         <AboutUs />
         <Portfolio />
         <Services />
+        <Awards/>
         <Clients />
         <Blogs posts={recentPosts} />
         <Faq />

@@ -147,16 +147,16 @@ const Footer = () => {
                             </div>
                         </div>
 
-                        <div className="w-full flex items-center justify-between relative mobile:mt-[7vw tablet:justify-center mobile:flex-col mobile:gap-4">
+                        <div className="w-full flex items-center justify-between relative mobile:mt-[7vw tablet:justify-between mobile:flex-col mobile:gap-4">
                             <div>
-                                <p className="font-medium text-[1.15vw] capitalize mobile:text-[3.5vw] tablet:text-[2.5vw]">© 2025 | Yellow. All rights reserved.</p>
+                                <p className="font-medium text-[1.15vw] capitalize mobile:text-[3.5vw] tablet:text-[2vw]">© 2025 | Yellow. All rights reserved.</p>
                             </div>
 
-                            <button aria-label="Scroll Down Button" onClick={handleScroll} className="absolute cursor-pointer scroll-btn w-fit right-10 text-[1.1vw] gap-[0.5vw] font-[400] group flex items-center justify-center mobile:hidden tablet:hidden">
+                            <button aria-label="Scroll Down Button" onClick={handleScroll} className="cursor-pointer scroll-btn w-fit right-10 text-[1.1vw] gap-[0.5vw] font-[400] group flex items-center justify-center mobile:hidden tablet:hidden">
                                 <span className="relative leading-[1.5] after:absolute after:block after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-current after:transition-all after:duration-500 after:ease-out group-hover:after:scale-x-0">Send me back up.</span>
                             </button>
 
-                            {/* <div className="text-[1.15vw] font-medium mobile:text-[3.5vw] tablet:text-[2vw] mr-[3vw] mobile:mr-0">
+                            <div className="text-[1.15vw] font-medium mobile:text-[3.5vw] tablet:text-[2vw] mr-[3vw] tablet:mr-[5.5vw] mobile:mr-0">
                                 <p className="flex items-center gap-[5px]">Developed By:
                                     <Link
                                         href="https://weareenigma.com" className="" target="_blank">
@@ -166,7 +166,7 @@ const Footer = () => {
                                         </span>
                                     </Link>
                                 </p>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                 </div>

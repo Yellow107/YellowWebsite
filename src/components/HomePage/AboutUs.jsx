@@ -87,7 +87,7 @@ const AboutUs = () => {
         <Section className="py-[10%] mobile:py-[20%]" id="second-section">
             <div ref={containerRef} className="container">
                 <div className="flex justify-between items-start mobile:flex-col">
-                    <div className="w-[40%] h-[45vw] mobile:w-full mobile:h-[100vw] overflow-hidden rounded-xl fadeup">
+                    <div className="w-[40%] h-[45vw] mobile:w-full mobile:h-[100vw] overflow-hidden rounded-xl fadeup relative">
                         <Image
                             src="/assets/images/homepage/yellow-office.webp"
                             alt="About Image"

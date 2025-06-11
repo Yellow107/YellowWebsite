@@ -107,6 +107,7 @@ export const QUERY_PROJECT_BY_SLUG = gql`
       workFields {
         description
         subheading
+        award
         packagingWorld
         detailPageFeaturedImageVideo {
           node {

@@ -76,14 +76,14 @@ const Services = () => {
     return (
         <Section className="py-[5%] mobile:pb-[15%]" id="services">
             <div ref={containerRef} className="container">
-                <div className="space-y-[2.5vw] mt-[5vw] mobile:space-y-[7vw]">
-                    <SectionTitle data-title-anim text="OUR EXPERTISE" />
+                <div className="space-y-[2.5vw] mobile:space-y-[7vw] tablet:mt-[5vw] mobile:mt-[5vw]">
+                    <SectionTitle text="OUR EXPERTISE" />
                     <p data-para-anim className="text-[1.9vw] font-medium w-[35%] mobile:text-[4vw] mobile:w-[90%] tablet:text-[3vw] tablet:w-[60%] ">
                         We grow amazing companies through exceptional branding and communications.
                     </p>
                 </div>
 
-                <div className="w-3/5 ml-auto mt-[12vw] mobile:w-full tablet:w-full satoshi">
+                <div className="w-3/5 ml-auto mt-[8vw] mobile:mt-[12vw] tablet:mt-[12vw] mobile:w-full tablet:w-full satoshi">
                     <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
                         {serviceData.map((service) => (
                             <SingleAccordion
