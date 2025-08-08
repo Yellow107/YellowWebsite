@@ -231,16 +231,9 @@ export function mapPostData(post = {}) {
     };
   }
 
-  // The URL by default that comes from Gravatar / WordPress is not a secure
-  // URL. This ends up redirecting to https, but it gives mixed content warnings
-  // as the HTML shows it as http. Replace the url to avoid those warnings
-  // and provide a secure URL by default
-
   if (data.author?.avatar) {
     data.author.avatar = updateUserAvatar(data.author.avatar);
   }
-
-  // Clean up the categories to make them more easy to access
 
   if (data.categories) {
     data.categories = data.categories.edges.map(({ node }) => {

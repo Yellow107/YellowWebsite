@@ -19,10 +19,10 @@ export default function Post({ post, relatedPosts }) {
     metaDescription,
     content,
     date,
-    categories,
     featuredImage,
     slug,
     readingTime,
+    categories
   } = post;
 
   const router = useRouter();
