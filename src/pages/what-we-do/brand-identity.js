@@ -22,9 +22,9 @@ export default function servicesdetail({ recentWorks }) {
   fadeUp();
 
   const metadata = {
-    title: "Brand Identity Creation Dubai - Yellow Agency",
+    title: "Best Corporate Brand Identity Design Agency in Dubai, UAE",
     description:
-      "We use brand identity, logo design, and graphic design to build compelling brands that exist across traditional, retail, digital, and social media channels.",
+      "Yellow is a reputable brand identity agency in Dubai, UAE. Our brand identity services include logo design, packaging, and brand collateral to build compelling brands that stand out and grow.",
     img: "home.png",
     date_published: "2017-10-22T06:17",
     date_modified: "2024-08-01T12:32",

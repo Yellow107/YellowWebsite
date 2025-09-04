@@ -22,9 +22,9 @@ export default function servicesdetail({ recentWorks }) {
   fadeUp();
 
   const metadata = {
-    title: "Brand & Business Naming In Dubai - Yellow Agency",
+    title: "Brand, Business & Product Naming Agency in Dubai, UAE",
     description:
-      "Get your brand or business off to a good start with a meaningful, memorable name crafted through strategy and creativity. Work with us today.",
+      "Yellow is a well-known brand naming agency in Dubai, UAE. Our approach to brand naming begins with creating meaningful, unique, and memorable brand names.",
     img: "home.png",
     date_published: "2017-10-22T06:17",
     date_modified: "2024-08-01T12:32",
