@@ -39,11 +39,11 @@ const Content = (({ date, content, slug, readingTime }) => {
             <div className="container bg-white py-[5%]">
                 <div className="flex justify-between items-start mobile:flex-col mobile:gap-[5vw] tablet:flex-col tablet:gap-[2vw]">
                     <aside ref={sectionPin}>
-                        <h3 data-title-anim className="text-[1.55vw] font-medium mb-[0.5vw] mobile:text-[7vw] tablet:text-[4vw]">Posted On :</h3>
+                        <p data-title-anim className="text-[1.55vw] font-medium mb-[0.5vw] mobile:text-[7vw] tablet:text-[4vw]">Posted On :</p>
                         <p data-para-anim className="text-[1.25vw] font-medium mb-[3vw] mobile:text-[4vw] tablet:text-[2.5vw]">{formatDate(date)}</p>
-                        <h3 data-title-anim className="text-[1.55vw] font-medium mb-[0.5vw] mobile:text-[7vw] tablet:text-[4vw]">Reading Time</h3>
+                        <p data-title-anim className="text-[1.55vw] font-medium mb-[0.5vw] mobile:text-[7vw] tablet:text-[4vw]">Reading Time</p>
                         <p data-para-anim className="text-[1.25vw] font-medium mb-[3vw] mobile:text-[4vw] tablet:text-[2.5vw]">{readingTime} mins</p>
-                        <h3 data-title-anim className="text-[1.55vw] font-medium mb-[0.5vw] mobile:text-[7vw] tablet:text-[4vw]">Share Article :</h3>
+                        <p data-title-anim className="text-[1.55vw] font-medium mb-[0.5vw] mobile:text-[7vw] tablet:text-[4vw]">Share Article :</p>
                         <div className="flex items-center gap-[1.5vw] fadeup">
                             <FacebookShareButton className="" url={`https://welcometoyellow.com//${slug}`} quote="Read more articles like this on our website - https://welcometoyellow.com/blog" hashtag="#welcometoyellow">
                                 <img className="border border-body rounded-full hover:border-white hover:bg-white hover:invert transition-all w-[2.8vw] h-[2.8vw] mobile:w-[10vw] mobile:h-[10vw] tablet:w-[7vw] tablet:h-[7vw]" src="/assets/icons/fb.svg" alt="Facebook Icon" title='Facebook Icon' />

@@ -57,7 +57,7 @@ const Awards = () => {
                           src={card.logo}
                           height={156}
                           width={277}
-                          alt="brand-logo"
+                          alt="brand logo Image"
                           className="h-full w-full object-contain brightness-[5]"
                         />
                       </div>
@@ -68,7 +68,7 @@ const Awards = () => {
                           src="/assets/icons/arrow.svg"
                           height={20}
                           width={20}
-                          alt="arrow"
+                          alt="arrow svg"
                           className={`transition-all duration-300 ease -rotate-[140deg]`}
                         />
                         
@@ -78,7 +78,7 @@ const Awards = () => {
                           src="/assets/images/homepage/yellow-awards.png"
                           width={163}
                           height={375}
-                          alt="transform-awards"
+                          alt="transform awards image"
                           className="h-full w-full object-contain"
                         />
                       </div>
@@ -115,7 +115,7 @@ const AwardCard = ({ title, bgColor, logo, link, isActive, index, setActiveCard 
               src={logo}
               height={156}
               width={277}
-              alt="brand-logo"
+              alt="brand logo Image"
               className="h-full w-full object-contain brightness-[5]"
             />
           </div>
@@ -126,7 +126,7 @@ const AwardCard = ({ title, bgColor, logo, link, isActive, index, setActiveCard 
               src="/assets/icons/arrow.svg"
               height={20}
               width={20}
-              alt="arrow"
+              alt="arrow svg"
               className={`transition-all duration-300 ease -rotate-[140deg]`}
             />
           </div>
@@ -135,7 +135,7 @@ const AwardCard = ({ title, bgColor, logo, link, isActive, index, setActiveCard 
               src="/assets/images/homepage/transform-awards.png"
               width={163}
               height={375}
-              alt="transform-awards"
+              alt="transform awards image"
               className="h-full w-full object-contain"
             />
           </div>

@@ -17,6 +17,7 @@ export const POST_FIELDS = gql`
       node {
         altText
         caption
+        mimeType
         sourceUrl
         srcSet
         sizes

@@ -9,6 +9,7 @@ import localFont from 'next/font/local';
 import nextSeoConfig from "../../next-seo.config";
 import { SearchProvider } from "@/hooks/use-search";
 import 'lenis/dist/lenis.css';
+import { LocalBusiness } from "@/lib/json-ld";
 
 const outfit = localFont({
   src: [
@@ -61,7 +62,7 @@ export default function App({ Component, pageProps = {}, }) {
   return (
     <>
       <DefaultSeo {...nextSeoConfig}/>
-      
+      <LocalBusiness/>
       <SearchProvider>
         <ReactLenis root options={{ lerp: 0.05 }}>
           <main className={`${outfit.variable} ${satoshi.variable}`}>

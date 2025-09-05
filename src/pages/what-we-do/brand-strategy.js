@@ -107,12 +107,12 @@ export default function servicesdetail({ recentWorks }) {
             </div>
             <div className="w-full grid grid-cols-3 gap-x-[5vw] gap-y-[2vw] mobile:flex mobile:flex-col mobile:gap-[10vw] tablet:flex tablet:flex-col tablet:gap-[5vw]">
               <div className="col-span-1">
-                <h3
+                <h2
                   data-para-anim
                   className="text-[2vw] font-display mobile:text-[8vw] tablet:font-medium tablet:text-[4vw] capitalize leading-[1.4]"
                 >
                   Brand workshop, audit and research
-                </h3>
+                </h2>
                 <div className="h-[1px] w-full bg-black mobile:block hidden lineDraw my-[6vw] tablet:block tablet:my-[3vw]"></div>
                 <p
                   data-para-anim
@@ -128,12 +128,12 @@ export default function servicesdetail({ recentWorks }) {
                 </p>
               </div>
               <div className="col-span-1 col-start-2 mobile:flex mobile:flex-col ">
-                <h3
+                <h2
                   data-para-anim
                   className=" text-[2vw] font-display mobile:text-[8vw] tablet:font-medium tablet:text-[4vw] capitalize leading-[1.4]"
                 >
                   Brand strategy development
-                </h3>
+                </h2>
                 <div className="h-[1px] w-full bg-black mobile:block hidden lineDraw my-[6vw] tablet:block tablet:my-[3vw]"></div>
                 <p
                   data-para-anim
@@ -148,12 +148,12 @@ export default function servicesdetail({ recentWorks }) {
                 </p>
               </div>
               <div className="col-span-1 col-start-3 flex mobile:flex-col tablet:flex-col">
-                <h3
+                <h2
                   data-para-anim
                   className=" text-[2vw] font-display mobile:text-[8vw] tablet:font-medium tablet:text-[4vw] capitalize leading-[1.4]"
                 >
                   Why work with us?
-                </h3>
+                </h2>
                 <div className="h-[1px] w-full bg-black mobile:block hidden lineDraw my-[6vw] tablet:block tablet:my-[3vw]"></div>
                 <p
                   data-para-anim

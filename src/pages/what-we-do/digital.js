@@ -66,9 +66,9 @@ export default function servicesdetail({ recentWorks }) {
             <div className="w-full grid grid-cols-3 gap-x-[5vw] gap-y-[2vw] mobile:flex mobile:flex-col mobile:gap-[10vw] tablet:flex tablet:flex-col tablet:gap-[5vw]">
 
               <div className="col-span-1">
-                <h3 data-para-anim className="text-[2vw] font-display mobile:text-[8vw] tablet:font-medium tablet:text-[4vw] capitalize leading-[1.4]">
+                <h2 data-para-anim className="text-[2vw] font-display mobile:text-[8vw] tablet:font-medium tablet:text-[4vw] capitalize leading-[1.4]">
                   Digital Audit & Strategy
-                </h3>
+                </h2>
                 <div className="h-[1px] w-full bg-black mobile:block hidden lineDraw my-[6vw] tablet:block tablet:my-[3vw]"></div>
                 <p data-para-anim className='hidden mobile:block text-[4.5vw] tablet:block tablet:text-[2.5vw]'>
                   Our starting point upon engagement is to conduct an in-depth digital assets audit of your brand as well as your competitors and looking at benchmarks within your industry. Based on our findings, and your brand’s positioning, we then craft a thorough digital strategy with a roadmap to implement the recommendations.
@@ -76,9 +76,9 @@ export default function servicesdetail({ recentWorks }) {
               </div>
 
               <div className="col-span-1 col-start-2 mobile:flex mobile:flex-col">
-                <h3 data-para-anim className=" text-[2vw] font-display mobile:text-[8vw] tablet:font-medium tablet:text-[4vw] capitalize leading-[1.4]">
+                <h2 data-para-anim className=" text-[2vw] font-display mobile:text-[8vw] tablet:font-medium tablet:text-[4vw] capitalize leading-[1.4]">
                   Digital assets execution
-                </h3>
+                </h2>
                 <div className="h-[1px] w-full bg-black mobile:block hidden lineDraw my-[6vw] tablet:block tablet:my-[3vw]"></div>
                 <p data-para-anim className='hidden mobile:block text-[4.5vw] tablet:block tablet:text-[2.5vw] tablet:mb-[1.5vw] mobile:mb-[2.5vw]'>
                   Based on the digital strategy, we plan out the execution, ensuring your brand’s message is clear and succinct and your voice is consistent. Our objective is to convert your potential customers and drive them through the purchase funnel - we thus craft content and design to capture attention during the awareness, consideration and conversion and advocacy cycle.
@@ -86,9 +86,9 @@ export default function servicesdetail({ recentWorks }) {
               </div>
 
               <div className="col-span-1 col-start-3 flex mobile:flex-col tablet:flex-col">
-                <h3 data-para-anim className=" text-[2vw] font-display mobile:text-[8vw] tablet:font-medium tablet:text-[4vw] capitalize leading-[1.4]">
+                <h2 data-para-anim className=" text-[2vw] font-display mobile:text-[8vw] tablet:font-medium tablet:text-[4vw] capitalize leading-[1.4]">
                   Why work with us?
-                </h3>
+                </h2>
                 <div className="h-[1px] w-full bg-black mobile:block hidden lineDraw my-[6vw] tablet:block tablet:my-[3vw]"></div>
                 <p data-para-anim className='hidden mobile:block text-[4.5vw] tablet:block tablet:text-[2.5vw] tablet:mb-[1.5vw] mobile:mb-[2.5vw]'>
                   As a leading digital agency in Dubai that has built a name for itself in creating content that converts and cuts through the noise, Yellow is your ideal partner if you want to achieve a strong digital presence.

@@ -90,7 +90,7 @@ const AboutUs = () => {
                     <div className="w-[40%] h-[45vw] mobile:w-full mobile:h-[100vw] overflow-hidden rounded-xl fadeup relative">
                         <Image
                             src="/assets/images/homepage/yellow-office.webp"
-                            alt="About Image"
+                            alt="About Yellow Image"
                             title="About Us Image"
                             fill
                             quality={100}

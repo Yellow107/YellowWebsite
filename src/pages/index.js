@@ -37,7 +37,7 @@ export default function Home({ recentPosts }) {
     <>
       <MetaData metadata={metadata} />
       <WebpageJsonLd metadata={metadata} />
-      <LocalBusiness />
+      {/* <LocalBusiness /> */}
       <Layout>
         <Hero />
         <AboutUs />

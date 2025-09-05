@@ -19,7 +19,7 @@ export default function MetaData({ metadata }) {
                         url: `${homepage}/assets/images/seo/${img}`,
                         width: 1290,
                         height: 594,
-                        alt: "Page Og Image",
+                           alt: "Yellow Dubai branding agency Image",
                         type: "image/png",
                     },
                 ],
