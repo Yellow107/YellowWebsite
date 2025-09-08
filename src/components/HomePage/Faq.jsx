@@ -9,32 +9,32 @@ const FaqData = [
   {
     id: 1,
     title: "What services does Yellow offer?",
-    description: "Yellow supports clients solve their branding and marketing challenges. Yellow offers multiple services including brand strategy, brand identity, brand naming, branded touchpoints, brand engagements and guidelines, web and app design, social media strategy and content, and advertising campaigns.",
+    description: "Yellow supports clients in solving their branding and marketing challenges. The agency offers services including brand strategy, brand identity, brand naming, branded touchpoints, brand engagement and guidelines, web and app design, social media strategy and content, and advertising campaigns.",
   },
   {
     id: 2,
     title: "How can Yellow’s expertise help my business stand out in Dubai’s market?",
-    description: "Our experience, our market knowledge and our dedication to deliver results for our clients, makes us a leading branding and marketing agency based in Dubai. We ensure we immerse ourselves in understaning your business, your audience and your competition in order to deliver work that stands out.",
+    description: "With deep experience, market knowledge, and a results-driven approach, Yellow helps businesses stand out in Dubai’s competitive market. The agency immerses itself in understanding your business, audience, and competition to deliver impactful work.",
   },
   {
     id: 3,
     title: "What industries does Yellow Branding & Advertising agency cater to?",
-    description: "Yellow branding agency works with a variety of industries, including e-commerce, automotive, retail, FMCG, hospitality, healthcare, and more, providing customized branding and marketing strategies."
+    description: "Yellow works with diverse industries, including e-commerce, automotive, retail, FMCG, hospitality, healthcare, and more, delivering customized branding and marketing strategies."
   },
   {
     id: 4,
     title: "What makes Yellow different from other branding and advertising agencies in Dubai?",
-    description: "Our people, our experience, our case studies and our spirit of partnership. As a leading branding and communications agency, we are responsible to our clients and ensure we consistently deliver value and help them achieve their objectives.	"
+    description: "Yellow stands out through its people, extensive experience, proven case studies, and a spirit of partnership. As a leading branding and communications agency, Yellow consistently delivers value and helps clients achieve their objectives.	"
   },
   {
     id: 5,
     title: "Does Yellow provide branding and marketing consultation services for new startups?",
-    description: "Yes. Yellow offers branding and marketing services in Dubai and Abu Dhabi to startups, and has been behind several successful startup stories from the region. Our services help startups build a strong brand identity, connect with their target audience, and achieve sustainable growth through effective strategies."
+    description: "Yes. Yellow provides branding and marketing services for startups in Dubai and Abu Dhabi, and has contributed to several successful startup journeys. The agency helps startups build strong brand identities, connect with their audience, and achieve sustainable growth."
   },
   {
     id: 6,
-    title: "In which countries and cities do Yellow branding agency, offer its services?",
-    description: "Yellow is a leading branding agency with the head office in Dubai. However, Yellow has experience providing creative branding, advertising, and marketing	services in multiple countries and cities, such as Abu Dhabi, Oman,	Bahrain, Qatar, Saudi Arabia and beyond."
+    title: "In which countries and cities does Yellow branding agency offer its services?",
+    description: "Yellow is headquartered in Dubai but has provided creative branding, advertising, and marketing services across Abu Dhabi, Oman, Bahrain, Qatar, Saudi Arabia, and beyond."
   },
 ];
 
@@ -68,7 +68,7 @@ const Faq = () => {
   const containerRef = useRef(null);
   return (
     <>
-    <FAQPageJsonLd mainEntity={mainEntity} />
+    <FAQPageJsonLd  mainEntity={mainEntity} />
     <Section className="pb-[5%] mobile:pb-[15%]" id="services">
       <div ref={containerRef} className="container">
         <div className="mt-[2vw]">
