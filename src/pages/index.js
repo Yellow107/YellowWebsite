@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 import Hero from "@/components/HomePage/Hero";
 import { getHomePagePosts } from "@/lib/posts";
 import { fadeIn, fadeUp, lineAnim, paraAnim, titleAnim } from '@/components/gsapAnimations';
-import { LocalBusiness, WebpageJsonLd } from "@/lib/json-ld";
+import { LocalBusiness, OrganizationJsonLd, WebpageJsonLd } from "@/lib/json-ld";
 import MetaData from "@/components/Metadata";
 import dynamic from 'next/dynamic';
 import AboutUs from "@/components/HomePage/AboutUs";
@@ -37,6 +37,7 @@ export default function Home({ recentPosts }) {
     <>
       <MetaData metadata={metadata} />
       <WebpageJsonLd metadata={metadata} />
+      <OrganizationJsonLd />
       {/* <LocalBusiness /> */}
       <Layout>
         <Hero />
