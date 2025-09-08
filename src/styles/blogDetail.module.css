@@ -328,6 +328,9 @@
     .blogContent li{
         font-size: 4.2vw;
     }
+    .blogContent p{
+        margin: 3% 0%;
+    }
     .blogContent th{
         font-size: 4vw;
     }
