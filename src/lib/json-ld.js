@@ -68,7 +68,7 @@ export function OrganizationJsonLd() {
     description:
       "Yellow is a leading branding, creative design & advertising agency serving Dubai, Abu Dhabi & GCC. We provide brand strategy, naming, identity and marketing services that achieve our client's objectives.",
     url: homepage,
-    telephone: "+971 4 582 0205",
+    telephone: "+971 54 517 8971",
     email: "hello@welcometoyellow.com",
     contactPoint: {
       "@type": "ContactPoint",
