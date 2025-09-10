@@ -1,7 +1,7 @@
 
 import Section from "../Section"
 import dynamic from 'next/dynamic';
-const BrandsMarquee = dynamic(() => import('../Extra/BrandsMarquee'), { ssr: false });
+const BrandsMarquee = dynamic(() => import('../Extra/BrandsMarquee'), { ssr: true });
 
 const Clients = () => {
 

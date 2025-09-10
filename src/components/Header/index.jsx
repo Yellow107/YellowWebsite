@@ -7,11 +7,11 @@ import styles from "./styles.module.css";
 import dynamic from "next/dynamic";
 
 const Menu = dynamic(() => import('./Menu'), {
-  ssr: false,
+  ssr: true,
 })
 
 const SearchButton = dynamic(() => import('./SearchButton'), {
-  ssr: false,
+  ssr: true,
 })
 
 const Header = () => {

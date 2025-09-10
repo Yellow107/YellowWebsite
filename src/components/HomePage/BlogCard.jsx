@@ -18,7 +18,7 @@ const BlogCard = ({ title, src, date, link }) => {
               <div className="">
                 <Image
                   src={src}
-                 alt={`${title} image`}
+                  alt={`${title} image`}
                   priority={false}
                   fill
                   className="object-cover h-full w-full"
