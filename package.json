@@ -6,7 +6,7 @@
   "scripts": {
     "analyze": "cross-env ANALYZE=true next build",
     "dev": "next dev",
-    "build": "SKIP_REMOTE_FETCH=1 next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -61,7 +61,6 @@
     "split-type": "^0.3.4",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
-    "undici": "^7.15.0",
     "yellow-v2": "file:",
     "zod": "^3.23.8"
   },

@@ -21,7 +21,6 @@ const BrandsMarquee = () => {
   }
 
   const Clients = [
-    
     "/assets/images/clients/logo/barakat.svg",
     "/assets/images/clients/logo/cafu.svg",
     "/assets/images/clients/logo/pan-home.svg",

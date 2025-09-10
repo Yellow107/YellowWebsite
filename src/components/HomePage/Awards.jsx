@@ -57,7 +57,7 @@ const Awards = () => {
                           src={card.logo}
                           height={156}
                           width={277}
-                          alt="brand logo image"
+                          alt="brand logo Image"
                           className="h-full w-full object-contain brightness-[5]"
                         />
                       </div>
@@ -115,7 +115,7 @@ const AwardCard = ({ title, bgColor, logo, link, isActive, index, setActiveCard 
               src={logo}
               height={156}
               width={277}
-              alt="brand logo image"
+              alt="brand logo Image"
               className="h-full w-full object-contain brightness-[5]"
             />
           </div>

@@ -2,8 +2,8 @@
 import Section from "../Section"
 import SectionTitle from "../SectionTitle";
 import dynamic from 'next/dynamic';
-const BrandsMarquee = dynamic(() => import('../Extra/BrandsMarquee'), { ssr: true });
-const Testimonial = dynamic(() => import('../Extra/Testimonial'), { ssr: true });
+const BrandsMarquee = dynamic(() => import('../Extra/BrandsMarquee'), { ssr: false });
+const Testimonial = dynamic(() => import('../Extra/Testimonial'), { ssr: false });
 
 const Clients = () => {
 

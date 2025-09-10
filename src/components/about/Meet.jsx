@@ -12,92 +12,96 @@ import TeamDetail from "./TeamDetail";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Meet({ teams }) {
+
   const [detailOpen, setDetailOpen] = useState(false);
   const [selectedMember, setSelectedMember] = useState(null);
   const lenis = useLenis();
   const cardContainer = useRef(null);
 
-  // 🟢 Normalize teams: accept {teams: []} OR []
-  const teamInfo = Array.isArray(teams?.teams) ? teams.teams : (Array.isArray(teams) ? teams : []);
+  const teamInfo = teams.teams;
 
   const handleDetail = (member) => {
     setSelectedMember(member);
-    if (typeof window !== 'undefined') {
-      window.history.pushState({}, "", `/teams/${member.slug}`);
-    }
+    const newPath = `/teams/${member.slug}`;
+    window.history.pushState({}, "", newPath);
     setDetailOpen(true);
-    lenis?.stop?.();
+    lenis.stop();
   };
 
   const handleClose = () => {
-    if (typeof window !== 'undefined') {
-      window.history.pushState({}, "", `/about-us`);
-    }
+    const originalPath = `/about-us`;
+    window.history.pushState({}, "", originalPath);
     setDetailOpen(false);
     setSelectedMember(null);
-    lenis?.start?.();
+    lenis.start();
   };
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    gsap.to(".detail-overlay", {
-      opacity: detailOpen ? 0.2 : 0,
-      ease: "power2.in",
-      // small negative delay is harmless; keeping your semantics
-      delay: detailOpen ? 0 : -0.2,
-    });
+    if (detailOpen) {
+      gsap.to(".detail-overlay", {
+        opacity: 0.2,
+        ease: "power2.in"
+      });
+    } else {
+      gsap.to(".detail-overlay", {
+        opacity: 0,
+        delay: -0.2,
+        ease: "power2.in"
+      });
+    }
   }, [detailOpen]);
 
   return (
     <>
-      <Section className="w-full h-full pb-[8%] mobile:pb-[20%] relative" id="meet">
-        <div className={`container overflow-hidden ${detailOpen ? "pointer-events-none" : "pointer-events-auto"}`}>
+      <Section
+        className="w-full h-full pb-[8%] mobile:pb-[20%] relative"
+        id="meet"
+      >
+        <div
+          className={`container overflow-hidden ${detailOpen == true ? "pointer-events-none" : "pointer-events-auto"}`}
+        >
           <SectionTitle text={"Meet the people"} className={"mb-[3vw]"} />
           <p data-para-anim className="text-[1.9vw] w-[30%] font-medium leading-[1.3] mobile:w-[90%] mobile:text-[5vw] tablet:w-[60%] tablet:text-[2.5vw]">
             We grow amazing companies through exceptional branding and
             communications.
           </p>
-
           <div className="w-full mobile:overflow-scroll mobile:mt-[5vw] mobile:fadeup">
             <div
               ref={cardContainer}
               className="grid grid-cols-3 gap-[3vw] mt-[8vw] justify-between gap-y-[3vw] mobile:flex mobile:flex-nowrap mobile:w-fit mobile:overflow-scroll mobile:gap-[5vw] mobile:h-fit tablet:gap-y-[3.5vw] tablet:grid-cols-2"
             >
-              {Array.isArray(teamInfo) && teamInfo.length > 0 ? (
-                teamInfo.map((member) => (
-                  <div
-                    key={member.id ?? member.slug}
-                    className="w-fit overflow-hidden fadeup"
-                    onClick={() => handleDetail(member)}
-                  >
-                    <div className="w-full h-[36vw] group cursor-pointer relative overflow-hidden mobile:w-[75vw] mobile:h-[100vw] tablet:w-[41vw] tablet:h-full">
-                      <div className="bg-black/40 absolute opacity-0 tablet:opacity-100 w-10 h-10 rounded-full backdrop-blur-lg text-white flex items-center justify-center top-0 right-0 z-10 text-[4vw] leading-[0] mr-2 mt-2 pointer-events-none mobile:opacity-100 mobile:text-[6vw]">+</div>
+              {teamInfo.map((member) => (
+                <div
+                  key={member.id}
+                  className="w-fit overflow-hidden fadeup"
+                  onClick={() => handleDetail(member)}>
+                  <div className={`w-full h-[36vw] group cursor-pointer relative overflow-hidden mobile:w-[75vw] mobile:h-[100vw] tablet:w-[41vw] tablet:h-full`}>
+                    <div className="bg-black/40 absolute opacity-0 tablet:opacity-100 w-10 h-10 rounded-full backdrop-blur-lg text-white flex items-center justify-center top-0 right-0 z-10 text-[4vw] leading-[0] mr-2 mt-2 pointer-events-none mobile:opacity-100 mobile:text-[6vw]">+</div>
+                    <img
+                      loading="lazy"
+                      src={member.featuredImage.node.sourceUrl}
+                      alt={`${member.title} Image`}
+                      className="object-cover h-full w-full"/>
+                    {member.teams.blackWhitePicture && (
                       <img
                         loading="lazy"
-                        src={member?.featuredImage?.node?.sourceUrl || "/assets/images/placeholder.png"}
-                        alt={`${member?.title ?? "Member"} Image`}
-                        className="object-cover h-full w-full"
+                        src={member.teams.blackWhitePicture.node.sourceUrl}
+                        alt={`${member.title} B&W Image`}
+                        className="absolute object-cover h-full w-full top-0 left-0 bottom-0 right-0 opacity-0 group-hover:opacity-100 duration-200"
                       />
-                      {member?.teams?.blackWhitePicture?.node?.sourceUrl && (
-                        <img
-                          loading="lazy"
-                          src={member.teams.blackWhitePicture.node.sourceUrl}
-                          alt={`${member?.title ?? "Member"} B&W Image`}
-                          className="absolute object-cover h-full w-full top-0 left-0 bottom-0 right-0 opacity-0 group-hover:opacity-100 duration-200"
-                        />
-                      )}
-                      <div className="absolute w-full px-[2vw] py-[1.5vw] z-[2] bottom-0 overflow-hidden translate-y-full bg-black/40 backdrop-blur-lg group-hover:translate-y-0 tablet:translate-y-0 duration-300 ease-out mobile:py-[3vw] mobile:px-[3vw] tablet:py-[3vw]">
-                        <div className="text-white flex w-full justify-between h-full">
-                          <div className="flex flex-col tablet:w-[100%]">
-                            <h4 className="text-[1.8vw] font-display leading-[1.3] uppercase mobile:text-[6vw] tablet:text-[2.4vw]">
-                              {member?.title ?? "—"}
-                            </h4>
-                            <p className="mobile:w-full mobile:leading-[1.3] mobile:text-[3vw] text-[1.2vw] tablet:text-[2vw]">
-                              {member?.teams?.designation ?? ""}
-                            </p>
-                          </div>
-                          <div className="mobile:flex mobile:items-center">
-                            <svg
+                    )}
+                    <div className="absolute w-full px-[2vw] py-[1.5vw] z-[2] bottom-0 overflow-hidden translate-y-full bg-black/40 backdrop-blur-lg group-hover:translate-y-0 tablet:translate-y-0 duration-300 ease-out mobile:py-[3vw] mobile:px-[3vw] tablet:py-[3vw]">
+                      <div className="text-white flex w-full justify-between h-full">
+                        <div className="flex flex-col tablet:w-[100%]">
+                          <h4 className="text-[1.8vw] font-display leading-[1.3] uppercase mobile:text-[6vw] tablet:text-[2.4vw]">
+                            {member.title}
+                          </h4>
+                          <p className="mobile:w-full mobile:leading-[1.3] mobile:text-[3vw] text-[1.2vw] tablet:text-[2vw]">
+                            {member.teams.designation}
+                          </p>
+                        </div>
+                        <div className="mobile:flex mobile:items-center">
+                          <svg
                             className="relative -rotate-[135deg] w-[2.3vw] h-[2.3vw] overflow-hidden mobile:w-[7vw] mobile:h-[7vw] tablet:w-[4vw] tablet:h-[4vw]"
                             width="19"
                             height="23"
@@ -116,15 +120,12 @@ export default function Meet({ teams }) {
                               fill="#ffffff"
                             />
                           </svg>
-                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                ))
-              ) : (
-                <p className="col-span-full py-10">No team members yet.</p>
-              )}
+                </div>
+              ))}
             </div>
           </div>
 
@@ -133,7 +134,7 @@ export default function Meet({ teams }) {
           </div>
         </div>
 
-        <div data-lenis-prevent id='team-detail' className="w-full bg-transparent fixed h-full top-0 right-0 overflow-y-auto overflow-x-hidden overflow-scroll detail-section z-[204] flex justify-end pointer-events-none">
+        <div data-lenis-prevent id='team-detail' className={`w-full bg-transparent fixed h-full top-0 right-0 overflow-y-auto overflow-x-hidden overflow-scroll detail-section z-[204] flex justify-end pointer-events-none`}>
           <div onClick={handleClose} className={`bg-[#000000] w-full h-full detail-overlay opacity-0 ${detailOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none'}`}></div>
           <div className={` w-[70%] px-[5vw] absolute right-0 flex flex-col gap-[2vw] bg-white h-full overflow-y-auto overflow-scroll z-[205] pointer-events-auto mobile:w-full mobile:gap-[5vw] tablet:w-[80%] tablet:gap-[3vw] transition-all ease-in-out duration-700 ${detailOpen ? "translate-x-0" : "translate-x-full"}`}>
             <TeamDetail
@@ -147,4 +148,3 @@ export default function Meet({ teams }) {
     </>
   );
 }
-

@@ -3,11 +3,11 @@ import Whatsapp from "../Whatsapp";
 import { ImageObjectJsonLd, OrganizationJsonLd, WebsiteJsonLd } from "@/lib/json-ld";
 
 const DynamicHeader = dynamic(() => import('../Header'), {
-  ssr: true,
+  ssr: false,
 })
 
 const DynaminFooter = dynamic(() => import('../Footer'), {
-  ssr: true,
+  ssr: false,
 })
 
 const Layout = ({ children }) => {

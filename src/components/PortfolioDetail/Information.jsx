@@ -1,6 +1,5 @@
 import Image from "next/image"
 import Section from "../Section"
-import styles from "@/styles/work.module.css";
 
 const Information = ({ info, title, tags, industry }) => {
 
@@ -18,7 +17,7 @@ const Information = ({ info, title, tags, industry }) => {
                     </div>
                     <div className="w-1/2 col-start-2 pt-[1vw] mobile:w-full mobile:pt-[5vw] fadeup">
                         <div
-                            className={`mb-[4vw] text-[1.4vw] mobile:text-[4.5vw] tablet:text-[2.2vw] leading-[1.4] mobile:mb-[10vw] fadeup space-y-[1.5vw] mobile:space-y-4 ${styles.portfolioDescription}`}
+                            className="mb-[4vw] text-[1.4vw] mobile:text-[4.5vw] tablet:text-[2.2vw] leading-[1.4] mobile:mb-[10vw] fadeup space-y-[1.5vw]"
                             dangerouslySetInnerHTML={{
                                 __html: info.description,
                             }}

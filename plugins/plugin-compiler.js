@@ -10,12 +10,6 @@ class WebpackPlugin {
   async index(compilation, options) {
     const { url, plugin, verbose = false, nextConfig } = options;
 
-    // 🚦 Skip in CI or when explicitly disabled
-    if (process.env.CI === 'true' || process.env.SKIP_REMOTE_FETCH === '1') {
-      console.log(`[${plugin.name}] Skipped in CI`);
-      return;
-    }
-
     try {
       plugin.outputLocation = path.join(plugin.outputDirectory, plugin.outputName);
 

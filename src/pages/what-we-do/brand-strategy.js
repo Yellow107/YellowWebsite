@@ -14,15 +14,14 @@ import Line from "@/components/Line";
 import LinkButton from "@/components/Button/LinkButton";
 import React from "react";
 import RelatedWork from "@/components/Metadata/RelatedWork";
-import { skipInCI } from "@/lib/util";
 
-export default function servicesdetail({ recentWorks = [] }) {
+export default function servicesdetail({ recentWorks }) {
   titleAnim();
   paraAnim();
   lineAnim();
   fadeUp();
 
-  const metadata = {
+ const metadata = {
     title: "Brand Strategy Agency Dubai, UAE - Brand Strategy Services",
     description:
       "Yellow is a leading brand strategy agency in Dubai, UAE. Our services include workshops, audits, research, positioning, and staff engagement.",
@@ -31,7 +30,6 @@ export default function servicesdetail({ recentWorks = [] }) {
     date_modified: "2024-08-01T12:32",
     slug: "what-we-do/brand-strategy",
   };
-
   const services = [
     {
       title: "Brand Positioning",
@@ -273,24 +271,12 @@ export default function servicesdetail({ recentWorks = [] }) {
 }
 
 export async function getStaticProps() {
-  // ⛳ Skip remote calls on build machines so CI never hits WP
-  if (skipInCI()) {
-    return {
-      props: { recentWorks: [] },
-      revalidate: 60, // ISR will repopulate after deploy
-    };
-  }
+  const recentWorks = await getRelatedPortfolioForPages("brand-strategy");
 
-  try {
-    const recentWorks = await getRelatedPortfolioForPages('brand-strategy').catch(() => []);
-    return {
-      props: { recentWorks: Array.isArray(recentWorks) ? recentWorks : [] },
-      revalidate: 300,
-    };
-  } catch {
-    return {
-      props: { recentWorks: [] },
-      revalidate: 60,
-    };
-  }
+  return {
+    props: {
+      recentWorks,
+    },
+    revalidate: 500,
+  };
 }

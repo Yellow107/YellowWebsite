@@ -10,12 +10,11 @@ import AboutUs from "@/components/HomePage/AboutUs";
 import Clients from "@/components/HomePage/Clients";
 import Faq from "@/components/HomePage/Faq";
 import Awards from "@/components/HomePage/Awards";
-import { skipInCI } from "@/lib/util";
 
 // Dynamically import Blogs component
 const Blogs = dynamic(() => import('@/components/HomePage/Blogs'));
-const Portfolio = dynamic(() => import('@/components/HomePage/Portfolio'), { ssr: true });
-const Services = dynamic(() => import('@/components/HomePage/Services'), { ssr: true });
+const Portfolio = dynamic(() => import('@/components/HomePage/Portfolio'), { ssr: false });
+const Services = dynamic(() => import('@/components/HomePage/Services'), { ssr: false });
 
 export default function Home({ recentPosts }) {
 
@@ -38,12 +37,14 @@ export default function Home({ recentPosts }) {
     <>
       <MetaData metadata={metadata} />
       <WebpageJsonLd metadata={metadata} />
+      {/* <OrganizationJsonLd /> */}
+      {/* <LocalBusiness /> */}
       <Layout>
         <Hero />
         <AboutUs />
         <Portfolio />
         <Services />
-        <Awards />
+        <Awards/>
         <Clients />
         <Blogs posts={recentPosts} />
         <Faq />
@@ -53,14 +54,13 @@ export default function Home({ recentPosts }) {
 }
 
 export async function getStaticProps() {
-  if (skipInCI()) {
-    return { props: { recentPosts: [] }, revalidate: 60 };
-  }
-  try {
-    const recentPosts = await getHomePagePosts();
-    return { props: { recentPosts: recentPosts || [] }, revalidate: 60 };
-  }
-  catch {
-    return { props: { recentPosts: [] }, revalidate: 60 };
-  }
+
+  const recentPosts = await getHomePagePosts();
+
+  return {
+    props: {
+      recentPosts,
+    },
+    revalidate: 500,
+  };
 }

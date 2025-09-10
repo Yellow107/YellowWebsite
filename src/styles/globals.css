@@ -407,6 +407,8 @@ input:-webkit-autofill:active {
     overflow: hidden;
   }
   .work_work__qXY49 p strong {
+    font-size: 5.5vw !important;
+    margin-bottom: 2vw !important;
     font-weight: 500;
   }
   .work_work__qXY49 p {

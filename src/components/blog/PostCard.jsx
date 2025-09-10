@@ -16,7 +16,7 @@ const PostCard = (({ post }) => {
                     <p className='text-[1vw] font-medium mobile:text-[4vw] tablet:text-[2vw]'>{formatDate(post.date)}</p>
                     <div className='text-[1vw] flex gap-[0.5vw] mobile:text-[3vw] mobile:gap-[2vw] tablet:text-[2vw] tablet:gap-[1vw]'>
                         {post.categories && post.categories.slice(0, 2).map((item, idx) => (
-                            <span key={idx} className='px-[0.7vw] border-[1px] border-black border-opacity-60 rounded-[50px] mobile:px-[2.5vw] tablet:px-[1.4vw] tablet:py-[0.3vw] mobile:py-[1vw]'>{item.name}</span>
+                            <span className='px-[0.7vw] border-[1px] border-black border-opacity-60 rounded-[50px] mobile:px-[2.5vw] tablet:px-[1.4vw] tablet:py-[0.3vw] mobile:py-[1vw]'>{item.name}</span>
                         ))}
                         {/* {post.categories[1] && (
                             <span className='px-[0.7vw] border-[1px] border-black border-opacity-60 rounded-[50px] mobile:px-[2.5vw] tablet:px-[1.4vw] tablet:py-[0.3vw] mobile:py-[1vw]'>{post.categories[1].name}</span>
