@@ -68,7 +68,7 @@ const Faq = () => {
   const containerRef = useRef(null);
   return (
     <>
-    <FAQPageJsonLd  mainEntity={mainEntity} />
+    <FAQPageJsonLd mainEntity={mainEntity} />
     <Section className="pb-[5%] mobile:pb-[15%]" id="services">
       <div ref={containerRef} className="container">
         <div className="mt-[2vw]">

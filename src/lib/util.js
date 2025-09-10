@@ -31,3 +31,5 @@ export function removeExtraSpaces(text) {
   if (typeof text !== 'string') return;
   return text.replace(/\s+/g, ' ').trim();
 }
+
+export const skipInCI = () => process.env.SKIP_REMOTE_FETCH === '1';

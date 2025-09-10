@@ -25,6 +25,10 @@ export function _createApolloClient() {
     }),
     cache: new InMemoryCache({
       typePolicies: {
+        JobFields: { keyFields: false },
+        WorkFields: { keyFields: false },
+        Job: { fields: { jobFields: { merge: false } } },
+        Project: { fields: { workFields: { merge: false } } },
         RootQuery: {
           queryType: true,
         },

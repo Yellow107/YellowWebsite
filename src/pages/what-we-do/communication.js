@@ -14,8 +14,9 @@ import Line from "@/components/Line";
 import LinkButton from "@/components/Button/LinkButton";
 import React from "react";
 import RelatedWork from "@/components/Metadata/RelatedWork";
+import { skipInCI } from "@/lib/util";
 
-export default function servicesdetail({ recentWorks }) {
+export default function servicesdetail({ recentWorks = [] }) {
   titleAnim();
   paraAnim();
   lineAnim();
@@ -242,12 +243,24 @@ export default function servicesdetail({ recentWorks }) {
 }
 
 export async function getStaticProps() {
-  const recentWorks = await getRelatedPortfolioForPages("communication");
+  // ⛳ Skip remote calls on build machines so CI never hits WP
+  if (skipInCI()) {
+    return {
+      props: { recentWorks: [] },
+      revalidate: 60, // ISR will repopulate after deploy
+    };
+  }
 
-  return {
-    props: {
-      recentWorks,
-    },
-    revalidate: 500,
-  };
+  try {
+    const recentWorks = await getRelatedPortfolioForPages('communication').catch(() => []);
+    return {
+      props: { recentWorks: Array.isArray(recentWorks) ? recentWorks : [] },
+      revalidate: 300,
+    };
+  } catch {
+    return {
+      props: { recentWorks: [] },
+      revalidate: 60,
+    };
+  }
 }

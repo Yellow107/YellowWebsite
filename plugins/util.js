@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
 const fs = require('fs');
 const he = require('he');
-const { gql, ApolloClient, InMemoryCache } = require('@apollo/client');
+const { gql, ApolloClient, InMemoryCache, HttpLink } = require('@apollo/client');
+const fetch = global.fetch || require('node-fetch');
 const RSS = require('rss');
 const prettier = require('prettier');
 
@@ -59,10 +60,25 @@ function mkdirp(directory) {
  * createApolloClient
  */
 
+function fetchWithTimeout(url, init = {}) {
+  const ctl = new AbortController();
+  const t = setTimeout(() => ctl.abort(), 8000); // 8s
+  return fetch(url, { ...init, signal: ctl.signal })
+    .finally(() => clearTimeout(t));
+}
+
 function createApolloClient(url) {
-  return new ApolloClient({
+  const link = new HttpLink({
     uri: url,
+    fetch: fetchWithTimeout,
+  });
+
+  return new ApolloClient({
+    link,
     cache: new InMemoryCache(),
+    defaultOptions: {
+      query: { errorPolicy: 'all' },   // don’t throw on partials
+    },
   });
 }
 

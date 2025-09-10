@@ -82,7 +82,6 @@ export function OrganizationJsonLd() {
       "@type": "PostalAddress",
       streetAddress: "Loft offices 2, Office 107 - Dubai Media City",
       addressLocality: "Dubai",
-      // addressRegion: "Dubai",
       postalCode: "25314",
       addressCountry: "AE",
     },
@@ -179,8 +178,7 @@ export function LocalBusiness() {
       streetAddress: "Loft offices 2, Office 107 - Dubai Media City",
       addressLocality: "Dubai",
       postalCode: "25314",
-      // addressRegion: 'Dubai',
-      addressCountry: "AE", // fixed
+      addressCountry: "AE",
     },
     aggregateRating: {
       "@type": "AggregateRating",

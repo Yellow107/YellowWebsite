@@ -17,7 +17,6 @@ export const POST_FIELDS = gql`
       node {
         altText
         caption
-        mimeType
         sourceUrl
         srcSet
         sizes
@@ -98,6 +97,7 @@ export const QUERY_POST_BY_SLUG = gql`
         node {
           altText
           caption
+          mimeType
           sourceUrl
           srcSet
           sizes

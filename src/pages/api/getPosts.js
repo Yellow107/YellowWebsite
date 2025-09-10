@@ -1,16 +1,26 @@
+// pages/api/getPosts.js
 import { getPaginatedPosts } from '@/lib/posts';
 
 export default async function handler(req, res) {
-    const { page = 1 } = req.query;
+  const page = Math.max(1, parseInt(req.query.page || '1', 10));
 
-    try {
-        const { posts, pagination } = await getPaginatedPosts({
-            currentPage: parseInt(page, 10),
-            queryIncludes: 'archive',
-        });
+  try {
+    const { posts = [], pagination } = await getPaginatedPosts({
+      currentPage: page,
+      queryIncludes: 'archive',
+    });
 
-        res.status(200).json({ posts, pagination });
-    } catch (error) {
-        res.status(500).json({ error: 'Failed to fetch posts' });
-    }
+    res.setHeader('Cache-Control', 's-maxage=30, stale-while-revalidate=60');
+    res.status(200).json({
+      posts,
+      pagination: pagination ?? { currentPage: page, pagesCount: page, basePath: '/blog' },
+    });
+  } catch {
+    // Soft-fail keeps UI functional even if WP blips
+    res.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate=30');
+    res.status(200).json({
+      posts: [],
+      pagination: { currentPage: page, pagesCount: page, basePath: '/blog' },
+    });
+  }
 }
