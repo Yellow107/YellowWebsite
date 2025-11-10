@@ -114,6 +114,8 @@ export function WebsiteJsonLd() {
   return <JsonLd json={json} />;
 }
 
+
+
 export function ImageObjectJsonLd() {
   const { homepage = "" } = config || {};
   const url = `${homepage}/assets/images/seo/home.png`;
@@ -143,8 +145,7 @@ export function WebpageJsonLd({ metadata = {} }) {
 
   const pageUrl = slug ? `${homepage}/${slug}`.replace(/\/+$/, "") : homepage;
 
-  const json = {
-    "@context": "https://schema.org",
+  const webPageNode = {
     "@type": "WebPage",
     "@id": `${pageUrl}#webpage`,
     url: pageUrl,
@@ -157,14 +158,27 @@ export function WebpageJsonLd({ metadata = {} }) {
       name: "Yellow",
       logo: { "@type": "ImageObject", url: `${homepage}${faviconPath}` },
     },
-    about: { "@id": `${homepage}/#organization` }, // root IDs for cross-refs
+    about: { "@id": `${homepage}/#organization` }, // cross-ref your OrganizationJsonLd
     isPartOf: { "@id": `${homepage}/#website` },
     inLanguage: "en-US",
   };
 
+  // Static AggregateRating as requested
+  const aggregateRatingNode = {
+    "@type": "AggregateRating",
+    bestRating: "5",
+    ratingValue: "5.0",
+    reviewCount: "41",
+    itemReviewed: { "@id": `${homepage}/#organization` },
+  };
+
+  const json = {
+    "@context": "https://schema.org",
+    "@graph": [webPageNode, aggregateRatingNode],
+  };
+
   return <JsonLd json={json} />;
 }
-
 export function LocalBusiness() {
   const json = {
     "@context": "https://schema.org",
