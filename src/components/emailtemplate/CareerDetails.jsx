@@ -29,6 +29,7 @@ const CareerDetails = ({
   userSecondTextArea,
   userThirdTextArea,
   userFourthTextArea,
+  userPageUrl,
 }) => {
   return (
     <Html>
@@ -110,7 +111,7 @@ const CareerDetails = ({
             </Section>
           </Section>
           <Text style={footer}>
-            This form is submitted from <Link style={link} href="https://welcometoyellow.com/careers/career-detail">Careers Page.</Link>
+            This form is submitted from <Link style={link} href={userPageUrl || "https://welcometoyellow.com/careers"}>Careers Page.</Link>
           </Text>
           <Text style={h1}>- Team Yellow</Text>
           <Hr style={hr} />

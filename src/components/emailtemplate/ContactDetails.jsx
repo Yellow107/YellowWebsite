@@ -65,7 +65,7 @@ const ContactDetails = ({ userName, userEmail, userNumber, userDetail, userServi
             </Row>
           </Section>
           <Text style={footer}>
-            This form is submitted from <Link href="/contact-us">Contact Page.</Link>
+            This form is submitted from <Link href="https://welcometoyellow.com/careers/contact-us">Contact Page.</Link>
           </Text>
           <Text style={paragraph}>- Team Yellow</Text>
           <Hr style={hr} />

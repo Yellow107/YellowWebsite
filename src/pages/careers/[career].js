@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 export default function Work({ job, jobsList }) {
+
   const router = useRouter();
 
   // always call hooks first (fixes hooks-after-return issue)
@@ -73,7 +74,7 @@ export default function Work({ job, jobsList }) {
       <Layout>
         <Pagehero title={title} bgImage={featuredImage} jobInfo={jobFields} />
         {jobFields?.overview && <Overview details={jobFields.overview} />}
-        <CareerForm jobs={jobsList || []} />
+        <CareerForm role={title} />
       </Layout>
     </>
   );

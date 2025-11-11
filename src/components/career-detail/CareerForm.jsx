@@ -49,6 +49,7 @@ const formSchema = z.object({
     message: "This field is required.",
   }),
 });
+
 const currentRoles = [
   "Art Director",
   "Senior Designer",
@@ -65,6 +66,7 @@ const currentRoles = [
   "Account Manager",
   "Account Executive",
 ];
+
 const mediums = [
   "Facebook",
   "BBC News",
@@ -84,10 +86,10 @@ const mediums = [
   "I bury my head in the sand",
 ];
 
-function CareerForm({ jobs }) {
-  const JobsData = jobs.jobs;
+function CareerForm({ role }) {
+
   const router = useRouter();
-  const [selectedRole, setSelectedRole] = useState("");
+  const [selectedRole, setSelectedRole] = useState(role || "");
   const [isLoading, setIsLoading] = useState(false);
   const [currentRole, setCurrentRole] = useState("");
   const [medium, setMedium] = useState("");
@@ -125,6 +127,7 @@ function CareerForm({ jobs }) {
     setIsLoading(true);
 
     const base64Content = content.split(",")[1];
+    const pageUrl = window.location.href;
 
     const formData = {
       name: data.name,
@@ -143,6 +146,7 @@ function CareerForm({ jobs }) {
       fourthTextArea: fourthTextArea,
       filename: fileName,
       content: base64Content,
+      pageUrl: pageUrl,
     };
 
     try {
@@ -167,9 +171,6 @@ function CareerForm({ jobs }) {
     }
   };
 
-  const handleValueChange = (value) => {
-    setSelectedRole(value);
-  };
   const handleCurrentRoleChange = (value) => {
     setCurrentRole(value);
   };
@@ -225,27 +226,6 @@ function CareerForm({ jobs }) {
               onSubmit={form.handleSubmit(onSubmit)}
               className="w-full h-full border-[1.5px]  rounded-[50px] border-black/20 bg-white py-[5vw] px-[5vw] flex flex-wrap gap-x-[7.8vw] gap-y-[3vw] border-opacity-45 drop-shadow-[50px] shadow-2xl  mobile:rounded-[10px] mobile:gap-y-[12vw] mobile:border-[1px] mobile:py-[12vw] mobile:shadow-none tablet:rounded-[15px] tablet:gap-y-[4vw] tablet:py-[7vw] tablet:gap-x-[7vw] career-form fadeup"
             >
-              <div className="w-full  career-input border-b border-black flex flex-col gap-[0.5vw]">
-                <Label htmlFor="roles" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[5vw] tablet:text-[2.2vw]">
-                  Which role are you applying for?
-                </Label>
-                <Select onValueChange={handleValueChange}>
-                  <SelectTrigger className="w-full placeholder:text-[2vw]">
-                    <SelectValue placeholder="" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel>Roles</SelectLabel>
-                      {JobsData &&
-                        JobsData.map((job, index) => (
-                          <SelectItem key={index} value={job.title} name="roles">
-                            {job.title}
-                          </SelectItem>
-                        ))}
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              </div>
               <div className="flex w-full justify-between mobile:flex-col mobile:gap-[8vw]">
                 <div className="w-[45%] flex flex-col mobile:w-full">
                   <Label htmlFor="name" className="text-[1.3vw] mb-[1vw] font-medium mobile:text-[4.5vw] mobile:mb-[2vw] tablet:text-[2.2vw]">
