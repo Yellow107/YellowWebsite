@@ -149,7 +149,7 @@ const Footer = () => {
 
                         <div className="w-full flex items-center justify-between relative mobile:mt-[7vw tablet:justify-between mobile:flex-col mobile:gap-4">
                             <div>
-                                <p className="font-medium text-[1.15vw] capitalize mobile:text-[3.5vw] tablet:text-[2vw]">© 2025 | Yellow. All rights reserved.</p>
+                                <p className="font-medium text-[1.15vw] capitalize mobile:text-[3.5vw] tablet:text-[2vw]">© 2026 | Yellow. All rights reserved.</p>
                             </div>
 
                             <button aria-label="Scroll Down Button" onClick={handleScroll} className="cursor-pointer scroll-btn w-fit right-10 text-[1.1vw] gap-[0.5vw] font-[400] group flex items-center justify-center mobile:hidden tablet:hidden">
