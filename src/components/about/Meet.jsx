@@ -16,6 +16,7 @@ export default function Meet({ teams }) {
   const [selectedMember, setSelectedMember] = useState(null);
   const lenis = useLenis();
   const cardContainer = useRef(null);
+  // console.log(teams)
 
   // 🟢 Normalize teams: accept {teams: []} OR []
   const teamInfo = Array.isArray(teams?.teams) ? teams.teams : (Array.isArray(teams) ? teams : []);
