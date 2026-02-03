@@ -47,7 +47,7 @@ export default function Essentials() {
             note on why you think you would be a good fit for the company.
           </p>
           <div className="fadeup mobile:mt-[4vw]">
-            <LinkButton btnText={"Send Your CV"} btnLink={"/careers/career-detail"}/>
+            <LinkButton btnText={"Send Your CV"} btnLink={"mailto:hello@welcometoyellow.com"}  />
           </div>
         </div>
         <div className="w-[40%] flex flex-col gap-[2vw] mb-[5vw] mobile:w-full tablet:w-[70%]">
