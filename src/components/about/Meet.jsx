@@ -68,7 +68,7 @@ export default function Meet({ teams }) {
                 teamInfo.map((member) => (
                   <div
                     key={member.id ?? member.slug}
-                    className="w-fit overflow-hidden fadeup"
+                    className="w-full overflow-hidden fadeup"
                     onClick={() => handleDetail(member)}
                   >
                     <div className="w-full h-[36vw] group cursor-pointer relative overflow-hidden mobile:w-[75vw] mobile:h-[100vw] tablet:w-[41vw] tablet:h-full">
