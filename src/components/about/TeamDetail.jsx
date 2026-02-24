@@ -18,7 +18,7 @@ export default function TeamDetail({ member, handleClose, teams }) {
           <div className='w-full h-[1px] py-[0.01vw] bg-black lineDraw mobile:my-[4vw] mobile:py-[0.1vw] tablet:my-[2vw]'></div>
           <div className='w-full flex gap-[2vw] mobile:flex-col mobile:gap-[5vw]'>
             <div className='w-[25vw] rounded-xl overflow-hidden h-[30vw] relative mobile:w-[90vw] mobile:h-[120vw] tablet:w-[40vw] tablet:h-[50vw]'>
-              <Image src={member.featuredImage.node.sourceUrl} alt={`${member.title} Image`} className="object-cover" fill />
+              <Image src={member.featuredImage.node.sourceUrl} alt={`${member.title} Image`} className="object-cover object-top" fill />
             </div>
             <div className='tablet:w-[30%] '>
               <h2 className='text-[4vw] font-display leading-[1.1] mobile:text-[10vw] mobile:mb-[2vw] tablet:text-[6.5vw]'>{member.title}</h2>
