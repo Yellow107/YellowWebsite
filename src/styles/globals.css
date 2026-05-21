@@ -593,3 +593,10 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+
+
+
+.blog-content-global .wp-block-table {
+    overflow-x: scroll;
+}
