@@ -107,7 +107,7 @@ export default function Post({ post, relatedPosts }) {
       <Layout>
         <Pagehero>
           {featuredImage && (
-            <div className="mobile:relative mobile:h-[60vh] mobile:w-full tablet:w-full w-[89vw]">
+            <div className="mobile:relative mobile:h-fit mobile:w-full tablet:w-full w-[89vw]">
               <FeaturedImage
                 title={title}
                 src={featuredImage.sourceUrl}

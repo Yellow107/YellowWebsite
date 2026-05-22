@@ -205,6 +205,7 @@
     border-collapse: collapse;
     overflow-x: scroll;
 }
+
 .blogContent tbody tr:nth-child(odd) {
     background-color: #ffffff;
 }
@@ -337,4 +338,7 @@
     .blogContent td{
         font-size: 3vw;
     }
+    .blogContent ul, .blogContent ol{
+    margin-left: 5vw;
+}
 }
