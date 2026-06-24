@@ -112,7 +112,7 @@ export default function Post({ post, relatedPosts }) {
                 title={title}
                 src={featuredImage.sourceUrl}
                 alt={featuredImage.altText}
-                sizes={featuredImage.sizes}
+                // sizes={featuredImage.sizes}
               />
             </div>
           )}
