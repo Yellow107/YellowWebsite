@@ -69,23 +69,39 @@ const Awards = () => {
                   <div className="flex flex-col justify-between items-start w-[70%] h-full">
                     <div>
                       <h3
-                        className={`text-[3vw] leading-[1.2] font-display font-normal mobile:text-[7vw] tablet:text-[5vw] mobile:!w-full tablet:!w-full ${index == 2 ? "w-[27vw] mb-[1vw]" : "text-nowrap"}`}
+                        className={`text-[3vw] leading-[1.2] font-display font-normal mobile:text-[7vw] tablet:text-[5vw] mobile:!w-full tablet:!w-full mb-[1vw] mobile:mb-[3vw] tablet:mb-[2vw] ${index == 2 ? "w-[27vw] " : "text-nowrap"}`}
                       >
                         {card.title}
                       </h3>
+                        {index !== 1 ? (
                       <p
-                        className={` font-medium mobile:text-[3.5vw]  tablet:text-[3vw]  mobile:!w-full tablet:!w-full ${index == 2 ? "!w-[27vw] text-[1.5vw]" : "text-nowrap text-[1.8vw]"}`}
+                        className={` font-medium mobile:text-[3.5vw]  tablet:text-[3vw]  mobile:!w-full tablet:!w-full ${index == 2 ? "!w-[27vw] text-[1.5vw]" : "text-nowrap text-[1.5vw]"}`}
                       >
                         {card.subtitle}
-                      </p>
+                      </p>):(
+                        <div
+                      className={`font-medium w-[37vw] mobile:text-[3.5vw] text-[1.5vw] space-y-[1vw] tablet:text-[3vw]  mobile:!w-full tablet:!w-full `}
+                    >
+                      <p>Diamond Award - Education <br/>- Transform Global 2026</p>
+                      <p>Gold Award - Education <br/>- Transform MEA 2025</p>
+                    </div>
+                      )}
                     </div>
 
                     {/* always visible now */}
+                    {index !== 1 ? (
                     <div
                       className={`text-[1.4vw] font-medium mobile:text-[3.5vw] tablet:text-[3vw] mobile:!opacity-100 tablet:!opacity-100 ${index == 2 ? "hidden" : ""} transition-all  ease-in-out ${enter == 0 && index == 0 ? "opacity-100 duration-500" : "opacity-0 duration-400"} ${enter == 1 && index == 1 ? "opacity-100 duration-500" : "opacity-0 duration-400"} ${enter == 2 && index == 2 ? "opacity-100 duration-500" : "opacity-0 duration-400"}`}
                     >
                       <span>Transform Awards 2025</span>
                     </div>
+                  
+                  ):(
+
+                    <>
+                    
+                    </>
+                  )}
 
                     {/* always visible now */}
                     <div

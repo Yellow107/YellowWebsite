@@ -12,9 +12,9 @@ const BlogCard = ({ title, src, date, link }) => {
         <div className="flex items-start gap-[2vw] mobile:flex-col">
           <Link
             href={link}
-            className="overflow-hidden rounded-[1.5vw] mobile:rounded-[20px]"
+            className="overflow-hidden rounded-[1.5vw] mobile:rounded-[15px]"
           >
-            <div className="h-[16.5vw] w-[26.5vw] image-animation-down-wrapper overflow-hidden mobile:w-[85vw] mobile:h-[27vh] tablet:w-[30vw] tablet:h-[20vw] scale-[1.1] group-hover:scale-[1] transition-all ease-in-out duration-500">
+            <div className="h-[16.5vw] w-[26.5vw] image-animation-down-wrapper overflow-hidden mobile:w-[85vw] mobile:h-[46vw] tablet:w-[30vw] tablet:h-[20vw] scale-[1.05] group-hover:scale-[1] transition-all ease-in-out duration-500">
               <div className="">
                 <Image
                   src={src}
