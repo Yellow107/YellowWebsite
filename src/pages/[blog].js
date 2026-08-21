@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 // pages/[blog].js
 import { getPostBySlug, getRecentPosts, getRelatedPosts } from '@/lib/posts';
+import { withRetry } from '@/lib/retry';
 import { ArticleJsonLd, WebpageJsonLd } from '@/lib/json-ld';
 import Layout from '@/components/Layout';
 import FeaturedImage from '@/components/blog-detail/FeaturedImage';
@@ -138,7 +139,7 @@ export async function getStaticProps({ params = {} } = {}) {
   const { blog: postSlug } = params;
 
   try {
-    const { post } = await getPostBySlug(postSlug);
+    const { post } = await withRetry(() => getPostBySlug(postSlug));
 
     // If CMS confirms it's missing, return a true 404
     if (!post) {
@@ -169,10 +170,10 @@ export async function getStaticProps({ params = {} } = {}) {
 export async function getStaticPaths() {
   // Keep build alive even if CMS is down
   try {
-    const { posts } = await getRecentPosts({
+    const { posts } = await withRetry(() => getRecentPosts({
       count: process.env.POSTS_PRERENDER_COUNT || 20,
       queryIncludes: 'index',
-    });
+    }));
 
     const paths =
       Array.isArray(posts)

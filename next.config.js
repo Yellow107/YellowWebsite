@@ -9,6 +9,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Single worker process for static generation so the concurrency limiter
+  // in src/lib/apollo-client.js is a true global cap on requests to
+  // WordPress, not "10 per build worker".
+  cpus: 1,
   images: {
     remotePatterns: [
       {

@@ -33,43 +33,27 @@ export function workPathBySlug(slug) {
 export async function getProjectBySlug(slug) {
   const apolloClient = getApolloClient();
 
-  let projectData;
-  let seoData;
-
-  try {
-    projectData = await apolloClient.query({
-      query: QUERY_PROJECT_BY_SLUG,
-      variables: {
-        slug,
-      },
-    });
-  } catch (e) {
-    console.log(`[portfolio][getProjectBySlug] Failed to query project data: ${e.message}`);
-    throw e;
-  }
+  const [projectData, seoData] = await Promise.all([
+    apolloClient.query({ query: QUERY_PROJECT_BY_SLUG, variables: { slug } }).catch((e) => {
+      console.log(`[portfolio][getProjectBySlug] Failed to query project data: ${e.message}`);
+      throw e;
+    }),
+    apolloClient.query({ query: QUERY_PROJECT_SEO_BY_SLUG, variables: { slug } }).catch((e) => {
+      console.log(`[portfolio][getProjectBySlug] Failed to query SEO plugin: ${e.message}`);
+      console.log('Is the SEO Plugin installed? If not, disable WORDPRESS_PLUGIN_SEO in next.config.js.');
+      throw e;
+    }),
+  ]);
 
   if (!projectData?.data.project) return { project: undefined };
 
   const project = [projectData?.data.project].map(mapProjectData)[0];
 
-    try {
-      seoData = await apolloClient.query({
-        query: QUERY_PROJECT_SEO_BY_SLUG,
-        variables: {
-          slug,
-        },
-      });
-    } catch (e) {
-      console.log(`[portfolio][getProjectBySlug] Failed to query SEO plugin: ${e.message}`);
-      console.log('Is the SEO Plugin installed? If not, disable WORDPRESS_PLUGIN_SEO in next.config.js.');
-      throw e;
-    }
+  const { seo = {} } = seoData?.data?.project || {};
 
-    const { seo = {} } = seoData?.data?.project || {};
-
-    project.metaTitle = seo.title;
-    project.metaDescription = seo.metaDesc;
-    project.metaImage = seo.opengraphImage
+  project.metaTitle = seo.title;
+  project.metaDescription = seo.metaDesc;
+  project.metaImage = seo.opengraphImage
 
   return {
     project,

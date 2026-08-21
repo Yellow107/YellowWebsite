@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "@/components/Layout";
+import { withRetry } from "@/lib/retry";
 import Section from "@/components/Section";
 import PortfolioIndustries from "@/components/Portfolio/PortfolioIndustries";
 import WorkCard from "@/components/Portfolio/WorkCard";
@@ -177,7 +178,7 @@ export async function getStaticProps({ params }) {
   }
 
   try {
-    const { portfolioIndustry } = await getPortfolioIndustryBySlug(portfolioIndustrySlug);
+    const { portfolioIndustry } = await withRetry(() => getPortfolioIndustryBySlug(portfolioIndustrySlug));
 
     // Real 404 only if CMS confirms it's missing
     if (!portfolioIndustry) {
@@ -200,7 +201,7 @@ export async function getStaticProps({ params }) {
 
     // Fetch all industries for the filter strip (soft-fail)
     try {
-      const all = await getAllPortfolioIndustries();
+      const all = await withRetry(() => getAllPortfolioIndustries());
       portfolioIndustries = all?.portfolioIndustries || [];
     } catch {
       portfolioIndustries = [];
@@ -226,7 +227,7 @@ export async function getStaticPaths() {
   }
 
   try {
-    const { portfolioIndustries } = await getAllPortfolioIndustries();
+    const { portfolioIndustries } = await withRetry(() => getAllPortfolioIndustries());
     const paths = Array.isArray(portfolioIndustries)
       ? portfolioIndustries
         .filter((i) => typeof i?.slug === "string" && i.slug.length > 0)

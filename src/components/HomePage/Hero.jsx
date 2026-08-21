@@ -97,10 +97,11 @@ const Hero = () => {
             muted
             loop
             playsInline
-            loading="lazy"
             className="w-full h-full aspect-video object-cover brightness-[.65]"
-            src="/assets/showreel-6sec-optimized.mp4"
-          ></video>
+          >
+            <source media="(max-width: 768px)" src="/assets/showreel-hero-720p.mp4" type="video/mp4" />
+            <source src="/assets/showreel-hero-1080p.mp4" type="video/mp4" />
+          </video>
         </div>
         <div
           className="container h-full flex justify-start items-center relative mobile:flex-col mobile:pt-[35%] mobile:gap-[7vw] tablet:flex-col tablet:pt-[35%] tablet:gap-[7vw]"

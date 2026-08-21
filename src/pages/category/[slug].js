@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { getAllCategories, getCategoryBySlug } from '@/lib/categories';
+import { withRetry } from '@/lib/retry';
 import { getPostsByCategoryId } from '@/lib/posts';
 import CategoryList from '@/components/blog/CategoryList';
 import Layout from '@/components/Layout';
@@ -104,7 +105,7 @@ export async function getStaticProps({ params }) {
   }
 
   try {
-    const { category } = await getCategoryBySlug(categorySlug);
+    const { category } = await withRetry(() => getCategoryBySlug(categorySlug));
 
     if (!category) {
       return { notFound: true, revalidate: 60 };
@@ -124,7 +125,7 @@ export async function getStaticProps({ params }) {
     }
 
     try {
-      const all = await getAllCategories();
+      const all = await withRetry(() => getAllCategories());
       categories = all?.categories || [];
     } catch {
       categories = [];
@@ -144,7 +145,7 @@ export async function getStaticPaths() {
   if (skipInCI()) return { paths: [], fallback: 'blocking' };
 
   try {
-    const { categories } = await getAllCategories();
+    const { categories } = await withRetry(() => getAllCategories());
     const paths = Array.isArray(categories)
       ? categories.filter(c => typeof c?.slug === 'string' && c.slug).map(c => ({ params: { slug: c.slug } }))
       : [];

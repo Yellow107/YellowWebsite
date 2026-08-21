@@ -5,6 +5,7 @@ import Layout from "@/components/Layout";
 import { paraAnim, fadeUp, lineAnim } from "@/components/gsapAnimations";
 import Section from "@/components/Section";
 import { getAllTeams, getTeamBySlug } from "@/lib/teams";
+import { withRetry } from "@/lib/retry";
 import config from '../../../package.json';
 import { NextSeo } from "next-seo";
 import { WebpageJsonLd } from "@/lib/json-ld";
@@ -175,7 +176,7 @@ export default Teamdetail;
 export async function getStaticProps({ params = {} } = {}) {
   const { team: teamSlug } = params;
   try {
-    const { team } = await getTeamBySlug(teamSlug);
+    const { team } = await withRetry(() => getTeamBySlug(teamSlug));
 
     // Real 404 only when CMS confirms it's missing
     if (!team) {
@@ -191,7 +192,7 @@ export async function getStaticProps({ params = {} } = {}) {
 
 export async function getStaticPaths() {
   try {
-    const { teams } = await getAllTeams({ queryIncludes: 'index' });
+    const { teams } = await withRetry(() => getAllTeams({ queryIncludes: 'index' }));
     const paths = Array.isArray(teams)
       ? teams
           .filter(({ slug }) => typeof slug === 'string')

@@ -2,6 +2,7 @@
 import Layout from '@/components/Layout';
 import { titleAnim, paraAnim, lineAnim, fadeUp } from '@/components/gsapAnimations';
 import { getAllJobs, getJobBySlug } from '@/lib/jobs';
+import { withRetry } from '@/lib/retry';
 import Pagehero from '@/components/career-detail/Pagehero';
 import Overview from '@/components/career-detail/Overview';
 import CareerForm from '@/components/career-detail/CareerForm';
@@ -84,7 +85,7 @@ export async function getStaticProps({ params = {} } = {}) {
   const { career: jobSlug } = params;
 
   try {
-    const { job } = await getJobBySlug(jobSlug);
+    const { job } = await withRetry(() => getJobBySlug(jobSlug));
 
     // real 404 only when CMS confirms it's missing
     if (!job) {
@@ -93,7 +94,7 @@ export async function getStaticProps({ params = {} } = {}) {
 
     let jobsList = [];
     try {
-      const all = await getAllJobs({ queryIncludes: 'index' });
+      const all = await withRetry(() => getAllJobs({ queryIncludes: 'index' }));
       jobsList = all?.jobs || [];
     } catch {
       // don't fail build if list fetch fails
@@ -108,7 +109,7 @@ export async function getStaticProps({ params = {} } = {}) {
 
 export async function getStaticPaths() {
   try {
-    const { jobs } = await getAllJobs({ queryIncludes: 'index' });
+    const { jobs } = await withRetry(() => getAllJobs({ queryIncludes: 'index' }));
     const paths = Array.isArray(jobs)
       ? jobs
           .filter(({ slug }) => typeof slug === 'string')

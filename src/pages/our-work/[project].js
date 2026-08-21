@@ -1,6 +1,7 @@
 // pages/[project].js
 import Layout from '@/components/Layout';
 import { getRecentPortfolio, getProjectBySlug } from '@/lib/portfolio';
+import { withRetry } from '@/lib/retry';
 import Pagehero from '@/components/PortfolioDetail/Pagehero';
 import Section from '@/components/Section';
 import Information from '@/components/PortfolioDetail/Information';
@@ -131,7 +132,7 @@ export async function getStaticProps({ params = {} } = {}) {
   const { project: projectSlug } = params;
 
   try {
-    const { project } = await getProjectBySlug(projectSlug);
+    const { project } = await withRetry(() => getProjectBySlug(projectSlug));
 
     // real 404 only if CMS confirms it's missing
     if (!project) {
@@ -147,10 +148,10 @@ export async function getStaticProps({ params = {} } = {}) {
 
 export async function getStaticPaths() {
   try {
-    const { portfolio } = await getRecentPortfolio({
+    const { portfolio } = await withRetry(() => getRecentPortfolio({
       count: process.env.POSTS_PRERENDER_COUNT || 20,
       queryIncludes: 'index',
-    });
+    }));
 
     const paths = Array.isArray(portfolio)
       ? portfolio
