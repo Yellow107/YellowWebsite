@@ -47,7 +47,6 @@ const Hero = () => {
       yPercent: 100,
       duration: 1.47,
       stagger: 0.07,
-      delay: 1,
     });
     tl.to(".cover span", {
       scaleY: 0,

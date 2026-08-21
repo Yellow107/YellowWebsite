@@ -78,7 +78,7 @@ const CareerDetails = ({
               <Text style={paragraph}>{userQuestionA}</Text>
             </Section>
             <Section style={querySection}>
-              <Heading style={h1}>Why Yellow?(write a short paragraph on makes you want to work with us) :</Heading>
+              <Heading style={h1}>Why Yellow?(write a short paragraph about what makes you want to work with us) :</Heading>
               <Text style={paragraph}>{userFirstTextArea}</Text>
             </Section>
             <Section style={querySection}>
