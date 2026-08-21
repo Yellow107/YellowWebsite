@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { categoryPathBySlug } from '@/lib/categories';
+import { categoryPathBySlug } from '@/lib/paths';
 
 const Categories = ({ categories, className = "" }) => {
 

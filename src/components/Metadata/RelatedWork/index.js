@@ -5,7 +5,7 @@ import SectionTitle from '../../SectionTitle';
 import Section from '../../Section';
 import LinkButton from '../../Button/LinkButton';
 import MediaRender from '../../MediaRender';
-import { workPathBySlug } from '@/lib/portfolio';
+import { workPathBySlug } from '@/lib/paths';
 
 export default function RelatedWork({ works, heading, subheading }) {
   const list = Array.isArray(works) ? works : [];

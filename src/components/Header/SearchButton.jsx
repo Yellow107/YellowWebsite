@@ -1,7 +1,6 @@
 "use client"
 import useSearch, { SEARCH_STATE_LOADED } from '@/hooks/use-search';
-import { postPathBySlug } from "@/lib/posts";
-import { workPathBySlug } from "@/lib/portfolio";
+import { postPathBySlug, workPathBySlug } from "@/lib/paths";
 import { useLenis } from "lenis/react";
 import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";

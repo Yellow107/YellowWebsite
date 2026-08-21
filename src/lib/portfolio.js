@@ -19,14 +19,6 @@ import {
 } from '@/data/portfolio';
 
 /**
- * projectPathBySlug
- */
-
-export function workPathBySlug(slug) {
-  return `/our-work/${slug}`;
-}
-
-/**
  * getProjectBySlug
  */
 

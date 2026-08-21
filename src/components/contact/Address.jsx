@@ -8,7 +8,7 @@ export default function Address() {
         <div className="container flex justify-between gap-[5vw] mobile:flex-col mobile:gap-[10vw] tablet:flex-col py-[8%]  mobile:py-[15%] bg-white">
           <div className="h-[100vh] shadow-2xl w-[50%] mobile:w-full mobile:h-[80vh] mobile:order-2 mobile:rounded-[10px] mobile:overflow-hidden tablet:w-full tablet:h-[40vh] rounded-xl overflow-hidden">
             <iframe
-              loading="async"
+              loading="lazy"
               src="https://snazzymaps.com/embed/647472"
               width="100%"
               height="600px"

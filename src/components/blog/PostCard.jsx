@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { formatDate } from "@/lib/datetime";
-import { postPathBySlug } from "@/lib/posts";
+import { postPathBySlug } from "@/lib/paths";
 import Link from "next/link";
 
 const PostCard = (({ post }) => {

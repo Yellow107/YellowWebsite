@@ -1,4 +1,4 @@
-import { categoryPathBySlug } from '@/lib/categories';
+import { categoryPathBySlug } from '@/lib/paths';
 import Link from 'next/link';
 
 const CategoryList = ({ categories, activeCategory, setActiveCategory }) => {

@@ -3,14 +3,6 @@ import { getApolloClient } from './apollo-client';
 import { QUERY_ALL_CATEGORIES, QUERY_CATEGORY_BY_SLUG, QUERY_CATEGORY_SEO_BY_SLUG } from '../data/categories';
 
 /**
- * categoryPathBySlug
- */
-
-export function categoryPathBySlug(slug) {
-  return `/category/${slug}`;
-}
-
-/**
  * getAllCategories
  */
 

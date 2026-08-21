@@ -29,14 +29,6 @@ export async function getUserBySlug(slug) {
 }
 
 /**
- * authorPathByName
- */
-
-export function authorPathByName(name) {
-  return `/authors/${parameterize(name)}`;
-}
-
-/**
  * getUserByNameSlug
  */
 

@@ -1,4 +1,4 @@
-import { portfolioIndustryPathBySlug } from '@/lib/portfolioIndustries';
+import { portfolioIndustryPathBySlug } from '@/lib/paths';
 import Link from 'next/link';
 import { useState } from 'react';
 

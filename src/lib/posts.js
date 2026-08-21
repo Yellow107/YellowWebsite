@@ -20,14 +20,6 @@ import {
 } from '../data/posts';
 
 /**
- * postPathBySlug
- */
-
-export function postPathBySlug(slug) {
-  return `/${slug}`;
-}
-
-/**
  * getPostBySlug
  */
 

@@ -7,14 +7,6 @@ import {
 } from '../data/portfolioIndustries';
 
 /**
- * portfolioIndustryPathBySlug
- */
-
-export function portfolioIndustryPathBySlug(slug) {
-  return `/our-work/industry/${slug}`;
-}
-
-/**
  * getAllportfolioIndustries
  */
 

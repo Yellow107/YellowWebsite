@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import LinkButton from "../Button/LinkButton";
 import Section from "../Section";
-import { postPathBySlug } from "@/lib/posts";
+import { postPathBySlug } from "@/lib/paths";
 import Link from "next/link";
 
 export default function RelatedBlogs({ posts }) {

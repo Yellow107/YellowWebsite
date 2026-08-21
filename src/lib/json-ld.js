@@ -1,8 +1,7 @@
 // lib/json-ld.jsx
 import Head from "next/head";
 import config from "../../package.json"; // adjust relative path if needed
-import { authorPathByName } from "./users";
-import { postPathBySlug } from "./posts";
+import { authorPathByName, postPathBySlug } from "./paths";
 
 function JsonLd({ json }) {
   return (
