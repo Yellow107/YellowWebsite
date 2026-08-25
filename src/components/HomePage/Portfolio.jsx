@@ -207,7 +207,7 @@ const Portfolio = () => {
               className="brightness-75 object-cover h-full w-full absolute left-0 right-0 top-0 bottom-0"
             />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 z-[1] -translate-y-1/2">
-              <RoundButton href="/our-work/mitsubishi-motors"/>
+              <RoundButton href="/our-work/mitsubishi-motors" aria-label="View more: Mitsubishi Motors"/>
             </div>
             <div className="relative w-full flex text-white h-full items-end">
               <div className="flex justify-between items-end w-full mobile:flex-col mobile:h-full mobile:items-start">
@@ -239,7 +239,7 @@ const Portfolio = () => {
               className="brightness-75 object-cover h-full w-full absolute left-0 right-0 top-0 bottom-0"
             />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 z-[1] -translate-y-1/2">
-              <RoundButton href="/our-work/barakat" />
+              <RoundButton href="/our-work/barakat" aria-label="View more: Barakat" />
             </div>
             <div className="relative w-full flex text-white h-full items-end">
               <div className="flex justify-between items-end w-full mobile:flex-col mobile:h-full mobile:items-start">
@@ -271,7 +271,7 @@ const Portfolio = () => {
               className="brightness-75 object-cover h-full w-full absolute left-0 right-0 top-0 bottom-0"
             />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 z-[1] -translate-y-1/2">
-              <RoundButton href="/our-work/cafu-branding-and-digital" />
+              <RoundButton href="/our-work/cafu-branding-and-digital" aria-label="View more: Cafu Branding and Digital" />
             </div>
             <div className="relative w-full flex text-white h-full items-end">
               <div className="flex justify-between items-end w-full mobile:flex-col mobile:h-full mobile:items-start">

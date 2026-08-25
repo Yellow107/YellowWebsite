@@ -14,9 +14,22 @@ gsap.registerPlugin(useGSAP);
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [videoSrc, setVideoSrc] = useState(null);
   const lenis = useLenis();
   const text = useRef();
   const cover = useRef();
+
+  useEffect(() => {
+    // <source media> selection on <video> has proven unreliable across
+    // browsers when the media element autoplays - both the mobile and
+    // desktop files were observed loading on real mobile Chrome. Picking
+    // the file in JS guarantees only one <video src> is ever rendered.
+    setVideoSrc(
+      window.matchMedia("(max-width: 768px)").matches
+        ? "/assets/showreel-hero-720p.mp4"
+        : "/assets/showreel-hero-1080p.mp4"
+    );
+  }, []);
 
   const handleOpen = () => {
     setIsModalOpen(true);
@@ -91,16 +104,15 @@ const Hero = () => {
           </div>
           <video
             id="hero-video"
+            key={videoSrc}
             poster="/assets/images/homepage/showreel-poster.webp"
             autoPlay
             muted
             loop
             playsInline
+            src={videoSrc || undefined}
             className="w-full h-full aspect-video object-cover brightness-[.65]"
-          >
-            <source media="(max-width: 768px)" src="/assets/showreel-hero-720p.mp4" type="video/mp4" />
-            <source src="/assets/showreel-hero-1080p.mp4" type="video/mp4" />
-          </video>
+          ></video>
         </div>
         <div
           className="container h-full flex justify-start items-center relative mobile:flex-col mobile:pt-[35%] mobile:gap-[7vw] tablet:flex-col tablet:pt-[35%] tablet:gap-[7vw]"

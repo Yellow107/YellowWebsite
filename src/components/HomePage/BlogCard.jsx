@@ -37,7 +37,7 @@ const BlogCard = ({ title, src, date, link }) => {
             </p>
           </div>
         </div>
-        <Link href={link}>
+        <Link href={link} aria-label={`Read ${title}`}>
           <div className="h-[5vw] fadeIn w-[5vw] flex items-center justify-center border border-body rounded-full group-hover:bg-body transition-all duration-500 group-hover:text-white mobile:h-[15vw] mobile:w-[15vw] tablet:w-[8vw] tablet:h-[8vw] mobile:my-[5vw]">
             <svg
               className="relative -rotate-[135deg] w-[1.7vw] h-[1.7vw] overflow-hidden mobile:w-[6vw] mobile:h-[6vw] tablet:w-[4vw] tablet:h-[4vw]"

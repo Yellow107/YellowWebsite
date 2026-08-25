@@ -1,0 +1,27 @@
+# Yellow
+
+> Yellow is a branding, creative design, and advertising agency based in Dubai, serving clients across the UAE and GCC. We provide brand strategy, naming, visual identity, communication, and digital services to help businesses cut through the noise.
+
+## Company
+- [About Us](https://welcometoyellow.com/about-us): Who Yellow is, our story, and our team
+- [Teams](https://welcometoyellow.com/teams): Meet the people at Yellow
+- [Careers](https://welcometoyellow.com/careers): Open roles and how to apply
+- [Contact Us](https://welcometoyellow.com/contact-us): Get in touch with our team
+
+## Services
+- [What We Do](https://welcometoyellow.com/what-we-do): Overview of our service offering
+- [Brand Strategy](https://welcometoyellow.com/what-we-do/brand-strategy): Positioning, research, and strategic direction
+- [Brand Identity](https://welcometoyellow.com/what-we-do/brand-identity): Visual identity systems and design
+- [Naming](https://welcometoyellow.com/what-we-do/naming): Brand and product naming
+- [Communication](https://welcometoyellow.com/what-we-do/communication): Messaging and brand communication
+- [Digital](https://welcometoyellow.com/what-we-do/digital): Digital design and experience
+
+## Work
+- [Our Work](https://welcometoyellow.com/our-work): Portfolio of client projects and case studies, filterable by industry (automotive, FMCG, healthcare, hospitality, luxury, real estate, retail, technology, and more)
+
+## Insights
+- [Blog](https://welcometoyellow.com/blog): Articles on brand strategy, identity, marketing, and industry insights for UAE/GCC businesses
+
+## Optional
+- [Sitemap](https://welcometoyellow.com/sitemap.xml): Full list of indexed pages
+- [RSS Feed](https://welcometoyellow.com/feed.xml): Latest blog posts

@@ -92,13 +92,13 @@ const Footer = () => {
                                     </div>
                                     <div className="w-full mobile:w-full mobile:order-2 tablet:w-full">
                                         <h6 className="text-[1.9vw] font-display leading-[1.3] mb-[1vw] mobile:text-[5vw] mobile:text-center mobile:mb-[3vw] tablet:text-[3vw]">Phone</h6>
-                                        <Link href="tel:+97145820205" className="text-[1.15vw] font-medium text-shadow mobile:text-[4vw] mobile:flex mobile:justify-center tablet:text-[2.5vw]">
+                                        <Link href="tel:+97145820205" className="inline-block py-[0.6vw] text-[1.15vw] font-medium text-shadow mobile:py-[2vw] mobile:text-[4vw] mobile:flex mobile:justify-center tablet:text-[2.5vw]">
                                             <span
                                                 className="link-line footer-social overflow-hidden block">
                                                 +971 4 582 0205
                                             </span>
                                         </Link>
-                                        <Link href="tel:+971545178971" className="text-[1.15vw] font-medium text-shadow mobile:text-[4vw] mobile:flex mobile:justify-center tablet:text-[2.5vw]">
+                                        <Link href="tel:+971545178971" className="inline-block py-[0.6vw] text-[1.15vw] font-medium text-shadow mobile:py-[2vw] mobile:text-[4vw] mobile:flex mobile:justify-center tablet:text-[2.5vw]">
                                             <span
                                                 className="link-line footer-social overflow-hidden block">
                                                 +971 54 517 8971
