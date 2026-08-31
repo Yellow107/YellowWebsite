@@ -61,7 +61,7 @@ export default function Pagehero() {
               <p data-para-anim>Based in Dubai, working with ambitious brands across the region and beyond.</p> */}
             </div>
           </div>
-          <div className="w-[50vw] h-[44vw] relative mobile:w-[85vw] mobile:h-[120vw] rounded-xl overflow-hidden fadeup">
+          <div className="w-[50vw] h-[44vw] relative mobile:w-[85vw] mobile:h-[120vw] rounded-xl overflow-hidden">
             <div>
               <Image
                 src="/assets/images/contact/contact-head2.webp"

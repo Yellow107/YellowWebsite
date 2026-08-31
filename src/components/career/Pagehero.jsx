@@ -15,7 +15,7 @@ export default function Pagehero() {
                 Want to join a fun, dynamic and creative team based in Dubai? You’ve come to the right place.
               </p>
             </div>
-            <div className="w-[30vw] h-[40vw] relative mobile:w-[85vw] mobile:h-[120vw] rounded-xl overflow-hidden fadeup">
+            <div className="w-[30vw] h-[40vw] relative mobile:w-[85vw] mobile:h-[120vw] rounded-xl overflow-hidden">
               <div>
                 <Image src="/assets/images/career/work-with-us.webp" quality={100} alt="career-hero" fill priority={true}/>
               </div>

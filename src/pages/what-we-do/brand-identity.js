@@ -68,7 +68,7 @@ export default function servicesdetail({ recentWorks = [] }) {
             >
               Brand Identity
             </h1>
-            <div className="w-[90vw] h-[45vw] rounded-[15px] overflow-hidden relative fadeup mobile:w-full mobile:h-[50vw] tablet:w-full">
+            <div className="w-[90vw] h-[45vw] rounded-[15px] overflow-hidden relative mobile:w-full mobile:h-[50vw] tablet:w-full">
               <Image
                 quality={100}
                 src="/assets/images/service/brand-identity/brand-identity-listing.png"

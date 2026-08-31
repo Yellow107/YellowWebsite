@@ -11,7 +11,7 @@ export default function AdvertisingSolutions() {
           <div className="space-y-[8vw]">
               <div  className="grid grid-cols-8 h-full gap-x-[3vw] gap-y-[7vw] mobile:flex mobile:flex-col tablet:flex-col tablet:flex tablet:gap-y-[10vw]">
                 <div className="col-span-3 w-full h-full">
-                  <div className={`w-[37.5vw] h-[42.5vw] fadeup  overflow-hidden relative mobile:w-full mobile:h-[140vw] tablet:w-full tablet:h-[45vw]`}>
+                  <div className={`w-[37.5vw] h-[42.5vw] overflow-hidden relative mobile:w-full mobile:h-[140vw] tablet:w-full tablet:h-[45vw]`}>
                       <Image
                         priority={true}
                         quality={90}

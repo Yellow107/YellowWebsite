@@ -10,7 +10,7 @@ export default function Trusted() {
           <div className="space-y-[8vw]">
             <div className="grid grid-cols-7 h-full gap-x-[3vw] gap-y-[7vw] mobile:flex mobile:flex-col tablet:flex-col tablet:flex tablet:gap-y-[10vw]">
               <div className="col-span-4 w-full h-full">
-                <div className={`w-[48vw] h-[28vw] fadeup rounded-xl overflow-hidden relative mobile:w-full mobile:h-[50vw] tablet:w-full tablet:h-[45vw]`}>
+                <div className={`w-[48vw] h-[28vw] rounded-xl overflow-hidden relative mobile:w-full mobile:h-[50vw] tablet:w-full tablet:h-[45vw]`}>
                   <Image
                     priority={true}
                     quality={90}

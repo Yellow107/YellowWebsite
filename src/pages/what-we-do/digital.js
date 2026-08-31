@@ -38,7 +38,7 @@ export default function servicesdetail({ recentWorks = [] }) {
             <h1 data-para-anim className='text-[5.8vw] w-[80%] uppercase font-display mb-[7vw] leading-[1.3] mobile:text-[12vw] tablet:w-[90%]  mobile:w-full tablet:text-[7vw] mobile:mb-[10vw]'>
               Digital
             </h1>
-            <div className="w-[90vw] h-[45vw] rounded-[15px] overflow-hidden relative fadeup mobile:w-full mobile:h-[50vw] tablet:w-full">
+            <div className="w-[90vw] h-[45vw] rounded-[15px] overflow-hidden relative mobile:w-full mobile:h-[50vw] tablet:w-full">
               <Image
                 quality={90}
                 src="/assets/images/service/digital/Digital-Hero.webp"
