@@ -44,3 +44,13 @@ PERFORMANCE-OPTIMIZATION-PLAN.md
 
 # graft's local graph cache — regenerable, not committed (run `graft build`).
 graft/
+
+# local agent/editor tooling — not shared project config
+.claude/
+.codex/
+.ignore
+.mcp.json
+
+# ad-hoc lighthouse/pagespeed test output
+lh-*.json
+lighthouse-*
