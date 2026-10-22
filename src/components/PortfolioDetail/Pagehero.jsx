@@ -3,7 +3,7 @@ import Section from '../Section'
 import MediaRender from '../MediaRender'
 import { formatDateYear } from '@/lib/datetime'
 
-export default function Pagehero({ src, title, date, tags, headertags }) {
+export default function Pagehero({ src, title, date, tags, projectYear, headertags }) {
 
   return (
     <>
@@ -38,7 +38,7 @@ export default function Pagehero({ src, title, date, tags, headertags }) {
               )
             }
             <p className="w-fit border-[1px] border-white rounded-[60px] backdrop-blur-md px-[2.5vw] py-[0.5vw] text-[1.2vw] mobile:text-[4vw] mobile:hidden tablet:text-[2vw] bg-white/15">
-              {formatDateYear(date)}
+              {String(projectYear ?? "").trim() || formatDateYear(date)}
             </p>
           </div>
         </div>

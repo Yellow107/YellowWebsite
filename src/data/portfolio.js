@@ -108,6 +108,8 @@ export const QUERY_PROJECT_BY_SLUG = gql`
         description
         subheading
         award
+        clientName
+        projectYear
         packagingWorld
         detailPageFeaturedImageVideo {
           node {

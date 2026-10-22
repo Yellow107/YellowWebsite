@@ -3,15 +3,14 @@ import Section from "../Section";
 import styles from "@/styles/work.module.css";
 
 const Information = ({ info, title, tags, industry }) => {
-
   const awardText = info?.award || info?.awards;
 
   const awardLines =
     typeof awardText === "string"
       ? awardText
-          .split("|")
-          .map((item) => item.trim())
-          .filter(Boolean)
+        .split("|")
+        .map((item) => item.trim())
+        .filter(Boolean)
       : [];
 
   return (
@@ -56,7 +55,7 @@ const Information = ({ info, title, tags, industry }) => {
                   Client
                 </p>
                 <p data-para-anim className="mobile:text-[5vw]">
-                  {title}
+                  {info?.clientName?.trim() || title}
                 </p>
               </div>
 

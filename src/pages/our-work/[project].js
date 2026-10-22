@@ -100,6 +100,7 @@ export default function Work({ project }) {
         <Pagehero
           src={workFields?.detailPageFeaturedImageVideo?.node?.mediaItemUrl}
           date={date}
+          projectYear={workFields?.projectYear}
           title={title}
           headertags={workFields?.headertags}
           tags={tags}
