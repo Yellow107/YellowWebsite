@@ -1,0 +1,134 @@
+/* Homepage awards: cover-flow carousel. Cards are placed by Awards.jsx; everything is scoped under .root */
+.root {
+  --body: #111;
+  --ease: cubic-bezier(0.62, 0.05, 0.01, 0.99);
+  --font-display: var(--font-outfit), sans-serif;
+  --font-body: var(--font-satoshi), sans-serif;
+  --line: rgba(17, 17, 17, 0.14);
+}
+
+.root { padding: 6vw 0 5vw; overflow: hidden; }
+
+/* Stage: cards are absolutely placed around the centre by Awards.jsx */
+.root :global(.cf) { position: relative; height: 31vw; margin-top: 3.4vw; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.root :global(.cf__track) { position: absolute; inset: 0; }
+.root :global(.cf__card) {
+  position: absolute; top: 50%; left: 50%; display: flex; overflow: hidden;
+  border-radius: 1.1vw; background: var(--c); color: #fff; cursor: pointer;
+  box-shadow: 0 1.6vw 3vw -1.8vw rgba(17, 17, 17, 0.45);
+  will-change: transform, width, height;
+}
+.root :global(.cf__card.is-active) { cursor: default; }
+
+/* Text panel opens to a fixed inner width so its copy never reflows mid-animation */
+.root :global(.cf__text) { position: relative; flex: none; width: 0; height: 100%; overflow: hidden; }
+/* rows: arrow, title, client, category, spacer, show, logo */
+.root :global(.cf__text-in) {
+  position: absolute; top: 0; left: 0; bottom: 0; width: 25vw; padding: 1.9vw;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto auto auto 1fr auto auto; align-items: start;
+}
+.root :global(.cf__text-in > *) { grid-column: 1 / -1; }
+.root :global(.cf__text-in > .cf__arrow) { grid-column: 2; grid-row: 1; }
+.root :global(.cf__text-in > .cf__title) { grid-row: 2; }
+.root :global(.cf__text-in > .cf__client) { grid-row: 3; }
+.root :global(.cf__text-in > .cf__category) { grid-row: 4; }
+.root :global(.cf__text-in > .cf__show) { grid-row: 6; }
+.root :global(.cf__text-in > .cf__logo) { grid-row: 7; justify-self: start; margin-top: 0.9vw; }
+.root :global(.cf__arrow) { flex: none; width: 3vw; height: 3vw; border-radius: 50%; display: grid; place-items: center; background: var(--body); color: #fff; transition: background-color 0.4s, color 0.4s; }
+.root :global(.cf__arrow:hover) { background: #fff; color: var(--body); }
+.root :global(.cf__title) { margin: 1.7vw 0 0; font-family: var(--font-display); font-weight: 400; font-size: 2.15vw; line-height: 1.12; }
+.root :global(.cf__client) { margin: 0.8vw 0 0; font-size: 1.1vw; font-weight: 700; }
+.root :global(.cf__category) { margin: 0.35vw 0 0; font-size: 1.05vw; font-weight: 500; line-height: 1.4; opacity: 0.9; }
+.root :global(.cf__show) { font-size: 1vw; font-weight: 500; line-height: 1.35; opacity: 0.88; }
+.root :global(.cf__logo) { height: 2.1vw; width: auto; max-width: 12vw; object-fit: contain; object-position: left bottom; }
+.root :global(.cf__logo[data-size="tall"]) { height: 3.2vw; }
+.root :global(.cf__logo[data-size="short"]) { height: 1.6vw; }
+.root :global(.wordmark-numa) { display: flex; flex-direction: column; align-items: flex-start; color: #fff; font-family: var(--font-display); font-weight: 200; font-size: 2.1vw; line-height: 1; letter-spacing: 0.32em; }
+.root :global(.wordmark-numa small) { font-size: 0.32em; font-weight: 300; letter-spacing: 1.02em; margin-top: 0.55em; }
+
+/* Media panel: the trophy on a slightly deeper tint of the award colour */
+.root :global(.cf__media) { position: relative; flex: 1 1 auto; min-width: 0; height: 100%; overflow: hidden; }
+.root :global(.cf__media::before) { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.07); }
+.root :global(.cf__word) { position: absolute; left: 50%; top: 9%; transform: translateX(-50%); font-family: var(--font-display); font-weight: 500; font-size: min(7.4vw, calc(43vw / var(--len))); line-height: 0.85; text-transform: uppercase; color: rgba(255, 255, 255, 0.2); white-space: nowrap; pointer-events: none; }
+.root :global(.cf__trophy) { position: absolute; left: 50%; bottom: 0; width: auto; height: 86%; transform: translateX(-50%); filter: drop-shadow(0 1.4vw 1.6vw rgba(0, 0, 0, 0.25)); pointer-events: none; }
+.root :global(.cf__trophy[data-fit="wide"]) { height: 70%; }
+.root :global(.cf__trophy[data-fit="free"]) { height: 66%; bottom: 10%; }
+
+/* Yellow's arrow glyph: drawn pointing down, rotated per direction; on hover the arrow rolls out and a fresh one rolls in */
+.root :global(.yarrow) { width: 1.7vw; height: 1.7vw; overflow: hidden; fill: currentColor; }
+.root :global(.yarrow--ne) { transform: rotate(-135deg); }
+.root :global(.yarrow--e) { transform: rotate(-90deg); }
+.root :global(.yarrow--w) { transform: rotate(90deg); }
+.root :global(.yarrow path) { transform-box: fill-box; transform-origin: center; transition: transform 0.5s ease-out; }
+.root :global(.yarrow__in) { transform: translateY(-110%) scale(0); }
+.root :global(.cf__arrow:hover .yarrow__in), .root :global(.cf__btn:hover .yarrow__in) { transform: none; }
+.root :global(.cf__arrow:hover .yarrow__out), .root :global(.cf__btn:hover .yarrow__out) { transform: translateY(110%) scale(0); }
+.root :global(.cf__arrow .yarrow) { width: 1.45vw; height: 1.45vw; }
+
+
+/* Controls: arrows, progress dashes (fill = autoplay timer), counter */
+.root :global(.cf__controls) { display: flex; justify-content: center; align-items: center; gap: 1.6vw; margin-top: 2.6vw; }
+.root :global(.cf__btn) { width: 3.2vw; height: 3.2vw; border: 1px solid var(--body); border-radius: 50%; background: none; color: var(--body); display: grid; place-items: center; cursor: pointer; transition: background-color 0.4s, color 0.4s; }
+.root :global(.cf__btn:hover) { background: var(--body); color: #fff; }
+.root :global(.cf__btn:focus-visible), .root :global(.cf__dot:focus-visible), .root :global(.cf__arrow:focus-visible) { outline: 2px solid var(--body); outline-offset: 3px; }
+.root :global(.cf__dots) { display: flex; gap: 0.5vw; }
+.root :global(.cf__dot) { position: relative; width: 2.6vw; height: 1.4vw; padding: 0; border: 0; background: none; cursor: pointer; }
+.root :global(.cf__dot::before) { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2px; margin-top: -1px; background: var(--line); }
+.root :global(.cf__dot i) { position: absolute; left: 0; right: 0; top: 50%; height: 2px; margin-top: -1px; background: var(--body); transform: scaleX(0); transform-origin: 0 50%; }
+.root :global(.cf__dot.is-done i) { transform: scaleX(1); }
+.root :global(.cf__count) { min-width: 4.4vw; font-size: 0.95vw; font-weight: 500; font-variant-numeric: tabular-nums; text-align: center; }
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1024px) {
+  .root { padding-top: 12vw; }
+  .root :global(.cf) { height: 46vw; margin-top: 6vw; }
+  .root :global(.cf__card) { border-radius: 2vw; }
+  .root :global(.cf__text-in) { width: 34vw; padding: 3vw; }
+  .root :global(.cf__arrow) { width: 5.4vw; height: 5.4vw; }
+  .root :global(.cf__title) { font-size: 3.4vw; margin-top: 2.6vw; }
+  .root :global(.cf__client) { font-size: 2.1vw; margin-top: 1.4vw; }
+  .root :global(.cf__category) { font-size: 2vw; }
+  .root :global(.cf__show) { font-size: 1.9vw; }
+  .root :global(.cf__text-in > .cf__logo) { margin-top: 1.6vw; }
+  .root :global(.cf__logo) { height: 3.6vw; max-width: 20vw; }
+  .root :global(.cf__logo[data-size="tall"]) { height: 5.4vw; }
+  .root :global(.cf__logo[data-size="short"]) { height: 2.8vw; }
+  .root :global(.wordmark-numa) { font-size: 3.6vw; }
+  .root :global(.cf__word) { font-size: min(11vw, calc(56vw / var(--len))); }
+  .root :global(.cf__controls) { gap: 3vw; margin-top: 5vw; }
+  .root :global(.cf__btn) { width: 6.4vw; height: 6.4vw; }
+  .root :global(.yarrow) { width: 3.2vw; height: 3.2vw; }
+  .root :global(.cf__arrow .yarrow) { width: 2.6vw; height: 2.6vw; }
+  .root :global(.cf__dots) { gap: 1vw; }
+  .root :global(.cf__dot) { width: 4.6vw; height: 3vw; }
+  .root :global(.cf__count) { font-size: 2vw; min-width: 9vw; }
+}
+
+/* ---------- Mobile: card stacks the trophy above the text ---------- */
+@media (max-width: 540px) {
+  .root { padding-top: 16vw; }
+  .root :global(.cf) { height: 128vw; margin-top: 8vw; }
+  .root :global(.cf__card) { flex-direction: column-reverse; border-radius: 4vw; }
+  .root :global(.cf__text) { width: 100% !important; height: 0; }
+  .root :global(.cf__text-in) { position: absolute; left: 0; right: 0; top: 0; bottom: auto; width: auto; height: 62vw; padding: 5vw; }
+  .root :global(.cf__media) { width: 100%; }
+  .root :global(.cf__arrow) { width: 10vw; height: 10vw; }
+  .root :global(.cf__title) { font-size: 6.4vw; margin-top: 0; }
+  .root :global(.cf__client) { font-size: 3.8vw; margin-top: 2vw; }
+  .root :global(.cf__category) { font-size: 3.6vw; }
+  .root :global(.cf__show) { font-size: 3.3vw; }
+  /* the arrow drops to the logo row, so the copy starts at the top of the panel */
+  .root :global(.cf__text-in > .cf__arrow) { grid-row: 7; align-self: center; margin-top: 2.4vw; }
+  .root :global(.cf__text-in > .cf__logo) { grid-column: 1; align-self: center; margin-top: 2.4vw; }
+  .root :global(.cf__logo) { height: 6vw; max-width: 36vw; }
+  .root :global(.cf__logo[data-size="tall"]) { height: 9vw; }
+  .root :global(.cf__logo[data-size="short"]) { height: 4.6vw; }
+  .root :global(.wordmark-numa) { font-size: 6vw; }
+  .root :global(.cf__word) { font-size: min(18vw, calc(108vw / var(--len))); }
+  .root :global(.cf__controls) { gap: 4vw; margin-top: 7vw; }
+  .root :global(.cf__btn) { width: 11vw; height: 11vw; }
+  .root :global(.yarrow) { width: 5.4vw; height: 5.4vw; }
+  .root :global(.cf__arrow .yarrow) { width: 4.6vw; height: 4.6vw; }
+  .root :global(.cf__dots) { display: none; }
+  .root :global(.cf__count) { font-size: 3.8vw; min-width: 16vw; }
+}
