@@ -91,8 +91,7 @@ const awards = [
     color: "#7C8A7D",
     word: "Silver",
     trophy: TROPHIES.silver,
-    // placeholder wordmark until the official Numa logo file is supplied
-    logo: null,
+    logo: { src: `${IMG}/numa.png`, width: 300, height: 91, size: "mid" },
   },
   {
     title: "Branding Agency of the Year",
@@ -245,16 +244,24 @@ const Awards = () => {
           return;
         }
         const steps = Math.abs(delta);
+        let copyShown = false;
         posTween = gsap.to(pos, {
           p: pos.p + delta,
           // longer jumps get a little more time, but stay one smooth glide
           duration: Math.min(1.1 + Math.max(0, steps - 1) * 0.18, 1.6),
           ease: "power2.inOut",
-          onUpdate: render,
+          onUpdate() {
+            render();
+            // fade the copy in while the card is still opening, not after it settles
+            if (!copyShown && this.progress() >= 0.65) {
+              copyShown = true;
+              showCopy(i, 1);
+            }
+          },
           onComplete: () => {
             pos.p = i;
             render();
-            showCopy(i, 1);
+            if (!copyShown) showCopy(i, 1);
           },
         });
       }
@@ -376,20 +383,14 @@ const Awards = () => {
                   <p className="cf__client">{award.client}</p>
                   {award.category && <p className="cf__category">{award.category}</p>}
                   <span className="cf__show">{award.show}</span>
-                  {award.logo ? (
-                    <Image
-                      className="cf__logo"
-                      src={award.logo.src}
-                      width={award.logo.width}
-                      height={award.logo.height}
-                      alt={award.client}
-                      data-size={award.logo.size}
-                    />
-                  ) : (
-                    <span className="cf__logo wordmark-numa" role="img" aria-label={award.client}>
-                      NUMA<small>RESERVE</small>
-                    </span>
-                  )}
+                  <Image
+                    className="cf__logo"
+                    src={award.logo.src}
+                    width={award.logo.width}
+                    height={award.logo.height}
+                    alt={award.client}
+                    data-size={award.logo.size}
+                  />
                 </div>
               </div>
               <div className="cf__media">
