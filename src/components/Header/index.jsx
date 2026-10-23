@@ -112,11 +112,11 @@ const Header = () => {
 
   return (
     <>
-      <span className={`block w-full fixed z-[198] h-[8vw] tablet:h-[15vw] mobile:h-[21vw] transition-all ${isScrolled ? "bg-white" : "bg-transparent"} ${showHeader ? "transform-none" : "transform -translate-y-full"}`} />
+      <span className={`block w-full fixed z-[198] h-[6vw] tablet:h-[11vw] mobile:h-[18vw] transition-all ${isScrolled ? "bg-white" : "bg-transparent"} ${showHeader ? "transform-none" : "transform -translate-y-full"}`} />
       <header
         className={`fixed top-0 w-full z-[200] transition-all duration-300 ${showHeader ? "transform-none" : "transform -translate-y-full"}`}
       >
-        <div className="container pt-[2.2%] tablet:pt-[1%] flex justify-between items-center mobile:py-[4%]">
+        <div className="container pt-[1.2%] tablet:pt-[1.5%] flex justify-between items-center mobile:py-[3%]">
           <div className="w-fit overflow-hidden">
             <Link href="/" className="pointer-events-auto">
               <Image
@@ -134,13 +134,13 @@ const Header = () => {
           </div>
           <div className="flex items-center gap-8 relative z-[205] tablet:gap-4 mobile:gap-0 mobile:items-start">
             <SearchButton isInverted={isInverted} menuOpen={menuOpen} />
-            <div className="w-[3.5vw] mr-[-0.5%] h-[3.5vw] mobile:w-[12vw] mobile:h-[15vw] relative tablet:w-[8vw] tablet:h-[10vw] mobile:mr-[-5%]">
+            <div className="w-[3.5vw] mr-[-0.5%] h-[3.5vw] mobile:w-[12vw] mobile:h-[12vw] relative tablet:w-[8vw] tablet:h-[8vw] mobile:mr-[-5%]">
               <button
                 id="header-hamburger"
                 disabled={buttonDisabled}
                 onClick={handleMenuButtonClick}
                 aria-label="Open Menu"
-                className={`${styles.menuBtn} cursor-pointer pointer-events-auto h-[3.5vw] transition-all fixed z-[200] w-[3.5vw] mobile:w-[12vw] mobile:h-[12vw] tablet:w-[8vw] tablet:h-[10vw] ${
+                className={`${styles.menuBtn} cursor-pointer pointer-events-auto h-[3.5vw] transition-all fixed z-[200] w-[3.5vw] mobile:w-[12vw] mobile:h-[12vw] tablet:w-[8vw] tablet:h-[8vw] ${
                   menuOpen ? styles.open : ""
                 }`}
               >

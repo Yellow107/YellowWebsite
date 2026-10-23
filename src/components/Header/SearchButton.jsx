@@ -133,7 +133,7 @@ const SearchButton = ({ isInverted, menuOpen }) => {
         <div className="flex items-center relative" id="search-btn">
             <div ref={searchWrapper} className={`${styles.searchWrapper}`}>
                 <span className={styles.bg}></span>
-                <div className={`${styles.searchBarContainer} container flex items-center justify-between w-full py-[2.7%] tablet:py-[5%] mobile:py-[7%] h-fit relative`}>
+                <div className={`${styles.searchBarContainer} container flex items-center justify-between w-full py-[1.2%] tablet:py-[2%] mobile:py-[4%] h-fit relative`}>
                     <div className="flex flex-wrap mx-auto items-center w-full justify-between mobile:flex-nowrap">
                         <span className={styles.bg}></span>
                         <div className="w-fit overflow-hidden tablet:hidden mobile:hidden">

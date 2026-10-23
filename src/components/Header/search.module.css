@@ -8,7 +8,7 @@
   height: 100vh;
   bottom: 0;
   background-color: #000000ab;
-  padding: 12vw 10vw 10vw;
+  padding: 9vw 10vw 10vw;
 }
 [data-search-is-active="true"] .navSearchResults {
   display: block;
@@ -30,7 +30,7 @@
 
 @media only screen and (max-width: 1023px) {
   .navSearchResults {
-    padding: 22vw 5vw 10vw;
+    padding: 17vw 5vw 10vw;
     overflow: scroll;
     position: fixed;
     height: auto;
@@ -226,7 +226,7 @@
     display: none;
   }
   .searchBtn {
-    height: 12.9vw;
+    height: 45px;
   }
   .searchBtn:after {
     height: 74px;
