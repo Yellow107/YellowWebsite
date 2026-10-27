@@ -123,6 +123,7 @@ export const QUERY_PROJECT_BY_SLUG = gql`
             }
           }
         }
+        tagOrder
       }
       portfolioForPages {
         relatedPortfolio {

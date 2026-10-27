@@ -102,7 +102,7 @@ export default function Work({ project }) {
           date={date}
           projectYear={workFields?.projectYear}
           title={title}
-          headertags={workFields?.headertags}
+          headertags={workFields?.tagOrder?.trim() ? null : workFields?.headertags}
           tags={tags}
         />
         <Information

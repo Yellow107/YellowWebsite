@@ -231,6 +231,18 @@ export function mapProjectData(project = {}) {
     });
   }
 
+  // If the ACF "Tag order" field is filled in, it replaces the tags
+  // so they render in exactly the order typed in WordPress
+
+  const tagOrder = data.workFields?.tagOrder
+    ?.split(',')
+    .map((name) => name.trim())
+    .filter(Boolean);
+
+  if (tagOrder?.length) {
+    data.tags = tagOrder.map((name) => ({ name, slug: name.toLowerCase() }));
+  }
+
   // Clean up the featured image to make them more easy to access
 
   if (data.featuredImage) {
